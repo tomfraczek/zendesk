@@ -5,6 +5,12 @@
     {{search scoped=settings.scoped_kb_search submit=false}}
   </nav>
 
+  <section class="section hero">
+    <div class="hero-inner">
+      {{search submit=false instant=settings.instant_search class='search search-full'}}
+    </div>
+  </section>
+
   <div class="article-container" id="article-container">
     <aside class="article-sidebar">
       {{#if settings.show_articles_in_section}}
