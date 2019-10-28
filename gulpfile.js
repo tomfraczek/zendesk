@@ -15,6 +15,9 @@ var ignore = require('gulp-ignore');
 // paths
 var paths = {
     sass: './styles/*.scss',
+    styles: {
+      dest: './../',
+    },
     excludeCSS: {
         underscored: '!./styles/_*.scss',
     }
@@ -31,7 +34,7 @@ var onError = function(err) {
 // SASS
 function style() {
     return gulp
-        .src(paths.sass, {base: "./"})
+        .src(paths.sass)
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
         .pipe(ignore.include(paths.excludeCSS.underscored))
@@ -40,7 +43,7 @@ function style() {
             browsers: ['last 2 versions', 'IE 11'],
             remove: true,
         }))
-        .pipe(gulp.dest("./"));
+        .pipe(gulp.dest('./'));
 }
 
 
