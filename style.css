@@ -955,7 +955,7 @@ ul {
     text-transform: uppercase;
     flex: 0 0 auto;
     padding-right: 30px;
-    width: 33%;
+    width: 100%;
     /* Three columns on desktop */
   }
   [dir="rtl"] .promoted-articles-item {
@@ -976,16 +976,6 @@ ul {
 
 .promoted-articles-item .icon-lock::before {
   vertical-align: baseline;
-}
-
-.promoted-articles-item:last-child a {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  .promoted-articles-item:last-child a {
-    border-bottom: 1px solid #ddd;
-  }
 }
 
 /***** Community section in homepage *****/
