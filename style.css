@@ -946,19 +946,13 @@ ul {
   flex-wrap: wrap;
 }
 
-@media (min-width: 1024px) {
-  .promoted-articles {
-    flex-direction: row;
-  }
-}
-
 .promoted-articles-item {
   flex: 1 0 auto;
 }
 
 @media (min-width: 1024px) {
   .promoted-articles-item {
-    align-self: flex-end;
+    text-transform: uppercase;
     flex: 0 0 auto;
     padding-right: 30px;
     width: 33%;
