@@ -1,4 +1,7 @@
 /***** Request *****/
+
+@import "variables";
+
 .request {
   &-container {
     @include desktop {

@@ -1,4 +1,8 @@
 /* Sidebar navigation that collapses on mobile */
+
+@import "variables";
+
+
 .collapsible-sidebar {
   @include desktop {
     max-height: none;

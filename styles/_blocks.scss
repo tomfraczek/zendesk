@@ -1,5 +1,9 @@
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
+
+@import "variables";
+
+
 .blocks {
   &-list {
     @include tablet {

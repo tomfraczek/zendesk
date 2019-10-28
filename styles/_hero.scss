@@ -1,6 +1,9 @@
 /***** Hero component *****/
+
+@import "variables";
+
 .hero {
-  background-image: url($homepage_background_image);
+  //background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
   height: 300px;

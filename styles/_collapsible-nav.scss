@@ -1,4 +1,8 @@
 /* Navigation element that collapses on mobile */
+
+@import "variables";
+
+
 .collapsible-nav {
   @include tablet {
     flex-direction: row;

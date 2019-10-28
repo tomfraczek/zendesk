@@ -1,5 +1,8 @@
 /***** Actions *****/
 /* Styles admin and en user actions(edit, delete, change status) in comments and posts */
+
+@import "variables";
+
 .actions {
   text-align: center;
   flex-shrink: 0; /*Avoid collapsing elements in Safari*/

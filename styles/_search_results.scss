@@ -1,4 +1,7 @@
 /***** Search results *****/
+
+@import "variables";
+
 .search-results {
   @include desktop {
     flex-direction: row;

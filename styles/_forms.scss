@@ -1,5 +1,7 @@
 /***** Forms *****/
 
+@import "variables";
+
 .form {
   max-width: 650px;
 }
@@ -81,7 +83,7 @@
 
 [data-loading="true"] input,
 [data-loading="true"] textarea {
-  background: transparent url($assets-loader-gif) 99% 50% no-repeat;
+  //background: transparent url($assets-loader-gif) 99% 50% no-repeat;
   background-size: 16px 16px;
 }
 

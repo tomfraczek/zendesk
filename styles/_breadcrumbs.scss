@@ -1,4 +1,7 @@
 /***** Breadcrumbs *****/
+
+@import "variables";
+
 .breadcrumbs {
   @include tablet {
     margin: 0;

@@ -1,7 +1,14 @@
 /***** Community *****/
+
+@import "variables";
+
+.tomeczek{
+  background:red;
+}
+
 .community {
   &-hero {
-    background-image: url($community_background_image);
+    //background-image: url($community_background_image);
     margin-bottom: 10px;
   }
 
