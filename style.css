@@ -954,7 +954,6 @@ ul {
   .promoted-articles-item {
     text-transform: uppercase;
     flex: 0 0 auto;
-    padding-right: 30px;
     width: 100%;
     /* Three columns on desktop */
   }
@@ -993,7 +992,6 @@ ul {
 
 .community,
 .activity {
-  border-top: 1px solid #ddd;
   padding: 30px 0;
 }
 
