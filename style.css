@@ -1419,7 +1419,6 @@ ul {
 .article-relatives {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
 }
 
 @media (min-width: 768px) {
@@ -1564,7 +1563,6 @@ ul {
 .recent-articles h3,
 .related-articles h3 {
   font-size: 15px;
-  margin: 20px 0;
 }
 
 .recent-articles li,
