@@ -505,7 +505,7 @@ ul {
 
 .nav-wrapper a.login {
   display: inline-block;
-  padding: 19px 10px;
+  padding: 20px 10px;
   border-radius: 0;
   letter-spacing: 2px;
 }
@@ -1586,6 +1586,10 @@ ul {
 
 .sub-nav--article {
   margin: 20px 0 50px;
+}
+
+.sub-nav--article .search {
+  margin: 15px 0 45px;
 }
 
 /***** Attachments *****/
