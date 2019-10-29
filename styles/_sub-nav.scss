@@ -2,13 +2,14 @@
 @import "variables";
 
 .sub-nav {
+
   @include tablet {
     align-items: baseline;
     flex-direction: row;
   }
 
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   margin-bottom: 30px;
   min-height: 50px;

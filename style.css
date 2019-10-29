@@ -122,7 +122,6 @@ textarea:focus {
 
 .container-divider {
   border-top: 1px solid #ddd;
-  margin-bottom: 20px;
 }
 
 ul {
@@ -477,6 +476,7 @@ ul {
   padding: 25px 10px !important;
   border-left: 1px solid #ddd !important;
   border-right: 1px solid #ddd !important;
+  letter-spacing: 2px;
 }
 
 .nav-wrapper a {
@@ -510,6 +510,7 @@ ul {
   padding: 19px 10px;
   border-right: 1px solid #ddd;
   border-radius: 0;
+  letter-spacing: 2px;
 }
 
 .nav-wrapper .menu-button {
@@ -698,6 +699,10 @@ ul {
 /***** Search field *****/
 .search {
   position: relative;
+  max-width: 610px;
+  width: 100%;
+  align-self: center;
+  margin: 20px 0 50px;
 }
 
 .search input[type="search"] {
@@ -817,7 +822,7 @@ ul {
 
 .sub-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   margin-bottom: 30px;
   min-height: 50px;
