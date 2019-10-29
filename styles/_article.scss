@@ -19,6 +19,10 @@
 
   flex: 1 0 auto; //Explicit values needed whith flex-direction: column for IE11
 
+  &-main{
+    width:65%;
+  }
+
   &-container {
     @include desktop {
       flex-direction: row;
