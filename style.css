@@ -474,8 +474,6 @@ ul {
 
 .user-nav .submit-a-request {
   padding: 25px 10px !important;
-  border-left: 1px solid #ddd !important;
-  border-right: 1px solid #ddd !important;
   letter-spacing: 2px;
 }
 
@@ -508,7 +506,6 @@ ul {
 .nav-wrapper a.login {
   display: inline-block;
   padding: 19px 10px;
-  border-right: 1px solid #ddd;
   border-radius: 0;
   letter-spacing: 2px;
 }
@@ -702,7 +699,6 @@ ul {
   max-width: 610px;
   width: 100%;
   align-self: center;
-  margin: 20px 0 50px;
 }
 
 .search input[type="search"] {
@@ -832,7 +828,6 @@ ul {
 @media (min-width: 768px) {
   .sub-nav {
     align-items: baseline;
-    flex-direction: row;
   }
 }
 

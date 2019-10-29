@@ -43,8 +43,6 @@ $header-height: 71px;
 
   .submit-a-request{
     padding: 25px 10px !important;
-    border-left: 1px solid #ddd !important;
-    border-right: 1px solid #ddd !important;
     letter-spacing: 2px;
   }
 }
@@ -76,7 +74,6 @@ $header-height: 71px;
     &.login {
       display: inline-block;
       padding: 19px 10px;
-      border-right: 1px solid #ddd;
       border-radius: 0;
       letter-spacing: 2px;
     }
