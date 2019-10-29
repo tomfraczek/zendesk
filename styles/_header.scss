@@ -20,7 +20,9 @@ $header-height: 71px;
 
 .user-nav {
   @include tablet { position: relative; }
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   white-space: nowrap;
 
