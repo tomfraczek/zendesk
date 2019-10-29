@@ -498,6 +498,9 @@ ul {
 
 .nav-wrapper a.login {
   display: inline-block;
+  padding: 19px 10px;
+  border-right: 1px solid #ddd;
+  border-radius: 0;
 }
 
 .nav-wrapper .menu-button {
@@ -530,6 +533,12 @@ ul {
 .nav-wrapper .menu-button:hover, .nav-wrapper .menu-button:focus, .nav-wrapper .menu-button:active {
   background-color: transparent;
   color: $link_color;
+}
+
+.submit-a-request {
+  padding: 25px 10px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
 /***** User info in header *****/
@@ -1422,6 +1431,7 @@ ul {
   flex-direction: column;
   padding-left: 30px;
   border-left: 1px solid #dedede;
+  width: 25%;
 }
 
 @media (min-width: 768px) {
