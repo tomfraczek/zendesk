@@ -9,10 +9,12 @@
   * 17%     | 66%     | 17%
   */
   @include desktop {
-    flex: 1 0 66%;
-    max-width: 66%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
     min-width: 640px;
-    padding: 0 30px;
   }
 
   flex: 1 0 auto; //Explicit values needed whith flex-direction: column for IE11
@@ -132,10 +134,10 @@
       flex-direction: row;
     }
 
-    border-top: 1px solid $border-color;
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    padding-left: 30px;
+    border-left: 1px solid #dedede;
 
     > * {
       flex: 1 0 50%; //Explicit values needed whith flex-direction: column for IE11
@@ -275,7 +277,6 @@
 .related-articles {
   h3 {
     font-size: $font-size-base;
-    margin: 20px 0;
   }
 
   li {
