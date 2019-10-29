@@ -1584,6 +1584,10 @@ ul {
   margin-bottom: 15px;
 }
 
+.sub-nav--article {
+  margin: 20px 0 50px;
+}
+
 /***** Attachments *****/
 /* Styles attachments inside posts, articles and comments */
 .attachments .attachment-item {
