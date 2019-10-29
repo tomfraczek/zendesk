@@ -142,6 +142,7 @@
     flex-direction: column;
     padding-left: 30px;
     border-left: 1px solid #dedede;
+    width:25%;
 
     > * {
       flex: 1 0 50%; //Explicit values needed whith flex-direction: column for IE11
