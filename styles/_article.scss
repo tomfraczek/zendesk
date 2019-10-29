@@ -134,10 +134,6 @@
   }
 
   &-relatives {
-    @include tablet {
-      flex-direction: row;
-    }
-
     display: flex;
     flex-direction: column;
     padding-left: 30px;
@@ -282,9 +278,11 @@
 .related-articles {
   h3 {
     font-size: $font-size-base;
+    color: #ff7487;
   }
 
   li {
     margin-bottom: 15px;
+    color: #56565A;
   }
 }

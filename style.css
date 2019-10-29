@@ -471,6 +471,12 @@ ul {
   margin: 20px;
 }
 
+.user-nav .submit-a-request {
+  padding: 25px 10px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
 .nav-wrapper a {
   border: 0;
   color: $link_color;
@@ -533,12 +539,6 @@ ul {
 .nav-wrapper .menu-button:hover, .nav-wrapper .menu-button:focus, .nav-wrapper .menu-button:active {
   background-color: transparent;
   color: $link_color;
-}
-
-.submit-a-request {
-  padding: 25px 10px;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
 }
 
 /***** User info in header *****/
@@ -1434,12 +1434,6 @@ ul {
   width: 25%;
 }
 
-@media (min-width: 768px) {
-  .article-relatives {
-    flex-direction: row;
-  }
-}
-
 .article-relatives > * {
   flex: 1 0 50%;
   min-width: 50%;
@@ -1576,11 +1570,13 @@ ul {
 .recent-articles h3,
 .related-articles h3 {
   font-size: 15px;
+  color: #ff7487;
 }
 
 .recent-articles li,
 .related-articles li {
   margin-bottom: 15px;
+  color: #56565A;
 }
 
 /***** Attachments *****/
