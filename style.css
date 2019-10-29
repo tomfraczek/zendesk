@@ -472,9 +472,9 @@ ul {
 }
 
 .user-nav .submit-a-request {
-  padding: 25px 10px;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  padding: 25px 10px !important;
+  border-left: 1px solid #ddd !important;
+  border-right: 1px solid #ddd !important;
 }
 
 .nav-wrapper a {
@@ -1576,6 +1576,10 @@ ul {
 .recent-articles li,
 .related-articles li {
   margin-bottom: 15px;
+}
+
+.recent-articles li a,
+.related-articles li a {
   color: #56565A;
 }
 
