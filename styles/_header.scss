@@ -38,6 +38,12 @@ $header-height: 71px;
       margin: 20px;
     }
   }
+
+  .submit-a-request{
+    padding: 25px 10px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
 }
 
 .nav-wrapper {
@@ -101,8 +107,3 @@ $header-height: 71px;
   }
 }
 
-.submit-a-request{
-  padding: 25px 10px;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-}
