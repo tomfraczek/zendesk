@@ -56,6 +56,7 @@
   }
 
   &-title {
+    color: #ff7487;
     @include tablet {
       flex-basis: 100%; /* Take entire row */
     }
@@ -278,14 +279,10 @@
 .related-articles {
   h3 {
     font-size: $font-size-base;
-    color: #ff7487;
   }
 
   li {
     margin-bottom: 15px;
 
-    a{
-      color: #56565A;
-    }
   }
 }
