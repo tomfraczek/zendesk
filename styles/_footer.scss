@@ -14,11 +14,32 @@
     @include max-width-container;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
   }
 
   &-language-selector {
     color: $secondary-text-color;
     display: inline-block;
     font-weight: $font-weight-light;
+  }
+}
+
+.footer-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-top--logo{
+  width:145px;
+}
+
+.social-media--buttons{
+  a{
+    margin-left: 5px;
+    &:hover{
+      text-decoration: none;
+    }
   }
 }

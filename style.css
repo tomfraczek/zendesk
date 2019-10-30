@@ -651,6 +651,7 @@ ul {
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 @media (min-width: 1160px) {
@@ -664,6 +665,25 @@ ul {
   color: lighten($text_color, 20%);
   display: inline-block;
   font-weight: 300;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-top--logo {
+  width: 145px;
+}
+
+.social-media--buttons a {
+  margin-left: 5px;
+}
+
+.social-media--buttons a:hover {
+  text-decoration: none;
 }
 
 /***** Breadcrumbs *****/
@@ -1296,10 +1316,6 @@ ul {
 
 .article-author {
   margin-bottom: 10px;
-}
-
-.article-title {
-  color: #ff7487;
 }
 
 @media (min-width: 768px) {
