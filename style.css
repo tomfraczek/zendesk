@@ -2889,6 +2889,7 @@ ul {
 .requests-table-toolbar .search {
   flex: 1;
   width: 100%;
+  align-self: flex-end;
 }
 
 .requests-table-toolbar .request-table-filter {
