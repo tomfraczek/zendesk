@@ -143,8 +143,10 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    margin-top:25px;
 
     @include desktop{
+      margin-top:0;
       padding-left: 30px;
       border-left: 1px solid #dedede;
       width:25%;
