@@ -1678,6 +1678,12 @@ ul {
   margin: 15px 0 45px;
 }
 
+.attachments {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 /***** Attachments *****/
 /* Styles attachments inside posts, articles and comments */
 .attachments .attachment-item {
