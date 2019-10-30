@@ -477,6 +477,11 @@ ul {
   letter-spacing: 2px;
 }
 
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .nav-wrapper a {
   transition: all 0.4s ease;
   border: 0;

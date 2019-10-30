@@ -48,6 +48,8 @@ $header-height: 71px;
 }
 
 .nav-wrapper {
+  display:flex;
+  align-items: center;
   a {
     @include tablet {
       display: inline-block;
