@@ -9,10 +9,6 @@
   * 17%     | 66%     | 17%
   */
   @include desktop {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
     width: 100%;
     min-width: 640px;
   }
@@ -21,6 +17,14 @@
 
   &-main{
     width:65%;
+  }
+
+  &-content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width:100%;
   }
 
   &-container {

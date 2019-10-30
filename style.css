@@ -1161,6 +1161,7 @@ ul {
 .article-list-item {
   font-size: 16px;
   padding: 15px 0;
+  display: flex;
 }
 
 .article-list-item a {
@@ -1169,6 +1170,10 @@ ul {
 
 .article-list-item .icon-lock::before {
   vertical-align: baseline;
+}
+
+.article-list-item .icon-star {
+  margin-right: 10px;
 }
 
 .icon-star::before {
@@ -1244,10 +1249,6 @@ ul {
 
 @media (min-width: 1024px) {
   .article {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
     width: 100%;
     min-width: 640px;
   }
@@ -1255,6 +1256,14 @@ ul {
 
 .article-main {
   width: 65%;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .article-container {
