@@ -682,7 +682,7 @@ ul {
   margin-left: 5px;
 }
 
-.social-media--buttons a:hover {
+.social-media--buttons a:hover, .social-media--buttons a:active, .social-media--buttons a:focus, .social-media--buttons a:visited {
   text-decoration: none;
 }
 

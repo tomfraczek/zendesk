@@ -38,7 +38,11 @@
 .social-media--buttons{
   a{
     margin-left: 5px;
-    &:hover{
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited{
       text-decoration: none;
     }
   }
