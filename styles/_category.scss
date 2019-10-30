@@ -48,11 +48,16 @@
   &-item {
     font-size: $font-size-bigger;
     padding: 15px 0;
+    display: flex;
 
     a { color: $text_color; }
 
     .icon-lock::before {
       vertical-align: baseline;
+    }
+
+    .icon-star{
+      margin-right: 10px;
     }
   }
 }
