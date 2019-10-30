@@ -542,6 +542,10 @@ ul {
   color: $link_color;
 }
 
+.user-avatar {
+  margin-left: 10px;
+}
+
 /***** User info in header *****/
 .user-info {
   display: inline-block;
