@@ -212,13 +212,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  const Http = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
   const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
-  Http.open("GET", url);
-  Http.send();
+  request.open("GET", url);
+  request.responseType = 'json';
+  request.send();
 
-  Http.onreadystatechange = (e) => {
-    console.log(Http.responseText)
+  request.onreadystatechange = (e) => {
+    console.log(request.responseText);
   }
 
 });
