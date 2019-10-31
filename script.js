@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     articleTitleContent.appendChild(articleTitle);
 
-
+    document.body.insertBefore(articleTitleContent, articleContainer);
 
 
   }
