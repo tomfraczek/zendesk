@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // add the newly created element and its content into the DOM
     articleContainer.innerHTML = article.body;
-    articleContainer.appendChild(newTitle);
+    articleContainer.prepend(newTitle);
 
 
   }
