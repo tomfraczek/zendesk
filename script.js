@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const Http = new XMLHttpRequest();
-  const url='GET https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
+  const url='GET https://audiopartnership1571922554.zendesk.com/en-us/api/v2/help_center/en-us/articles.json';
   Http.open("GET", url);
   Http.send();
 
