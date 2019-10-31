@@ -223,10 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     request.onreadystatechange = (e) => {
 
-      console.log(request.response)
+      console.log(request.response);
+      console.log(request.response.results.find(article => article.id === 360003228837));
 
 
-      request.response.results.find(article => article.id === 360003228837)
+
 
 
 
