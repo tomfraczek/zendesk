@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
   request.onreadystatechange = (e) => {
     const article = request.response;
     console.log(article);
+    const articleContainer = document.querySelector('#homepageTopArticle');
 
     // create a new div element
     var newDiv = document.createElement("h1");
@@ -231,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // add the newly created element and its content into the DOM
     var currentDiv = document.getElementById("homepageTopArticle");
-    document.body.insertBefore(newDiv, currentDiv);
+    articleContainer.insertBefore(newDiv, currentDiv);
 
 
   }
