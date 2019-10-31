@@ -222,18 +222,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   } else {
     request.onreadystatechange = (e) => {
-      const article = request.response.article;
-      console.log(article);
-      console.log(article.body);
-      const articleContainer = document.querySelector('#homepageTopArticle');
-
-      var newTitle = document.createElement("h1");
-      var newTitleContent = document.createTextNode(article.title);
-
-      newTitle.appendChild(newTitleContent);
-
-      articleContainer.innerHTML = article.body;
-      articleContainer.prepend(newTitle);
+      // const article = request.response.article;
+      // console.log(article);
+      // console.log(article.body);
+      // const articleContainer = document.querySelector('#homepageTopArticle');
+      //
+      // var newTitle = document.createElement("h1");
+      // var newTitleContent = document.createTextNode(article.title);
+      //
+      // newTitle.appendChild(newTitleContent);
+      //
+      // articleContainer.innerHTML = article.body;
+      // articleContainer.prepend(newTitle);
     }
   }
 
