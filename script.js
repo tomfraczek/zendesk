@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
   request.send();
 
   request.onreadystatechange = (e) => {
-    const article = request.response;
+    const article = request.response.article;
     console.log(article);
     const articleContainer = document.querySelector('#homepageTopArticle');
 
