@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articleTitle = document.createElement('h1');
     const articleTitleContent = document.createTextNode(article.title);
 
-    articleTitleContent.appendChild(articleTitle);
+    articleTitle.appendChild(articleTitleContent);
 
     document.body.insertBefore(articleTitleContent, articleContainer);
 
