@@ -231,8 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
     newDiv.appendChild(newContent);
 
     // add the newly created element and its content into the DOM
-    var currentDiv = document.getElementById("homepageTopArticle");
-    articleContainer.insertBefore(newDiv, currentDiv);
+    articleContainer.appendChild(newDiv);
 
 
   }
