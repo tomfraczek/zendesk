@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
   request.responseType = 'json';
   request.send();
 
-  if (request.response){
     request.onreadystatechange = (e) => {
       const article = request.response.article;
       console.log(article);
@@ -235,6 +234,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     }
-  }
 
 });
