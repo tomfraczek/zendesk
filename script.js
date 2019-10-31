@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // console.log(request.response);
 
-      if(request.response.results.find(article => article.id === 367927678998)){
+      if(request.response.results){
         console.log(request.response.results.find(article => article.id === 360003228837));
       }
 
