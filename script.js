@@ -218,22 +218,23 @@ document.addEventListener('DOMContentLoaded', function() {
   request.responseType = 'json';
   request.send();
 
-  request.onreadystatechange = (e) => {
-    const article = request.response.article;
-    console.log(article);
-    console.log(article.body);
-    const articleContainer = document.querySelector('#homepageTopArticle');
+  if (request.response){
+    request.onreadystatechange = (e) => {
+      const article = request.response.article;
+      console.log(article);
+      console.log(article.body);
+      const articleContainer = document.querySelector('#homepageTopArticle');
 
-    var newTitle = document.createElement("h1");
-    var newTitleContent = document.createTextNode(article.title);
+      var newTitle = document.createElement("h1");
+      var newTitleContent = document.createTextNode(article.title);
 
-    newTitle.appendChild(newTitleContent);
+      newTitle.appendChild(newTitleContent);
 
-    // add the newly created element and its content into the DOM
-    articleContainer.innerHTML = article.body;
-    articleContainer.prepend(newTitle);
+      articleContainer.innerHTML = article.body;
+      articleContainer.prepend(newTitle);
 
 
+    }
   }
 
 });
