@@ -221,9 +221,16 @@ document.addEventListener('DOMContentLoaded', function() {
   request.onreadystatechange = (e) => {
     const article = request.response;
     console.log(article);
-    const articleTitle = document.querySelector('#homepageTopArticleTitle');
+    const articleContainer = document.querySelector('#homepageTopArticle');
 
-    saferInnerHTML(article, articleTitle);
+    const articleTitle = document.createElement('h1');
+    const articleTitleContent = document.createTextNode(article.title);
+
+    articleTitleContent.appendChild(articleTitleContent);
+
+
+
+
   }
 
 });
