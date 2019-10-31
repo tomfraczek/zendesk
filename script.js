@@ -223,15 +223,14 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(article);
     const articleContainer = document.querySelector('#homepageTopArticle');
 
-    // create a new div element
-    var newDiv = document.createElement("h1");
-    // and give it some content
-    var newContent = document.createTextNode(article.title);
-    // add the text node to the newly created div
-    newDiv.appendChild(newContent);
+    var newTitle = document.createElement("h1");
+    var newTitleContent = document.createTextNode(article.title);
+
+    newTitle.appendChild(newTitleContent);
 
     // add the newly created element and its content into the DOM
-    articleContainer.appendChild(newDiv);
+    articleContainer.appendChild(newTitle);
+    articleContainer.appendChild(article.body);
 
 
   }
