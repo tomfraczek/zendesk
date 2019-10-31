@@ -219,9 +219,9 @@ document.addEventListener('DOMContentLoaded', function() {
   request.send();
 
   request.onreadystatechange = (e) => {
-    console.log(request.response.articles.results.find(item => item.id === 367927678998));
-    console.log(request.response.articles);
     console.log(request.response);
+    console.log(request.response.articles);
+    console.log(request.response.articles.results.find(item => item.id === 367927678998));
   }
 
 });
