@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const request = new XMLHttpRequest();
-  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles/360003215657.json';
+  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
   request.open("GET", url);
   request.responseType = 'json';
   request.send();
@@ -222,18 +222,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   } else {
     request.onreadystatechange = (e) => {
-      const article = request.response.article;
-      console.log(article);
-      console.log(article.body);
-      const articleContainer = document.querySelector('#homepageTopArticle');
 
-      var newTitle = document.createElement("h1");
-      var newTitleContent = document.createTextNode(article.title);
-
-      newTitle.appendChild(newTitleContent);
-
-      articleContainer.innerHTML = article.body;
-      articleContainer.prepend(newTitle);
+      console.log(request.response)
+      // const article = request.response.article;
+      // console.log(article);
+      // console.log(article.body);
+      // const articleContainer = document.querySelector('#homepageTopArticle');
+      //
+      // var newTitle = document.createElement("h1");
+      // var newTitleContent = document.createTextNode(article.title);
+      //
+      // newTitle.appendChild(newTitleContent);
+      //
+      // articleContainer.innerHTML = article.body;
+      // articleContainer.prepend(newTitle);
     }
   }
 
