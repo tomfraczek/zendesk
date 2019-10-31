@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const request = new XMLHttpRequest();
-  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/articles/search.json?query=footer';
+  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/articles/search.json?query=edge';
   request.open("GET", url);
   request.responseType = 'json';
   request.send();
