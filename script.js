@@ -212,4 +212,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  const Http = new XMLHttpRequest();
+  const url='GET /api/v2/help_center/articles.json';
+  Http.open("GET", url);
+  Http.send();
+
+  Http.onreadystatechange = (e) => {
+    console.log(Http.responseText)
+  }
+
 });
