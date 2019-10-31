@@ -219,10 +219,10 @@ document.addEventListener('DOMContentLoaded', function() {
   request.send();
 
   request.onreadystatechange = (e) => {
-    console.log(request.response);
-    // console.log(request.response.articles);
-    // const articles = request.response.articles;
-    // console.log(articles.find(article => article.id === 367927678998));
+    const article = request.response;
+    const articleTitle = document.querySelector('#homepageTopArticleTitle');
+
+    saferInnerHTML(article, articleTitle);
   }
 
 });
