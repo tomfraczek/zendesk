@@ -227,21 +227,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if(request.response.results.find(article => article.id === 367927678998)){
         console.log(request.response.results.find(article => article.id === 360003228837));
-
-        const article = request.response.results.find(article => article.id === 360003228837);
-
-        const articleContainer = document.querySelector('#homepageTopArticle');
-
-        const newTitle = document.createElement("h1");
-        const newTitleContent = document.createTextNode(article.title);
-
-        newTitle.appendChild(newTitleContent);
-
-        articleContainer.innerHTML = article.body;
-        articleContainer.prepend(newTitle);
-
-
-
       }
 
 
