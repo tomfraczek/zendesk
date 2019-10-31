@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
   request.send();
 
   request.onreadystatechange = (e) => {
-    console.log(request.response);
+    console.log(request.response.articles);
   }
 
 });
