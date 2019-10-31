@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   request.onreadystatechange = (e) => {
     const article = request.response;
+    console.log(article);
     const articleTitle = document.querySelector('#homepageTopArticleTitle');
 
     saferInnerHTML(article, articleTitle);
