@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const Http = new XMLHttpRequest();
-  const url='GET /api/v2/help_center/articles.json';
+  const url='GET /api/v2/help_center/{locale}/articles.json';
   Http.open("GET", url);
   Http.send();
 
