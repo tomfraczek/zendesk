@@ -225,8 +225,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
       console.log(request.response);
 
-      if(request.response.results.find(article => article.id === 360003228837)){
-        console.log(request.response.results.find(article => article.id === 360003228837));
+      if(request.response.results.find(article => article.id === 367927678998)){
+        // console.log(request.response.results.find(article => article.id === 360003228837));
+
+        const result = request.response.results.find(article => article.id === 360003228837);
+
+        const articleContainer = document.querySelector('#homepageTopArticle');
+
+        const newTitle = document.createElement("h1");
+        const newTitleContent = document.createTextNode(result.title);
+
+        newTitle.appendChild(newTitleContent);
+
+        articleContainer.innerHTML = result.body;
+        articleContainer.prepend(newTitle);
+
+
+
       }
 
 
