@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
     newTitle.appendChild(newTitleContent);
 
     // add the newly created element and its content into the DOM
+    articleContainer.outerHTML = article.body;
     articleContainer.appendChild(newTitle);
-    articleContainer.appendChild(article.body);
 
 
   }
