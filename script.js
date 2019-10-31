@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
   request.onreadystatechange = (e) => {
     const article = request.response.article;
     console.log(article);
+    console.log(article.body);
     const articleContainer = document.querySelector('#homepageTopArticle');
 
     var newTitle = document.createElement("h1");
