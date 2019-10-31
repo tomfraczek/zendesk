@@ -224,6 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
     request.onreadystatechange = (e) => {
 
       console.log(request.response)
+
+
+      request.response.results.find(article => article.id === 360003228837)
+
+
+
+
       // const article = request.response.article;
       // console.log(article);
       // console.log(article.body);
