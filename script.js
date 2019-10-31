@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
   request.responseType = 'json';
   request.send();
 
+  if (request.response !== undefined){
     request.onreadystatechange = (e) => {
       const article = request.response.article;
       console.log(article);
@@ -231,8 +232,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       articleContainer.innerHTML = article.body;
       articleContainer.prepend(newTitle);
-
-
     }
+  } else {
+    console.log('not yet');
+  }
 
 });
