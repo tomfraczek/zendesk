@@ -221,14 +221,17 @@ document.addEventListener('DOMContentLoaded', function() {
   request.onreadystatechange = (e) => {
     const article = request.response;
     console.log(article);
-    const articleContainer = document.querySelector('#homepageTopArticle');
 
-    const articleTitle = document.createElement('h1');
-    const articleTitleContent = document.createTextNode(article.title);
+    // create a new div element
+    var newDiv = document.createElement("h1");
+    // and give it some content
+    var newContent = document.createTextNode(article.title);
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
 
-    articleTitle.appendChild(articleTitleContent);
-
-    document.body.insertBefore(articleTitleContent, articleContainer);
+    // add the newly created element and its content into the DOM
+    var currentDiv = document.getElementById("homepageTopArticle");
+    document.body.insertBefore(newDiv, currentDiv);
 
 
   }
