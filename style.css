@@ -1058,7 +1058,6 @@ ul {
 
 @media (min-width: 1024px) {
   .promoted-articles-item {
-    text-transform: uppercase;
     flex: 0 0 auto;
     width: 100%;
   }
