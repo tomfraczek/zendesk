@@ -60,4 +60,12 @@
       text-decoration: none;
     }
   }
+
+  svg{
+    width: 18px;
+
+    @include tablet{
+      width:24px;
+    }
+  }
 }
