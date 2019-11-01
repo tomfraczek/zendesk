@@ -8,59 +8,130 @@
 
     <div id="homepageTopArticle" class="homepage--top__article">
 <!--        <img id="loadingSpinner" class="loading-spinner" src="{{asset 'spinner-of-dots.svg'}}" alt="">-->
-        <div class="lds-css ng-scope"><div style="width:50%;height:50%" class="lds-disk"><div><div></div><div></div></div></div>
+        <div class="lds-css ng-scope">
+            <div class="lds-spinner" style="width:100%;height:100%"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             <style type="text/css">
-                @keyframes lds-disk {
+                @keyframes lds-spinner {
                     0% {
-                        -webkit-transform: rotate(0deg);
-                        transform: rotate(0deg);
+                        opacity: 1;
                     }
                     100% {
-                        -webkit-transform: rotate(360deg);
-                        transform: rotate(360deg);
+                        opacity: 0;
                     }
                 }
-                @-webkit-keyframes lds-disk {
+                @-webkit-keyframes lds-spinner {
                     0% {
-                        -webkit-transform: rotate(0deg);
-                        transform: rotate(0deg);
+                        opacity: 1;
                     }
                     100% {
-                        -webkit-transform: rotate(360deg);
-                        transform: rotate(360deg);
+                        opacity: 0;
                     }
                 }
-                .lds-disk {
+                .lds-spinner {
                     position: relative;
-                    margin: auto;
                 }
-                .lds-disk > div div:nth-child(1) {
+                .lds-spinner div {
+                    left: 94px;
+                    top: 15px;
                     position: absolute;
-                    top: 30px;
-                    left: 30px;
-                    width: 140px;
-                    height: 140px;
-                    border-radius: 50%;
+                    -webkit-animation: lds-spinner linear 1.2s infinite;
+                    animation: lds-spinner linear 1.2s infinite;
                     background: #56565A;
+                    width: 12px;
+                    height: 38px;
+                    border-radius: 76%;
+                    -webkit-transform-origin: 6px 85px;
+                    transform-origin: 6px 85px;
                 }
-                .lds-disk > div div:nth-child(2) {
-                    position: absolute;
-                    top: 39.800000000000004px;
-                    left: 79px;
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 50%;
-                    background: #ffffff;
-                    -webkit-animation: lds-disk 1s linear infinite;
-                    animation: lds-disk 1s linear infinite;
-                    -webkit-transform-origin: 21px 60.199999999999996px;
-                    transform-origin: 21px 60.199999999999996px;
+                .lds-spinner div:nth-child(1) {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                    -webkit-animation-delay: -1.114285714285714s;
+                    animation-delay: -1.114285714285714s;
                 }
-                .lds-disk {
-                    width: 200px !important;
-                    height: 200px !important;
-                    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
-                    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+                .lds-spinner div:nth-child(2) {
+                    -webkit-transform: rotate(25.714285714285715deg);
+                    transform: rotate(25.714285714285715deg);
+                    -webkit-animation-delay: -1.028571428571428s;
+                    animation-delay: -1.028571428571428s;
+                }
+                .lds-spinner div:nth-child(3) {
+                    -webkit-transform: rotate(51.42857142857143deg);
+                    transform: rotate(51.42857142857143deg);
+                    -webkit-animation-delay: -0.942857142857143s;
+                    animation-delay: -0.942857142857143s;
+                }
+                .lds-spinner div:nth-child(4) {
+                    -webkit-transform: rotate(77.14285714285714deg);
+                    transform: rotate(77.14285714285714deg);
+                    -webkit-animation-delay: -0.857142857142857s;
+                    animation-delay: -0.857142857142857s;
+                }
+                .lds-spinner div:nth-child(5) {
+                    -webkit-transform: rotate(102.85714285714286deg);
+                    transform: rotate(102.85714285714286deg);
+                    -webkit-animation-delay: -0.771428571428571s;
+                    animation-delay: -0.771428571428571s;
+                }
+                .lds-spinner div:nth-child(6) {
+                    -webkit-transform: rotate(128.57142857142858deg);
+                    transform: rotate(128.57142857142858deg);
+                    -webkit-animation-delay: -0.685714285714286s;
+                    animation-delay: -0.685714285714286s;
+                }
+                .lds-spinner div:nth-child(7) {
+                    -webkit-transform: rotate(154.28571428571428deg);
+                    transform: rotate(154.28571428571428deg);
+                    -webkit-animation-delay: -0.6s;
+                    animation-delay: -0.6s;
+                }
+                .lds-spinner div:nth-child(8) {
+                    -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                    -webkit-animation-delay: -0.514285714285714s;
+                    animation-delay: -0.514285714285714s;
+                }
+                .lds-spinner div:nth-child(9) {
+                    -webkit-transform: rotate(205.71428571428572deg);
+                    transform: rotate(205.71428571428572deg);
+                    -webkit-animation-delay: -0.428571428571429s;
+                    animation-delay: -0.428571428571429s;
+                }
+                .lds-spinner div:nth-child(10) {
+                    -webkit-transform: rotate(231.42857142857142deg);
+                    transform: rotate(231.42857142857142deg);
+                    -webkit-animation-delay: -0.342857142857143s;
+                    animation-delay: -0.342857142857143s;
+                }
+                .lds-spinner div:nth-child(11) {
+                    -webkit-transform: rotate(257.14285714285717deg);
+                    transform: rotate(257.14285714285717deg);
+                    -webkit-animation-delay: -0.257142857142857s;
+                    animation-delay: -0.257142857142857s;
+                }
+                .lds-spinner div:nth-child(12) {
+                    -webkit-transform: rotate(282.85714285714283deg);
+                    transform: rotate(282.85714285714283deg);
+                    -webkit-animation-delay: -0.171428571428571s;
+                    animation-delay: -0.171428571428571s;
+                }
+                .lds-spinner div:nth-child(13) {
+                    -webkit-transform: rotate(308.57142857142856deg);
+                    transform: rotate(308.57142857142856deg);
+                    -webkit-animation-delay: -0.085714285714286s;
+                    animation-delay: -0.085714285714286s;
+                }
+                .lds-spinner div:nth-child(14) {
+                    -webkit-transform: rotate(334.2857142857143deg);
+                    transform: rotate(334.2857142857143deg);
+                    -webkit-animation-delay: 0s;
+                    animation-delay: 0s;
+                }
+                .lds-spinner {
+                    width: 54px !important;
+                    height: 54px !important;
+                    -webkit-transform: translate(-27px, -27px) scale(0.27) translate(27px, 27px);
+                    transform: translate(-27px, -27px) scale(0.27) translate(27px, 27px);
                 }
             </style></div>
     </div>
