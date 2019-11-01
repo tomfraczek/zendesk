@@ -528,12 +528,6 @@ ul {
   padding: 0 0 0 20px;
 }
 
-.nav-wrapper a:hover, .nav-wrapper a:focus, .nav-wrapper a:active {
-  text-decoration: none;
-  color: #fff;
-  background: $link_color;
-}
-
 .nav-wrapper a.login {
   display: inline-block;
   padding: 20px 10px;
