@@ -15,9 +15,10 @@
 {{#if promoted_articles}}
       <section class="articles">
         <h3>Featured Articles</h3>
-          {{#each categories}}
               <ul class="article-list promoted-articles">
-                  <li class="recent-activity-item">
+          {{#each categories}}
+
+              <li class="recent-activity-item">
                   {{#each sections}}
                       <a href="{{url}}" class="recent-activity-item-parent">{{name}}</a>
                       {{#each articles}}
@@ -27,8 +28,9 @@
                       {{/each}}
                   {{/each}}
                   </li>
-              </ul>
           {{/each}}
+
+              </ul>
 <!--        <ul class="article-list promoted-articles">-->
 <!--          {{#each promoted_articles}}-->
 <!--            <li class="promoted-articles-item">-->
