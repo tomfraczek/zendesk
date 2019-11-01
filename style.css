@@ -446,13 +446,26 @@ ul {
 
 .logo img {
   max-height: 37px;
+  width: 100px;
+}
+
+@media (min-width: 768px) {
+  .logo img {
+    width: 145px;
+  }
 }
 
 .logo a[title="Home"] {
   text-transform: uppercase;
   margin-left: 25px;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .logo a[title="Home"] {
+    font-size: 14px;
+  }
 }
 
 .user-nav {

@@ -20,13 +20,22 @@ $header-height: 71px;
 
   img {
     max-height: 37px;
+    width: 100px;
+
+    @include tablet{
+      width:145px;
+    }
   }
 
   a[title="Home"] {
     text-transform: uppercase;
     margin-left: 25px;
     letter-spacing: 2px;
-    font-size: 14px;
+    font-size: 12px;
+
+    @include tablet{
+      font-size: 14px;
+    }
   }
 }
 
