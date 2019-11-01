@@ -529,7 +529,7 @@ ul {
 }
 
 .nav-wrapper a:hover, .nav-wrapper a:focus, .nav-wrapper a:active {
-  text-decoration: underscore;
+  text-decoration: underline;
   color: $link_color;
 }
 
