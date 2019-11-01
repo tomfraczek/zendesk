@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const newTitleContent = document.createTextNode(article.title);
           newTitleTag.appendChild(newTitleContent);
           articleContainer.innerHTML = article.body;
-          articleContainer.prepend(newTitleContent);
+          articleContainer.prepend(newTitleTag);
         }
       }
 
