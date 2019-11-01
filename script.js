@@ -226,14 +226,16 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(request.response);
 
       if(request.response.results){
-        console.log(request.response.results.find(article => article.id === 367927678998));
+        console.log(request.response.results.find(article => article.id === 360003215657));
 
-        const articleContainer = document.querySelector('#homepageTopArticle');
-        const article = request.response.results.find(article => article.id === 367927678998);
-        const newTitleTag = document.createElement("h1");
-        const newTitleContent = document.createTextNode(article.title);
-        articleContainer.innerHTML = article.body;
-        newTitleTag.prepend(newTitleContent);
+        if(request.response.results.find(article => article.id === 360003215657) !== undefined){
+          const articleContainer = document.querySelector('#homepageTopArticle');
+          const article = request.response.results.find(article => article.id === 360003215657);
+          const newTitleTag = document.createElement("h1");
+          const newTitleContent = document.createTextNode(article.title);
+          articleContainer.innerHTML = article.body;
+          newTitleTag.prepend(newTitleContent);
+        }
       }
 
 
