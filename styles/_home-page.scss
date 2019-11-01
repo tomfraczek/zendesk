@@ -89,6 +89,13 @@
   background: #56565a;
   color: #fff;
   text-align: center;
+
+  p{
+    &:last-of-type{
+      margin-bottom: 0;
+      padding-bottom: 15px;
+    }
+  }
 }
 
 ///////////////
