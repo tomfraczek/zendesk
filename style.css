@@ -528,6 +528,11 @@ ul {
   padding: 0 0 0 20px;
 }
 
+.nav-wrapper a:hover, .nav-wrapper a:focus, .nav-wrapper a:active {
+  text-decoration: underscore;
+  color: $link_color;
+}
+
 .nav-wrapper a.login {
   display: inline-block;
   padding: 20px 10px;
@@ -661,7 +666,7 @@ ul {
 
 /***** Footer *****/
 .footer {
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 
 .footer a {

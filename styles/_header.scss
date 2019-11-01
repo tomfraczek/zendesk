@@ -87,6 +87,13 @@ $header-height: 71px;
 
     [dir="rtl"] & { padding: 0 0 0 20px;}
 
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underscore;
+      color: $link_color;
+    }
+
     &.login {
       display: inline-block;
       padding: 20px 10px;

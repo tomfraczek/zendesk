@@ -212,39 +212,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  const request = new XMLHttpRequest();
-  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/articles/search.json?label_names=homepage';
-  request.open("GET", url);
-  request.responseType = 'json';
-  request.send();
-
-  if (request.response !== undefined){
-    request.onreadystatechange = (e) => {
-
-      console.log(request.response);
-
-      if(request.response.results){
-        console.log(request.response.results.find(article => article.id === 360003215657));
-
-        // TOP ARTICLE
-        if(request.response.results.find(article => article.id === 360003215657) !== undefined){
-          const articleContainer = document.querySelector('#homepageTopArticle');
-          const article = request.response.results.find(article => article.id === 360003215657);
-          const newTitleTag = document.createElement("h1");
-          const newTitleContent = document.createTextNode(article.title);
-          newTitleTag.appendChild(newTitleContent);
-          articleContainer.innerHTML = article.body;
-          articleContainer.prepend(newTitleTag);
-        }
-
-        //BOTTOM ARTICLE
-        if(request.response.results.find(article => article.id === 360003228837) !== undefined){
-          const articleContainer = document.querySelector('#homepageBottomArticle');
-          const article = request.response.results.find(article => article.id === 360003228837);
-          articleContainer.innerHTML = article.body;
-        }
-      }
-    }
-  }
-
 });
