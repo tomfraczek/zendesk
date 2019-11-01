@@ -712,6 +712,16 @@ ul {
   text-decoration: none;
 }
 
+.social-media--buttons svg {
+  width: 18px;
+}
+
+@media (min-width: 768px) {
+  .social-media--buttons svg {
+    width: 24px;
+  }
+}
+
 /***** Breadcrumbs *****/
 .breadcrumbs {
   margin: 0 0 15px 0;
@@ -1404,6 +1414,10 @@ ul {
 
 .see-all-sections-trigger[aria-hidden="true"] {
   display: none;
+}
+
+.section-content {
+  margin-bottom: 30px;
 }
 
 /***** Article *****/
