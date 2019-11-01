@@ -1095,11 +1095,15 @@ ul {
 .homepage--top__article {
   margin-bottom: 55px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
 }
 
 .homepage--top__article p {
   font-size: 18px;
+}
+
+.homepage--top__article p:last-of-type {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 25px;
 }
 
 .homepage--bottom__article {
