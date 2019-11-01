@@ -8,7 +8,7 @@
 
     <div id="homepageTopArticle" class="homepage--top__article">
 <!--        <img id="loadingSpinner" class="loading-spinner" src="{{asset 'spinner-of-dots.svg'}}" alt="">-->
-        <div class="lds-css ng-scope"><div style="width:100%;height:100%" class="lds-disk"><div><div></div><div></div></div></div>
+        <div class="lds-css ng-scope"><div style="width:50%;height:50%" class="lds-disk"><div><div></div><div></div></div></div>
             <style type="text/css">
                 @keyframes lds-disk {
                     0% {
@@ -32,13 +32,14 @@
                 }
                 .lds-disk {
                     position: relative;
+                    margin: auto;
                 }
                 .lds-disk > div div:nth-child(1) {
                     position: absolute;
                     top: 30px;
                     left: 30px;
-                    width: 90px;
-                    height: 90px;
+                    width: 140px;
+                    height: 140px;
                     border-radius: 50%;
                     background: #56565A;
                 }
