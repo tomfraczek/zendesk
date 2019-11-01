@@ -1067,6 +1067,7 @@ ul {
 
 .homepage--top__article {
   margin-bottom: 55px;
+  border-bottom: 1px solid #ddd;
 }
 
 .homepage--top__article p {
