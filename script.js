@@ -242,7 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
           const articleContainer = document.querySelector('#homepageBottomArticle');
           const article = request.response.results.find(article => article.id === 360003228837);
           articleContainer.innerHTML = article.body;
-          articleContainer.prepend(newTitleTag);
         }
       }
     }

@@ -24,7 +24,7 @@
 }
 
 .footer-top{
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
@@ -32,12 +32,15 @@
 
   @include desktop{
     align-items: center;
-    flex-direction: row;
   }
 }
 
 .footer-top--logo{
-  width:145px;
+  width:100px;
+
+  @include tablet{
+    width:145px;
+  }
 }
 
 .social-media--buttons{
