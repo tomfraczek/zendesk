@@ -1074,6 +1074,13 @@ ul {
   font-size: 18px;
 }
 
+.homepage--bottom__article {
+  width: 100%;
+  background: #56565a;
+  color: #fff;
+  text-align: center;
+}
+
 .sk-chase {
   width: 40px;
   height: 40px;

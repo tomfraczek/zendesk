@@ -243,32 +243,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if(request.response.results.find(article => article.id === 360003228837) !== undefined){
           const articleContainer = document.querySelector('#homepageBottomArticle');
           const article = request.response.results.find(article => article.id === 360003228837);
-          const newTitleTag = document.createElement("h1");
-          const newTitleContent = document.createTextNode(article.title);
-          newTitleTag.appendChild(newTitleContent);
           articleContainer.innerHTML = article.body;
           articleContainer.prepend(newTitleTag);
         }
       }
-
-
-
-
-
-
-
-      // const article = request.response.article;
-      // console.log(article);
-      // console.log(article.body);
-      // const articleContainer = document.querySelector('#homepageTopArticle');
-      //
-      // var newTitle = document.createElement("h1");
-      // var newTitleContent = document.createTextNode(article.title);
-      //
-      // newTitle.appendChild(newTitleContent);
-      //
-      // articleContainer.innerHTML = article.body;
-      // articleContainer.prepend(newTitle);
     }
   }
 
