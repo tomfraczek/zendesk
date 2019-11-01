@@ -439,8 +439,20 @@ ul {
   }
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   max-height: 37px;
+}
+
+.logo a[title="Home"] {
+  text-transform: uppercase;
+  margin-left: 25px;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
 
 .user-nav {

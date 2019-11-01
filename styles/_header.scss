@@ -14,8 +14,20 @@ $header-height: 71px;
   justify-content: space-between;
 }
 
-.logo img {
-  max-height: 37px;
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 37px;
+  }
+
+  a[title="Home"] {
+    text-transform: uppercase;
+    margin-left: 25px;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
 }
 
 .user-nav {
