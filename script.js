@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     request.onreadystatechange = (e) => {
 
-      // console.log(request.response);
+      console.log(request.response);
 
       if(request.response.results){
         console.log(request.response.results.find(article => article.id === 360003228837));
@@ -232,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const article = request.response.results.find(article => article.id === 360003228837);
         const newTitleTag = document.createElement("h1");
         const newTitleContent = document.createTextNode(article.title);
-        newTitleTag.appendChild(newTitleContent);
         articleContainer.innerHTML = article.body;
+        newTitleTag.prepend(newTitleContent);
       }
 
 
