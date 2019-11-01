@@ -233,8 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
           const article = request.response.results.find(article => article.id === 360003215657);
           const newTitleTag = document.createElement("h1");
           const newTitleContent = document.createTextNode(article.title);
+          newTitleTag.appendChild(newTitleContent);
           articleContainer.innerHTML = article.body;
-          newTitleTag.prepend(newTitleContent);
+          articleContainer.prepend(newTitleContent);
         }
       }
 
