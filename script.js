@@ -215,15 +215,22 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderHTML(articlesResponse, sectionsResponse) {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
-    console.log(sections);
+    // console.log(sections);
 
     for(let i = 0; i < articles.length; i++){
       if (articles[i].promoted === true){
         console.log(sections.find(section => section.id === articles[i].section_id));
 
+        // const articleContainer = document.querySelector('#promotedArticles');
+        // const sectionTitleTag = document.createElement("h1");
+        // const articleTitleTag = document.createElement("h4");
+        // const sectionContent = document.createTextNode(articles[i].title);
+        // const articleContent = document.createTextNode(sections.find(section => section.id === articles[i].section_id));
+
+
         // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
         //   console.log(section);
-          // const articleContainer = document.querySelector('#homepageTopArticle');
+          //
           // const article = request.response.results.find(article => article.id === 360003215657);
           // const newTitleTag = document.createElement("h1");
           // const newTitleContent = document.createTextNode(article.title);
