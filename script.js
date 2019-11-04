@@ -230,6 +230,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
       console.log(sectionIdsArr);
 
+      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
+
+      console.log(sectionsFiltered);
+
 //       for(let i = 0; i < sections.length; i++){
 //         if (articles[i].promoted === true){
 // console.log(sections[i]);
