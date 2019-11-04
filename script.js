@@ -219,9 +219,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
       if (articles[i].promoted === true){
-        console.log(articles[i]);
+        console.log(sections.find(section => section.id === articles[i].section_id));
+
+        // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
+        //   console.log(section);
+          // const articleContainer = document.querySelector('#homepageTopArticle');
+          // const article = request.response.results.find(article => article.id === 360003215657);
+          // const newTitleTag = document.createElement("h1");
+          // const newTitleContent = document.createTextNode(article.title);
+          // newTitleTag.appendChild(newTitleContent);
+          // articleContainer.innerHTML = article.body;
+          // articleContainer.prepend(newTitleTag);
+        // }
       }
     }
+
+
 
   }
 
