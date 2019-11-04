@@ -226,13 +226,14 @@ document.addEventListener('DOMContentLoaded', function() {
     articleContainer.appendChild(sectionList);
 
 
+    console.log(articles);
+    console.log(sections);
 
 
 
 
     for(let i = 0; i < articles.length; i++){
 
-      console.log(articles[i]);
 
       const sectionListElement = document.createElement("li");
       sectionListElement.setAttribute('class', 'list-element--item')
@@ -258,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
-        console.log(sectionsFiltered[i]);
+        // console.log(sectionsFiltered[i]);
         // console.log(sectionsFiltered[i].html_url);
         const listElementItem = document.querySelectorAll('.list-element--item');
 
