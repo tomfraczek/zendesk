@@ -220,8 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < articles.length; i++){
       for(let i = 0; i < sections.length; i++){
         if (articles[i].promoted === true){
-
-          console.log(sections.find(section => section[i].id === articles[i].section_id));
+console.log(sections[i]);
+          console.log(sections.find(section[i] => section.id === articles[i].section_id));
 
           const articleContainer = document.querySelector('#promotedArticles');
           const sectionTitleTag = document.createElement("h1");
