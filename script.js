@@ -236,9 +236,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const sectionListElementLink = document.createElement("a");
       sectionListElementLink.setAttribute('class', 'tomeczek');
       sectionListElement.appendChild(sectionListElementLink);
-      sectionListElementLink.setAttribute('href', articles[i].html_url)
+      sectionListElementLink.setAttribute('href', articles[i].html_url);
       const articleName = document.createTextNode(articles[i].name);
       sectionListElementLink.appendChild(articleName);
+      document.querySelector('#promotedArticlsList').appendChild(sectionListElement);
 
 
 
