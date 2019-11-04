@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
 
-      console.log(articles[i]);
+      // console.log(articles[i]);
 
       const sectionListElement = document.createElement("li");
       sectionListElement.setAttribute('data-id', articles[i].section_id)
