@@ -232,10 +232,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
 
-      // const sectionListElement = document.createElement("li");
-      // const sectionListElementLink = document.createElement("a");
-      // const articleName = document.createTextNode(articles[i].name);
-      //
+      const sectionListElement = document.createElement("li");
+      const sectionListElementLink = document.createElement("a");
+      sectionListElement.appendChild(sectionListElementLink);
+      sectionListElementLink.setAttribute('href', articles[i].html_url)
+      const articleName = document.createTextNode(articles[i].name);
+      sectionListElementLink.appendChild(articleName);
+
 
 
 
