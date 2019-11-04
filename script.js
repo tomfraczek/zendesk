@@ -219,6 +219,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
       console.log(articles[i].section_id)
+
+      let arr = [];
+
+      arr.push(articles[i].section_id);
+
+      console.log(arr);
+
 //       for(let i = 0; i < sections.length; i++){
 //         if (articles[i].promoted === true){
 // console.log(sections[i]);
