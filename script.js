@@ -213,13 +213,29 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function renderHTML(articlesResponse, sectionsResponse) {
+
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
     let arr = [];
 
+    const articleContainer = document.querySelector('#promotedArticles');
+    const sectionList = document.createElement("ul");
+    sectionList.setAttribute('id', 'promotedArticlsList');
+
+    articleContainer.appendChild(sectionList);
+
+
+
+
+
+
     for(let i = 0; i < articles.length; i++){
 
+      // const sectionListElement = document.createElement("li");
+      // const sectionListElementLink = document.createElement("a");
+      // const articleName = document.createTextNode(articles[i].name);
+      //
 
 
 
@@ -242,6 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // console.log(sectionsFiltered[i].name);
         // console.log(sectionsFiltered[i].html_url);
       }
+
+
+
+
       // console.log(sectionsFiltered.html_url);
 
 //       for(let i = 0; i < sections.length; i++){
