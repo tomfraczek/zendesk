@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
-    let sectionIdsArr = [];
+    let arr = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
@@ -226,14 +226,13 @@ document.addEventListener('DOMContentLoaded', function() {
     articleContainer.appendChild(sectionList);
 
 
-    console.log(articles);
-    console.log(sections);
 
 
 
 
     for(let i = 0; i < articles.length; i++){
 
+      console.log(articles[i]);
 
       const sectionListElement = document.createElement("li");
       sectionListElement.setAttribute('class', 'list-element--item')
@@ -248,28 +247,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      sectionIdsArr.push(articles[i].section_id);
+      arr.push(articles[i].section_id);
 
-      const sectionIds = new Set(sectionIdsArr);
+      const sectionIds = new Set(arr);
 
-      const sectionIdsArr = [...sectionIds];
+      const sectionIdsArr = [...sectionIds]
 
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
-        // console.log(sectionsFiltered[i]);
+        // console.log(sectionsFiltered[i].name);
         // console.log(sectionsFiltered[i].html_url);
         const listElementItem = document.querySelectorAll('.list-element--item');
 
-        // for (let i = 0; i < listElementItem.length; i++){
-        //   console.log(listElementItem[i]);
-        //
-        //   if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-        //
-        //   }
-        //       }
+        for (let i = 0; i < listElementItem.length; i++){
+          console.log(listElementItem[i]);
+
+          if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+
+          }
+              }
 
       }
 
@@ -330,5 +329,29 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   getData();
+
+  // const request = new XMLHttpRequest();
+  // const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
+  // request.open("GET", url);
+  // request.responseType = 'json';
+  // request.send();
+  //
+  // if (request.response !== undefined){
+  //   request.onreadystatechange = (e) => {
+  //
+  //
+  //     const articles = request.response.articles;
+  //
+  //     console.log(articles);
+  //
+  //     for(let i = 0; i < articles.length; i++){
+  //       if(articles[i].promoted === true){
+  //         console.log(articles[i]);
+  //       }
+  //     }
+  //
+  //
+  //   }
+  // }
 
 });
