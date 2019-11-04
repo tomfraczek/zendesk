@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(articles[i]);
 
       const sectionListElement = document.createElement("li");
+      sectionListElement.setAttribute('class', 'list-element--item')
       sectionListElement.setAttribute('data-id', articles[i].section_id)
       const sectionListElementLink = document.createElement("a");
       sectionListElementLink.setAttribute('class', 'tomeczek');
@@ -259,6 +260,12 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < sectionsFiltered.length; i++){
         // console.log(sectionsFiltered[i].name);
         // console.log(sectionsFiltered[i].html_url);
+      }
+
+      const listElementItem = document.querySelectorAll('.list-element--item');
+
+      for (let i = 0; i < listElementItem.length; i++){
+        console.log(listElementItem[i]);
       }
 
 
