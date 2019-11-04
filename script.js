@@ -224,7 +224,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       arr.push(articles[i].section_id);
 
-      console.log(arr);
+      const sectionIds = new Set(arr);
+
+      const sectionIdsArr = [...sectionIds]
+
+      console.log(sectionIdsArr);
 
 //       for(let i = 0; i < sections.length; i++){
 //         if (articles[i].promoted === true){
