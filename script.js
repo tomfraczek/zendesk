@@ -234,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const sectionListElement = document.createElement("li");
       const sectionListElementLink = document.createElement("a");
+      sectionListElementLink.setAttribute('class', 'tomeczek');
       sectionListElement.appendChild(sectionListElementLink);
       sectionListElementLink.setAttribute('href', articles[i].html_url)
       const articleName = document.createTextNode(articles[i].name);
@@ -242,9 +243,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-      console.log(articles[i].name);
-      console.log(articles[i].html_url);
+      //
+      // console.log(articles[i].name);
+      // console.log(articles[i].html_url);
 
 
       arr.push(articles[i].section_id);
