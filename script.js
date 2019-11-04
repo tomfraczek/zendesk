@@ -258,15 +258,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
-        // console.log(sectionsFiltered[i].name);
+        console.log(sectionsFiltered[i]);
         // console.log(sectionsFiltered[i].html_url);
+        const listElementItem = document.querySelectorAll('.list-element--item');
+
+        // for (let i = 0; i < listElementItem.length; i++){
+        //   console.log(listElementItem[i]);
+        //
+        //   if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+        //
+        //   }
+        //       }
+
       }
 
-      const listElementItem = document.querySelectorAll('.list-element--item');
 
-      for (let i = 0; i < listElementItem.length; i++){
-        console.log(listElementItem[i]);
-      }
 
 
 
