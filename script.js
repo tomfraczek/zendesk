@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const listElementItem = document.querySelectorAll('.list-element--item');
 
-        if(listElementItem){
+        if(listElementItem !== undefined){
           for (let i = 0; i < listElementItem.length; i++){
             console.log(listElementItem[i].dataset.id);
 
