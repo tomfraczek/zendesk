@@ -246,14 +246,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      arr.push(articles[i].section_id);
-
-      const sectionIds = new Set(arr);
-
-      const sectionIdsArr = [...sectionIds]
-
-
-      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
+      // arr.push(articles[i].section_id);
+      //
+      // const sectionIds = new Set(arr);
+      //
+      // const sectionIdsArr = [...sectionIds]
+      //
+      //
+      // const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
