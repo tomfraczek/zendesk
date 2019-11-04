@@ -262,12 +262,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const listElementItem = document.querySelectorAll('.list-element--item');
 
-        for (let i = 0; i < listElementItem.length; i++){
-          console.log(listElementItem[i].dataset.id);
+        if(listElementItem){
+          for (let i = 0; i < listElementItem.length; i++){
+            console.log(listElementItem[i].dataset.id);
 
-          // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-          //
-          // }
+            // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+            //
+            // }
+          }
         }
       }
 
