@@ -215,9 +215,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderHTML(articlesResponse, sectionsResponse) {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
-    console.log(articles);
     console.log(sections);
 
+    for(let i = 0; i < articles.length; i++){
+      if (articles[i].promoted === true){
+        console.log(articles[i]);
+      }
+    }
 
   }
 
