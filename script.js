@@ -232,85 +232,85 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    for(let i = 0; i < articles.length; i++){
-
-
-      const sectionListElement = document.createElement("li");
-      sectionListElement.setAttribute('class', 'list-element--item')
-      sectionListElement.setAttribute('data-id', articles[i].section_id)
-      const sectionListElementLink = document.createElement("a");
-      sectionListElementLink.setAttribute('class', 'tomeczek');
-      sectionListElement.appendChild(sectionListElementLink);
-      sectionListElementLink.setAttribute('href', articles[i].html_url);
-      const articleName = document.createTextNode(articles[i].name);
-      sectionListElementLink.appendChild(articleName);
-      document.querySelector('#promotedArticlsList').appendChild(sectionListElement);
-
-
-
-      arr.push(articles[i].section_id);
-
-      const sectionIds = new Set(arr);
-
-      const sectionIdsArr = [...sectionIds]
-
-
-      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
-
-
-      for (let i = 0; i < sectionsFiltered.length; i++){
-        // console.log(sectionsFiltered[i]);
-        // console.log(sectionsFiltered[i].html_url);
-        const listElementItem = document.querySelectorAll('.list-element--item');
-
-        // for (let i = 0; i < listElementItem.length; i++){
-        //   console.log(listElementItem[i]);
-        //
-        //   if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-        //
-        //   }
-        //       }
-
-      }
-
-
-
-
-
-
-      // console.log(sectionsFiltered.html_url);
-
-//       for(let i = 0; i < sections.length; i++){
-//         if (articles[i].promoted === true){
-// console.log(sections[i]);
-//           // console.log(sections.find(section => section.id === articles[i].section_id));
-//
-//           const articleContainer = document.querySelector('#promotedArticles');
-//           const sectionTitleTag = document.createElement("h1");
-//           const articleTitleTag = document.createElement("h4");
-//           const sectionTitleContent = document.createTextNode(articles[i].name);
-//           // const articleTitleContent = document.createTextNode(sections[i].find(section => section.id === articles[i].section_id.name));
-//
-//           // sectionTitleTag.prepend(sectionTitleContent);
-//           // articleTitleTag.prepend(articleTitleContent);
-//           //
-//           // articleContainer.prepend(sectionTitleTag);
-//           // articleContainer.appendChild(articleTitleTag);
+//     for(let i = 0; i < articles.length; i++){
 //
 //
-//           // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
-//           //   console.log(section);
-//           //
-//           // const article = request.response.results.find(article => article.id === 360003215657);
-//           // const newTitleTag = document.createElement("h1");
-//           // const newTitleContent = document.createTextNode(article.title);
-//           // newTitleTag.appendChild(newTitleContent);
-//           // articleContainer.innerHTML = article.body;
-//           // articleContainer.prepend(newTitleTag);
-//           // }
-//         }
+//       const sectionListElement = document.createElement("li");
+//       sectionListElement.setAttribute('class', 'list-element--item')
+//       sectionListElement.setAttribute('data-id', articles[i].section_id)
+//       const sectionListElementLink = document.createElement("a");
+//       sectionListElementLink.setAttribute('class', 'tomeczek');
+//       sectionListElement.appendChild(sectionListElementLink);
+//       sectionListElementLink.setAttribute('href', articles[i].html_url);
+//       const articleName = document.createTextNode(articles[i].name);
+//       sectionListElementLink.appendChild(articleName);
+//       document.querySelector('#promotedArticlsList').appendChild(sectionListElement);
+//
+//
+//
+//       arr.push(articles[i].section_id);
+//
+//       const sectionIds = new Set(arr);
+//
+//       const sectionIdsArr = [...sectionIds]
+//
+//
+//       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
+//
+//
+//       for (let i = 0; i < sectionsFiltered.length; i++){
+//         // console.log(sectionsFiltered[i]);
+//         // console.log(sectionsFiltered[i].html_url);
+//         const listElementItem = document.querySelectorAll('.list-element--item');
+//
+//         // for (let i = 0; i < listElementItem.length; i++){
+//         //   console.log(listElementItem[i]);
+//         //
+//         //   if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+//         //
+//         //   }
+//         //       }
+//
 //       }
-    }
+//
+//
+//
+//
+//
+//
+//       // console.log(sectionsFiltered.html_url);
+//
+// //       for(let i = 0; i < sections.length; i++){
+// //         if (articles[i].promoted === true){
+// // console.log(sections[i]);
+// //           // console.log(sections.find(section => section.id === articles[i].section_id));
+// //
+// //           const articleContainer = document.querySelector('#promotedArticles');
+// //           const sectionTitleTag = document.createElement("h1");
+// //           const articleTitleTag = document.createElement("h4");
+// //           const sectionTitleContent = document.createTextNode(articles[i].name);
+// //           // const articleTitleContent = document.createTextNode(sections[i].find(section => section.id === articles[i].section_id.name));
+// //
+// //           // sectionTitleTag.prepend(sectionTitleContent);
+// //           // articleTitleTag.prepend(articleTitleContent);
+// //           //
+// //           // articleContainer.prepend(sectionTitleTag);
+// //           // articleContainer.appendChild(articleTitleTag);
+// //
+// //
+// //           // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
+// //           //   console.log(section);
+// //           //
+// //           // const article = request.response.results.find(article => article.id === 360003215657);
+// //           // const newTitleTag = document.createElement("h1");
+// //           // const newTitleContent = document.createTextNode(article.title);
+// //           // newTitleTag.appendChild(newTitleContent);
+// //           // articleContainer.innerHTML = article.body;
+// //           // articleContainer.prepend(newTitleTag);
+// //           // }
+// //         }
+// //       }
+//     }
 
 
 
