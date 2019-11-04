@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
       if (articles[i].promoted === true){
-        console.log(sections.find(section => section.id === articles[i].section_id));
+        console.log(sections.find(section => section.id === articles[i].section_id).name + '-' + articles[i]);
 
         // const articleContainer = document.querySelector('#promotedArticles');
         // const sectionTitleTag = document.createElement("h1");
