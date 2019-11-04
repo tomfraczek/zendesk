@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
-    let arr = [];
+    let sectionIdsArr = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
@@ -248,14 +248,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      // arr.push(articles[i].section_id);
-      //
-      // const sectionIds = new Set(arr);
-      //
-      // const sectionIdsArr = [...sectionIds]
-      //
-      //
-      // const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
+      sectionIdsArr.push(articles[i].section_id);
+
+      const sectionIds = new Set(sectionIdsArr);
+
+      const sectionIdsArr = [...sectionIds];
+
+
+      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
