@@ -212,28 +212,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  const request = new XMLHttpRequest();
-  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
-  request.open("GET", url);
-  request.responseType = 'json';
-  request.send();
-
-  if (request.response !== undefined){
-    request.onreadystatechange = (e) => {
-
-
-      const articles = request.response.articles;
-
-      console.log(articles);
-
-      for(let i = 0; i < articles.length; i++){
-        if(articles[i].promoted === true){
-          console.log(articles[i]);
-        }
-      }
-
-
-    }
+  function renderHTML(APIResponse, AnotherAPIResponse) {
+    // document.querySelector("body").innerHTML = `<h1>${APIResponse.info}: ${AnotherAPIResponse.info}</h1>`
+    console.log(APIResponse);
+    console.log(AnotherAPIResponse);
   }
+
+  function getData() {
+    let firstAPICall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
+    let secondAPICall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
+
+    Promise.all([firstAPICall, secondAPICall])
+        .then(values => Promise.all(values.map(value => value.json())))
+        .then(finalVals => {
+          let firstAPIResp = finalVals[0];
+          let secondAPIResp = finalVals[1];
+          renderHTML(firstAPIResp, secondAPIResp);
+        });
+  }
+
+  // const request = new XMLHttpRequest();
+  // const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
+  // request.open("GET", url);
+  // request.responseType = 'json';
+  // request.send();
+  //
+  // if (request.response !== undefined){
+  //   request.onreadystatechange = (e) => {
+  //
+  //
+  //     const articles = request.response.articles;
+  //
+  //     console.log(articles);
+  //
+  //     for(let i = 0; i < articles.length; i++){
+  //       if(articles[i].promoted === true){
+  //         console.log(articles[i]);
+  //       }
+  //     }
+  //
+  //
+  //   }
+  // }
 
 });
