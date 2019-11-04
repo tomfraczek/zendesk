@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for(let i = 0; i < sections.length; i++){
         if (articles[i].promoted === true){
 
-          console.log(sections[i].find(section => section.id === articles[i].section_id).name);
+          console.log(sections[i].find(section => section.id === articles[i].section_id));
 
           const articleContainer = document.querySelector('#promotedArticles');
           const sectionTitleTag = document.createElement("h1");
