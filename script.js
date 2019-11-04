@@ -232,8 +232,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
-      console.log(sectionsFiltered.name);
-      console.log(sectionsFiltered.html_url);
+      console.log(sectionsFiltered);
+
+      for (let i = 0; i < sectionsFiltered.length; i++){
+        console.log(sectionsFiltered[i].name);
+      }
+      // console.log(sectionsFiltered.html_url);
 
 //       for(let i = 0; i < sections.length; i++){
 //         if (articles[i].promoted === true){
