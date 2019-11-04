@@ -212,22 +212,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  function renderHTML(APIResponse, AnotherAPIResponse) {
-    // document.querySelector("body").innerHTML = `<h1>${APIResponse.info}: ${AnotherAPIResponse.info}</h1>`
-    console.log(APIResponse);
-    console.log(AnotherAPIResponse);
+  function renderHTML(articlesResponse, sectionsResponse) {
+    const articles = articlesResponse.articles;
+    const sections = sectionsResponse.sections;
+    console.log(articles);
+    console.log(sections);
+
+
   }
 
   function getData() {
-    let firstAPICall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
-    let secondAPICall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
+    let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
+    let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
 
-    Promise.all([firstAPICall, secondAPICall])
+    Promise.all([articlesCall, sectionsCall])
         .then(values => Promise.all(values.map(value => value.json())))
         .then(finalVals => {
-          let firstAPIResp = finalVals[0];
-          let secondAPIResp = finalVals[1];
-          renderHTML(firstAPIResp, secondAPIResp);
+          let articlesApiResp = finalVals[0];
+          let sectionsApiResp = finalVals[1];
+          renderHTML(articlesApiResp, sectionsApiResp);
         });
   }
 
