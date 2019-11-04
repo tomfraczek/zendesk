@@ -219,13 +219,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
       if (articles[i].promoted === true){
-        console.log(sections.find(section => section.id === articles[i].section_id).name + '-' + articles[i]);
+        console.log(articles[i]);
 
-        // const articleContainer = document.querySelector('#promotedArticles');
-        // const sectionTitleTag = document.createElement("h1");
-        // const articleTitleTag = document.createElement("h4");
-        // const sectionContent = document.createTextNode(articles[i].title);
-        // const articleContent = document.createTextNode(sections.find(section => section.id === articles[i].section_id));
+        const articleContainer = document.querySelector('#promotedArticles');
+        const sectionTitleTag = document.createElement("h1");
+        const articleTitleTag = document.createElement("h4");
+        const sectionContent = document.createTextNode(articles[i].title);
+        const articleContent = document.createTextNode(sections.find(section => section.id === articles[i].section_id.name));
 
 
         // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
