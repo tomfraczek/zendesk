@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       for (let i = 0; i < sectionsFiltered.length; i++){
         console.log(sectionsFiltered[i].name);
+        console.log(sectionsFiltered[i].html_url);
       }
       // console.log(sectionsFiltered.html_url);
 
