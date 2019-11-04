@@ -216,11 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
+    let arr = [];
 
     for(let i = 0; i < articles.length; i++){
       console.log(articles[i].section_id)
 
-      let arr = [];
 
       arr.push(articles[i].section_id);
 
