@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
-    let arr = [];
+    let sectionIdsArr = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
@@ -247,9 +247,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      arr.push(articles[i].section_id);
+      sectionIdsArr.push(articles[i].section_id);
 
-      const sectionIds = new Set(arr);
+      const sectionIds = new Set(sectionIdsArr);
 
       const sectionIdsArr = [...sectionIds]
 
@@ -258,12 +258,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
+        console.log(sectionsFiltered[i]);
         // console.log(sectionsFiltered[i].name);
         // console.log(sectionsFiltered[i].html_url);
         const listElementItem = document.querySelectorAll('.list-element--item');
 
         for (let i = 0; i < listElementItem.length; i++){
-          console.log(listElementItem[i]);
+          // console.log(listElementItem[i]);
 
           if(listElementItem[i].dataset.id === sectionsFiltered[i]){
 
