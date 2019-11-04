@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      console.log(articles[i])
+      console.log(articles[i]);
 
 
       arr.push(articles[i].section_id);
@@ -233,11 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const sectionIdsArr = [...sectionIds]
 
-      console.log(sectionIdsArr);
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
-      console.log(sectionsFiltered);
 
       for (let i = 0; i < sectionsFiltered.length; i++){
         console.log(sectionsFiltered[i].name);
