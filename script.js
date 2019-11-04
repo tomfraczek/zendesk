@@ -331,28 +331,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   getData();
 
-  // const request = new XMLHttpRequest();
-  // const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
-  // request.open("GET", url);
-  // request.responseType = 'json';
-  // request.send();
-  //
-  // if (request.response !== undefined){
-  //   request.onreadystatechange = (e) => {
-  //
-  //
-  //     const articles = request.response.articles;
-  //
-  //     console.log(articles);
-  //
-  //     for(let i = 0; i < articles.length; i++){
-  //       if(articles[i].promoted === true){
-  //         console.log(articles[i]);
-  //       }
-  //     }
-  //
-  //
-  //   }
-  // }
-
 });
