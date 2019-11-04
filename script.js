@@ -219,7 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let arr = [];
 
     for(let i = 0; i < articles.length; i++){
-      console.log(articles[i].section_id)
+
+
+
+
+
+      console.log(articles[i])
 
 
       arr.push(articles[i].section_id);
