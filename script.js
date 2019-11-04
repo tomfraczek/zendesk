@@ -224,7 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      console.log(articles[i]);
+      console.log(articles[i].name);
+      console.log(articles[i].html_url);
 
 
       arr.push(articles[i].section_id);
