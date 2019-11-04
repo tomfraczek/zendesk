@@ -219,13 +219,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(let i = 0; i < articles.length; i++){
       if (articles[i].promoted === true){
-        console.log(articles[i]);
 
         const articleContainer = document.querySelector('#promotedArticles');
         const sectionTitleTag = document.createElement("h1");
         const articleTitleTag = document.createElement("h4");
-        const sectionContent = document.createTextNode(articles[i].title);
-        const articleContent = document.createTextNode(sections.find(section => section.id === articles[i].section_id.name));
+        const sectionTitleContent = document.createTextNode(articles[i].name);
+        const articleTitleContent = document.createTextNode(sections.find(section => section.id === articles[i].section_id.name));
+
+        sectionTitleTag.prepend(sectionTitleContent);
+        articleTitleTag.prepend(articleTitleContent)
+
+        articleContainer.prepend(sectionTitleTag);
+        articleContainer.appendChild(articleTitleTag);
 
 
         // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
