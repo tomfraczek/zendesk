@@ -231,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
   }
 
+  getData();
+
   // const request = new XMLHttpRequest();
   // const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
   // request.open("GET", url);
