@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
-    let sectionIdsArr = [];
+    let arr = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
@@ -235,7 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(articles[i]);
 
       const sectionListElement = document.createElement("li");
-      sectionListElement.setAttribute('class', 'list-element--item')
       sectionListElement.setAttribute('data-id', articles[i].section_id)
       const sectionListElementLink = document.createElement("a");
       sectionListElementLink.setAttribute('class', 'tomeczek');
@@ -247,9 +246,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      sectionIdsArr.push(articles[i].section_id);
+      arr.push(articles[i].section_id);
 
-      const sectionIds = new Set(sectionIdsArr);
+      const sectionIds = new Set(arr);
 
       const sectionIdsArr = [...sectionIds]
 
@@ -258,19 +257,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
-        console.log(sectionsFiltered[i]);
         // console.log(sectionsFiltered[i].name);
         // console.log(sectionsFiltered[i].html_url);
-        const listElementItem = document.querySelectorAll('.list-element--item');
-
-        for (let i = 0; i < listElementItem.length; i++){
-          // console.log(listElementItem[i]);
-
-          if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-
-          }
-              }
-
       }
 
 
