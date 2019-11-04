@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(articles[i]);
 
       const sectionListElement = document.createElement("li");
-      sectionListElement.setAttribute('data-id', articles[i].id)
+      sectionListElement.setAttribute('data-id', articles[i].section_id)
       const sectionListElementLink = document.createElement("a");
       sectionListElementLink.setAttribute('class', 'tomeczek');
       sectionListElement.appendChild(sectionListElementLink);
