@@ -221,7 +221,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (request.response !== undefined){
     request.onreadystatechange = (e) => {
 
-      console.log(request.response);
+
+      const articles = request.response.articles;
+
+      console.log(articles);
+
+      for(let i = 0; i < articles.length; i++){
+        if(articles[i].promoted === true){
+          console.log(articles[i]);
+        }
+      }
+
 
     }
   }
