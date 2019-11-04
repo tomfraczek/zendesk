@@ -220,6 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < articles.length; i++){
       if (articles[i].promoted === true){
 
+        console.log(sections.find(section => section.id === articles[i].section_id.name));
+
         const articleContainer = document.querySelector('#promotedArticles');
         const sectionTitleTag = document.createElement("h1");
         const articleTitleTag = document.createElement("h4");
@@ -227,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const articleTitleContent = document.createTextNode(sections.find(section => section.id === articles[i].section_id.name));
 
         sectionTitleTag.prepend(sectionTitleContent);
-        articleTitleTag.prepend(articleTitleContent)
+        articleTitleTag.prepend(articleTitleContent);
 
         articleContainer.prepend(sectionTitleTag);
         articleContainer.appendChild(articleTitleTag);
