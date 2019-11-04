@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     do {
       if (Element.prototype.matches && element.matches(selector)
-        || Element.prototype.msMatchesSelector && element.msMatchesSelector(selector)
-        || Element.prototype.webkitMatchesSelector && element.webkitMatchesSelector(selector)) {
+          || Element.prototype.msMatchesSelector && element.msMatchesSelector(selector)
+          || Element.prototype.webkitMatchesSelector && element.webkitMatchesSelector(selector)) {
         return element;
       }
       element = element.parentElement || element.parentNode;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // show form controls when the textarea receives focus or backbutton is used and value exists
   var commentContainerTextarea = document.querySelector('.comment-container textarea'),
-    commentContainerFormControls = document.querySelector('.comment-form-controls, .comment-ccs');
+      commentContainerFormControls = document.querySelector('.comment-form-controls, .comment-ccs');
 
   if (commentContainerTextarea) {
     commentContainerTextarea.addEventListener('focus', function focusCommentContainerTextarea() {
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Expand Request comment form when Add to conversation is clicked
   var showRequestCommentContainerTrigger = document.querySelector('.request-container .comment-container .comment-show-container'),
-    requestCommentFields = document.querySelectorAll('.request-container .comment-container .comment-fields'),
-    requestCommentSubmit = document.querySelector('.request-container .comment-container .request-submit-comment');
+      requestCommentFields = document.querySelectorAll('.request-container .comment-container .comment-fields'),
+      requestCommentSubmit = document.querySelector('.request-container .comment-container .request-submit-comment');
 
   if (showRequestCommentContainerTrigger) {
     showRequestCommentContainerTrigger.addEventListener('click', function() {
@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Mark as solved button
   var requestMarkAsSolvedButton = document.querySelector('.request-container .mark-as-solved:not([data-disabled])'),
-    requestMarkAsSolvedCheckbox = document.querySelector('.request-container .comment-container input[type=checkbox]'),
-    requestCommentSubmitButton = document.querySelector('.request-container .comment-container input[type=submit]');
+      requestMarkAsSolvedCheckbox = document.querySelector('.request-container .comment-container input[type=checkbox]'),
+      requestCommentSubmitButton = document.querySelector('.request-container .comment-container input[type=submit]');
 
   if (requestMarkAsSolvedButton) {
     requestMarkAsSolvedButton.addEventListener('click', function () {
@@ -211,5 +211,19 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     }
   });
+
+  const request = new XMLHttpRequest();
+  const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/articles/search.json?label_names=homepage';
+  request.open("GET", url);
+  request.responseType = 'json';
+  request.send();
+
+  if (request.response !== undefined){
+    request.onreadystatechange = (e) => {
+
+      console.log(request.response);
+
+    }
+  }
 
 });
