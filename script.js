@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //
       const sectionIdsArr = [...sectionIds];
       //
-      // console.log('sectionIdsArr ', sectionIdsArr );
+      console.log('sectionIdsArr ', sectionIdsArr );
       //
       //
       // const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
