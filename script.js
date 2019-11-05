@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     articleContainer.appendChild(sectionList);
 
-console.log(sections);
+    console.log('sections ', sections );
 
 
 
@@ -251,6 +251,8 @@ console.log(sections);
       const sectionIds = new Set(sectionIdsArray);
 
       const sectionIdsArr = [...sectionIds];
+
+      console.log('sectionIdsArr ', sectionIdsArr );
 
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
