@@ -258,7 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const listElementItem = document.querySelectorAll('.list-element--item');
 
 
-      setTimeout(function(){
         console.log(listElementItem);
         console.log(listElementItem.length);
         for (let i = 0; i < listElementItem.length; i++){
@@ -270,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
           //
           // }
         }
-      }, 2000)
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
