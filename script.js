@@ -252,14 +252,14 @@ document.addEventListener('DOMContentLoaded', function() {
       //
       const sectionIdsArr = [...sectionIds];
       //
-      console.log('sectionIdsArr ', sectionIdsArr );
+      // console.log('sectionIdsArr ', sectionIdsArr );
       //
       //
-      // const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
+      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
       //
       // const listElementItem = document.querySelectorAll('.list-element--item');
       //
-      // console.log('sectionsFiltered ', sectionsFiltered);
+      console.log('sectionsFiltered ', sectionsFiltered);
       //
       //   for (let i = 0; i < listElementItem.length; i++){
       //
