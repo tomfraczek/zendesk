@@ -257,25 +257,26 @@ document.addEventListener('DOMContentLoaded', function() {
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
 
-//       for (let i = 0; i < sectionsFiltered.length; i++){
-//         // console.log(sectionsFiltered[i].name);
-//         // console.log(sectionsFiltered[i].html_url);
-//
-//
-// console.log('1');
-//           console.log('2');
-//           const listElementItem = document.querySelector('.list-element--item');
-//           listElementItem.addEventListener('load', function () {
-//             for (let i = 0; i < listElementItem.length; i++){
-//               console.log('3');
-//               console.log(listElementItem[i].dataset.id);
-//
-//               // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-//               //
-//               // }
-//             }
-//           })
-//       }
+      for (let i = 0; i < sectionsFiltered.length; i++){
+        // console.log(sectionsFiltered[i].name);
+        // console.log(sectionsFiltered[i].html_url);
+
+
+
+          const listElementItem = document.querySelector('.list-element--item');
+          listElementItem.addEventListener('load', function () {
+            console.log('1');
+
+            // for (let i = 0; i < listElementItem.length; i++){
+            //   console.log('3');
+            //   console.log(listElementItem[i].dataset.id);
+            //
+            //   // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+            //   //
+            //   // }
+            // }
+          })
+      }
 
 
 
