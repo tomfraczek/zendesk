@@ -258,16 +258,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const listElementItem = document.querySelectorAll('.list-element--item');
 
 
-        console.log(listElementItem);
-        console.log(listElementItem.length);
         for (let i = 0; i < listElementItem.length; i++){
 
-          console.log('3');
-          console.log(listElementItem[i].dataset.id);
 
-          // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-          //
-          // }
+
+          if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+            console.log(listElementItem[i].dataset.id);
+          }
         }
 
 
