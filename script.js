@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //
       // const listElementItem = document.querySelectorAll('.list-element--item');
       //
-      console.log('sectionsFiltered ', sectionsFiltered);
+      // console.log('sectionsFiltered ', sectionsFiltered);
       //
       //   for (let i = 0; i < listElementItem.length; i++){
       //
