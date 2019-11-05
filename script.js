@@ -255,8 +255,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
-
       const listElementItem = document.querySelector('#promotedArticlesList');
+
+      function loaded() {
+        // woo yey image loaded
+        console.log('loaded');
+      }
+
+      if (listElementItem.complete) {
+        loaded();
+      }
+      else {
+        listElementItem.addEventListener('load', loaded);
+      }
+
+      listElementItem.addEventListener('error', function() {
+        // argh everything's broken
+        console.log('error');
+      });
+
+
       listElementItem.addEventListener('load', function () {
         console.log('1');
 
