@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
           //
           // }
         }
-      }, 0)
+      }, 5000)
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
