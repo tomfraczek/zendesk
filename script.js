@@ -225,7 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     articleContainer.appendChild(sectionList);
 
-    console.log('sections ', sections );
+
+    // console.log('sections ', sections );
 
 
 
@@ -234,92 +235,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // console.log(articles[i]);
 
-      const sectionListElement = document.createElement("li");
-      sectionListElement.setAttribute('data-id', articles[i].section_id);
-      sectionListElement.setAttribute('class', 'list-element--item');
-      const sectionListElementLink = document.createElement("a");
-      sectionListElement.appendChild(sectionListElementLink);
-      sectionListElementLink.setAttribute('href', articles[i].html_url);
-      const articleName = document.createTextNode(articles[i].name);
-      sectionListElementLink.appendChild(articleName);
-      document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
+      if(articles[i].promoted === true){
 
-      //
-      //
-      sectionIdsArray.push(articles[i].section_id);
-      //
-      const sectionIds = new Set(sectionIdsArray);
-      //
-      const sectionIdsArr = [...sectionIds];
-      //
-      // console.log('sectionIdsArr ', sectionIdsArr );
-      //
-      //
-      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
-      //
-      // const listElementItem = document.querySelectorAll('.list-element--item');
-      //
-      // console.log('sectionsFiltered ', sectionsFiltered);
-      //
-      //   for (let i = 0; i < listElementItem.length; i++){
-      //
-      //
-      //
-      //     if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-      //       console.log(listElementItem[i].dataset.id);
-      //     }
-      //   }
-      //
-      //
-      // for (let i = 0; i < sectionsFiltered.length; i++){
-      //   // console.log(sectionsFiltered[i].name);
-      //   // console.log(sectionsFiltered[i].html_url);
-      //
-      //
-      //
-      //
-      // }
+        // DOM structure creator
+        const sectionListElement = document.createElement("li");
+        sectionListElement.setAttribute('data-id', articles[i].section_id);
+        sectionListElement.setAttribute('class', 'list-element--item');
+        const sectionListElementLink = document.createElement("a");
+        sectionListElement.appendChild(sectionListElementLink);
+        sectionListElementLink.setAttribute('href', articles[i].html_url);
+        const articleName = document.createTextNode(articles[i].name);
+        sectionListElementLink.appendChild(articleName);
+        const sectionNameLink = document.createElement("a");
+        sectionNameLink.setAttribute('href', sections[i].html_url);
+        const sectionName = document.createTextNode(sections[i].name);
+        sectionNameLink.appendChild(sectionName);
+
+        document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
+
+        //
+        //
+        sectionIdsArray.push(articles[i].section_id);
+        // console.log(sectionIdsArray.length);
+        //
+        const sectionIds = new Set(sectionIdsArray);
+        //
+        const sectionIdsArr = [...sectionIds];
+        //
+        // console.log('sectionIdsArr ', sectionIdsArr );
+        //
+        //
+
+        let listElement = document.querySelectorAll('.list-element--item');
 
 
+        for(let i = 0; i < sections.length; i++){
+          // console.log(sections[i]);
+          // console.log(sectionIdsArr.length)
+          sectionIdsArray.forEach(function (id, index) {
+            if(sections[i].id === id){
+
+
+              // console.log(sections[i].name);
+              // console.log(sections[i].html_url);
+
+
+              for(let i = 0; i < listElement.length; i++){
+                listElement[i].appendChild(sectionNameLink);
+              }
+
+            }
+          });
+        }
 
 
 
 
-      // console.log(sectionsFiltered.html_url);
 
-//       for(let i = 0; i < sections.length; i++){
-//         if (articles[i].promoted === true){
-// console.log(sections[i]);
-//           // console.log(sections.find(section => section.id === articles[i].section_id));
-//
-//           const articleContainer = document.querySelector('#promotedArticles');
-//           const sectionTitleTag = document.createElement("h1");
-//           const articleTitleTag = document.createElement("h4");
-//           const sectionTitleContent = document.createTextNode(articles[i].name);
-//           // const articleTitleContent = document.createTextNode(sections[i].find(section => section.id === articles[i].section_id.name));
-//
-//           // sectionTitleTag.prepend(sectionTitleContent);
-//           // articleTitleTag.prepend(articleTitleContent);
-//           //
-//           // articleContainer.prepend(sectionTitleTag);
-//           // articleContainer.appendChild(articleTitleTag);
-//
-//
-//           // if(sections.find(section => section.id === articles[i].section_id) !== undefined){
-//           //   console.log(section);
-//           //
-//           // const article = request.response.results.find(article => article.id === 360003215657);
-//           // const newTitleTag = document.createElement("h1");
-//           // const newTitleContent = document.createTextNode(article.title);
-//           // newTitleTag.appendChild(newTitleContent);
-//           // articleContainer.innerHTML = article.body;
-//           // articleContainer.prepend(newTitleTag);
-//           // }
-//         }
+//       const listElementItem = document.querySelectorAll('.list-element--item');
+//       // console.log(listElementItem.length)
+
+//       for (let i = 0; i < listElementItem.length; i++){
+//         console.log(listElementItem[i].dataset.id);
 //       }
+
+
+
+      }
     }
-
-
 
   }
 
@@ -337,29 +320,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   getData();
-
-  // const request = new XMLHttpRequest();
-  // const url='https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json';
-  // request.open("GET", url);
-  // request.responseType = 'json';
-  // request.send();
-  //
-  // if (request.response !== undefined){
-  //   request.onreadystatechange = (e) => {
-  //
-  //
-  //     const articles = request.response.articles;
-  //
-  //     console.log(articles);
-  //
-  //     for(let i = 0; i < articles.length; i++){
-  //       if(articles[i].promoted === true){
-  //         console.log(articles[i]);
-  //       }
-  //     }
-  //
-  //
-  //   }
-  // }
-
-});
