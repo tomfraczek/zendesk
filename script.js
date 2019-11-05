@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     articleContainer.appendChild(sectionList);
 
-
+console.log(sections);
 
 
 
@@ -244,13 +244,13 @@ document.addEventListener('DOMContentLoaded', function() {
       sectionListElementLink.appendChild(articleName);
       document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
-      //
-      //
-      // sectionIdsArray.push(articles[i].section_id);
-      //
-      // const sectionIds = new Set(sectionIdsArray);
-      //
-      // const sectionIdsArr = [...sectionIds];
+
+
+      sectionIdsArray.push(articles[i].section_id);
+
+      const sectionIds = new Set(sectionIdsArray);
+
+      const sectionIdsArr = [...sectionIds];
 
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
