@@ -12,42 +12,22 @@
         <p>Still have a question? Get in contact with our dedicated technical support team by <a href="https://techsupport.cambridgeaudio.com/hc/en-us/requests/new" target="_blank">submitting a request here</a>.</p>
     </div>
 
-    <div id="promotedArticles" class="promoted-articles"></div>
-
-<!--{{#if promoted_articles}}-->
-<!--      <section class="articles">-->
-<!--        <h3>Featured Articles</h3>-->
-<!--              <ul class="article-list promoted-articles">-->
-<!--          {{#each categories}}-->
-
-<!--              <li class="recent-activity-item">-->
-<!--                  {{#each sections}}-->
-<!--                      <a href="{{url}}" class="recent-activity-item-parent">{{name}}</a>-->
-<!--                      {{#each articles}}-->
-<!--                          {{#if promoted}}-->
-<!--                                  <a class="recent-activity-item-parent" href="{{url}}">{{title}}</a>-->
-<!--                          {{/if}}-->
-<!--                      {{/each}}-->
-<!--                  {{/each}}-->
-<!--                  </li>-->
-<!--          {{/each}}-->
-
-<!--              </ul>-->
-<!--&lt;!&ndash;        <ul class="article-list promoted-articles">&ndash;&gt;-->
-<!--&lt;!&ndash;          {{#each promoted_articles}}&ndash;&gt;-->
-<!--&lt;!&ndash;            <li class="promoted-articles-item">&ndash;&gt;-->
-<!--&lt;!&ndash;                <a href="{{url}}">&ndash;&gt;-->
-<!--&lt;!&ndash;                  {{title}}&ndash;&gt;-->
-
-<!--&lt;!&ndash;                  {{#if internal}}&ndash;&gt;-->
-<!--&lt;!&ndash;                    <span class="icon-lock" title="{{t 'internal'}}"></span>&ndash;&gt;-->
-<!--&lt;!&ndash;                  {{/if}}&ndash;&gt;-->
-<!--&lt;!&ndash;                </a>&ndash;&gt;-->
-<!--&lt;!&ndash;            </li>&ndash;&gt;-->
-<!--&lt;!&ndash;          {{/each}}&ndash;&gt;-->
-<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
-<!--      </section>-->
-<!--    {{/if}}-->
+    <div class="promoted-articles-test">
+        {{#each categories}}
+            <ul class="article-list promoted-articles">
+                {{#each sections}}
+                    <h2 class="section-link section-name">{{name}}</h2>
+                    {{#each articles}}
+                        {{#if promoted}}
+                            <li>
+                                <a href="{{url}}">{{title}}</a>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                {{/each}}
+            </ul>
+        {{/each}}
+    </div>
 
   <section class="section home-section activity">
     {{#if settings.show_recent_activity}}
