@@ -255,38 +255,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
-      const listElementItem = document.querySelector('#promotedArticlesList');
 
-      function loaded() {
-        // woo yey image loaded
-        console.log('loaded');
-      }
+      setTimeout(function(){
+        const listElementItem = document.querySelector('#promotedArticlesList');
+        for (let i = 0; i < listElementItem.length; i++){
+          console.log('3');
+          console.log(listElementItem[i].dataset.id);
 
-      if (listElementItem.complete) {
-        loaded();
-      }
-      else {
-        listElementItem.addEventListener('load', loaded);
-      }
-
-      listElementItem.addEventListener('error', function() {
-        // argh everything's broken
-        console.log('error');
-      });
+          // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+          //
+          // }
+        }
+      }, 0)
 
 
-      listElementItem.addEventListener('load', function () {
-        console.log('1');
-
-        // for (let i = 0; i < listElementItem.length; i++){
-        //   console.log('3');
-        //   console.log(listElementItem[i].dataset.id);
-        //
-        //   // if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-        //   //
-        //   // }
-        // }
-      })
       for (let i = 0; i < sectionsFiltered.length; i++){
         // console.log(sectionsFiltered[i].name);
         // console.log(sectionsFiltered[i].html_url);
