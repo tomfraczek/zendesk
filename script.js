@@ -257,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const listElementItem = document.querySelectorAll('.list-element--item');
 
+      console.log(listElementItem);
 
         for (let i = 0; i < listElementItem.length; i++){
 
