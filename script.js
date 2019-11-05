@@ -261,6 +261,8 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(listElementItem);
 
       setTimeout(function(){
+        console.log('222d');
+
         for (let i = 0; i < listElementItem.length; i++){
           console.log('3');
           console.log(listElementItem[i].dataset.id);
