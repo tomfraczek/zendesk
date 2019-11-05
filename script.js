@@ -238,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
       sectionListElement.setAttribute('data-id', articles[i].section_id);
       sectionListElement.setAttribute('class', 'list-element--item');
       const sectionListElementLink = document.createElement("a");
-      sectionListElementLink.setAttribute('class', 'tomeczek');
       sectionListElement.appendChild(sectionListElementLink);
       sectionListElementLink.setAttribute('href', articles[i].html_url);
       const articleName = document.createTextNode(articles[i].name);
@@ -256,9 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
-      const listElementItem = document.querySelector('#promotedArticlesList');
+      const listElementItem = document.querySelectorAll('.list-element--item');
 
-      console.log(listElementItem);
 
       setTimeout(function(){
         console.log(listElementItem);
