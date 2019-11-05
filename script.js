@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
-    sectionList.setAttribute('id', 'promotedArticlsList');
+    sectionList.setAttribute('id', 'promotedArticlesList');
 
     articleContainer.appendChild(sectionList);
 
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sectionListElementLink.setAttribute('href', articles[i].html_url);
       const articleName = document.createTextNode(articles[i].name);
       sectionListElementLink.appendChild(articleName);
-      document.querySelector('#promotedArticlsList').appendChild(sectionListElement);
+      document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
 
 
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
-      const listElementItem = document.querySelector('.list-element--item');
+      const listElementItem = document.querySelector('#promotedArticlesList');
       listElementItem.addEventListener('load', function () {
         console.log('1');
 
