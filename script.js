@@ -256,8 +256,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
 
+      const listElementItem = document.querySelector('#promotedArticlesList');
+
+      console.log(listElementItem);
+
       setTimeout(function(){
-        const listElementItem = document.querySelector('#promotedArticlesList');
         for (let i = 0; i < listElementItem.length; i++){
           console.log('3');
           console.log(listElementItem[i].dataset.id);
