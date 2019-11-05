@@ -1128,6 +1128,20 @@ ul {
   margin-bottom: 0;
 }
 
+.list-element--item {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 10px;
+}
+
+.list-element--item .section-url {
+  display: none;
+}
+
+.list-element--item .section-url:last-of-type {
+  display: block;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;

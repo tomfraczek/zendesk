@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // console.log(sections[i].name);
                 // console.log(sections[i].html_url);
                 const sectionNameLink = document.createElement("a");
+                sectionNameLink.setAttribute('class', 'section-url');
                 sectionNameLink.setAttribute('href', sections[i].html_url);
                 const sectionName = document.createTextNode(sections[i].name);
                 sectionNameLink.appendChild(sectionName);
