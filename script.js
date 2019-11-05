@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       //
       //
-      // sectionIdsArray.push(articles[i].section_id);
+      sectionIdsArray.push(articles[i].section_id);
       //
       // const sectionIds = new Set(sectionIdsArray);
       //
