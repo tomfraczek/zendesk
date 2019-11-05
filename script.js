@@ -247,11 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionListElementLink.setAttribute('href', articles[i].html_url);
         const articleName = document.createTextNode(articles[i].name);
         sectionListElementLink.appendChild(articleName);
-        const sectionNameLink = document.createElement("a");
-        sectionNameLink.setAttribute('href', sections[i].html_url);
-        const sectionName = document.createTextNode(sections[i].name);
-        sectionNameLink.appendChild(sectionName);
-        document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
+
 
         sectionIdsArray.push(articles[i].section_id);
 
@@ -270,7 +266,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // console.log(sections[i].name);
                 // console.log(sections[i].html_url);
-
+                const sectionNameLink = document.createElement("a");
+                sectionNameLink.setAttribute('href', sections[i].html_url);
+                const sectionName = document.createTextNode(sections[i].name);
+                sectionNameLink.appendChild(sectionName);
+                document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
                 for(let i = 0; i < listElement.length; i++){
                   listElement[i].appendChild(sectionNameLink);
