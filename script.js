@@ -244,41 +244,41 @@ document.addEventListener('DOMContentLoaded', function() {
       sectionListElementLink.appendChild(articleName);
       document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
-
-
-      sectionIdsArray.push(articles[i].section_id);
-
-      const sectionIds = new Set(sectionIdsArray);
-
-      const sectionIdsArr = [...sectionIds];
-
-      console.log('sectionIdsArr ', sectionIdsArr );
-
-
-      const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
-
-      const listElementItem = document.querySelectorAll('.list-element--item');
-
-      console.log(sectionsFiltered);
-
-        for (let i = 0; i < listElementItem.length; i++){
-
-
-
-          if(listElementItem[i].dataset.id === sectionsFiltered[i]){
-            console.log(listElementItem[i].dataset.id);
-          }
-        }
-
-
-      for (let i = 0; i < sectionsFiltered.length; i++){
-        // console.log(sectionsFiltered[i].name);
-        // console.log(sectionsFiltered[i].html_url);
-
-
-
-
-      }
+      //
+      //
+      // sectionIdsArray.push(articles[i].section_id);
+      //
+      // const sectionIds = new Set(sectionIdsArray);
+      //
+      // const sectionIdsArr = [...sectionIds];
+      //
+      // console.log('sectionIdsArr ', sectionIdsArr );
+      //
+      //
+      // const sectionsFiltered = sections.filter(section => section.id = sectionIdsArr);
+      //
+      // const listElementItem = document.querySelectorAll('.list-element--item');
+      //
+      // console.log('sectionsFiltered ', sectionsFiltered);
+      //
+      //   for (let i = 0; i < listElementItem.length; i++){
+      //
+      //
+      //
+      //     if(listElementItem[i].dataset.id === sectionsFiltered[i]){
+      //       console.log(listElementItem[i].dataset.id);
+      //     }
+      //   }
+      //
+      //
+      // for (let i = 0; i < sectionsFiltered.length; i++){
+      //   // console.log(sectionsFiltered[i].name);
+      //   // console.log(sectionsFiltered[i].html_url);
+      //
+      //
+      //
+      //
+      // }
 
 
 
