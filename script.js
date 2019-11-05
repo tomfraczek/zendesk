@@ -261,9 +261,10 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(listElementItem);
 
       setTimeout(function(){
-        console.log('222d');
-
+        console.log(listElementItem);
+        console.log(listElementItem.length);
         for (let i = 0; i < listElementItem.length; i++){
+
           console.log('3');
           console.log(listElementItem[i].dataset.id);
 
@@ -271,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
           //
           // }
         }
-      }, 5000)
+      }, 2000)
 
 
       for (let i = 0; i < sectionsFiltered.length; i++){
