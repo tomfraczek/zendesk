@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //
       const sectionIds = new Set(sectionIdsArray);
       //
-      // const sectionIdsArr = [...sectionIds];
+      const sectionIdsArr = [...sectionIds];
       //
       // console.log('sectionIdsArr ', sectionIdsArr );
       //
