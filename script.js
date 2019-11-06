@@ -226,16 +226,17 @@ document.addEventListener('DOMContentLoaded', function() {
     articleContainer.appendChild(sectionList);
 
 
-    // console.log('sections ', sections );
+    console.log('sections ', sections );
 
 
 
 
     for(let i = 0; i < articles.length; i++){
 
-      // console.log(articles[i]);
+      console.log(articles[i]);
 
       if(articles[i].promoted === true){
+          // console.log(articles[i]);
 
         // DOM structure creator
         const sectionListElement = document.createElement("li");
@@ -246,12 +247,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionListElementLink.setAttribute('href', articles[i].html_url);
         const articleName = document.createTextNode(articles[i].name);
         sectionListElementLink.appendChild(articleName);
-        const sectionNameLink = document.createElement("a");
-        sectionNameLink.setAttribute('href', sections[i].html_url);
-        const sectionName = document.createTextNode(sections[i].name);
-        sectionNameLink.appendChild(sectionName);
-
-        document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
 
         sectionIdsArray.push(articles[i].section_id);
@@ -262,33 +257,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let listElement = document.querySelectorAll('.list-element--item');
 
-
-        for(let i = 0; i < sections.length; i++){
-          // console.log(sections[i]);
-          // console.log(sectionIdsArr.length)
-          sectionIdsArray.forEach(function (id, index) {
-            if(sections[i].id === id){
-
+          for(let i = 0; i < sections.length; i++){
+            // console.log(sections[i]);
+            // console.log(sectionIdsArr.length)
+            sectionIdsArray.forEach(function (id, index) {
+              if(sections[i].id === id){
 
 
+                // console.log(sections[i].name);
+                // console.log(sections[i].html_url);
+                const sectionNameLink = document.createElement("a");
+                sectionNameLink.setAttribute('class', 'section-url');
+                sectionNameLink.setAttribute('href', sections[i].html_url);
+                const sectionName = document.createTextNode(sections[i].name);
+                sectionNameLink.appendChild(sectionName);
+                document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
-              // console.log(sections[i].name);
-              // console.log(sections[i].html_url);
+                for(let i = 0; i < listElement.length; i++){
+                  listElement[i].appendChild(sectionNameLink);
+                }
 
-
-              for(let i = 0; i < listElement.length; i++){
-                listElement[i].appendChild(sectionNameLink);
               }
 
-            }
-          });
+            });
+
+          }
+
         }
-
-
       }
     }
-
-  }
 
 
 
