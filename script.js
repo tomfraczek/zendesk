@@ -213,7 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function createSection() {
-    console.log('s2');
+    const listItemArticle = document.querySelectorAll('.list-element--item');
+    console.log(listItemArticle);
   }
 
   function renderHTML(articlesResponse, sectionsResponse) {
