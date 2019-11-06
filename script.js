@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sectionList = document.createElement("ul");
     sectionList.setAttribute('id', 'promotedArticlesList');
 
-    articleContainer.appendChild(sectionList);
+    document.querySelector('#promotedArticles').appendChild(sectionList);
 
 
     // console.log('sections ', sections );
