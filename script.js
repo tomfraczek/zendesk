@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
     articleContainer.appendChild(sectionList);
 
 
-    // console.log('sections ', sections );
+    console.log('sections ', sections );
 
 
 
