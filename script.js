@@ -216,14 +216,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
-    console.log(sections);
+    // console.log(sections);
     let sectionIdsArray = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
     sectionList.setAttribute('id', 'promotedArticlesList');
 
-    document.querySelector('#promotedArticles').appendChild(sectionList);
+    articleContainer.appendChild(sectionList);
 
 
     // console.log('sections ', sections );
@@ -308,5 +308,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   getData();
+
 
 });
