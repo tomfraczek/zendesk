@@ -212,6 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  function createSection() {
+    console.log('s2');
+  }
+
   function renderHTML(articlesResponse, sectionsResponse) {
 
     const articles = articlesResponse.articles;
@@ -249,13 +253,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
+        console.log('s1');
 
 
-
+        createSection();
 
 
       }
     }
+
+
 
   }
 
