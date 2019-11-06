@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
-    // console.log(sections);
+    console.log(sections);
     let sectionIdsArray = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
