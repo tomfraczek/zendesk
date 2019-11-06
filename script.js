@@ -246,43 +246,12 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionListElementLink.setAttribute('href', articles[i].html_url);
         const articleName = document.createTextNode(articles[i].name);
         sectionListElementLink.appendChild(articleName);
-        const sectionNameLink = document.createElement("a");
-        sectionNameLink.setAttribute('href', sections[i].html_url);
-        const sectionName = document.createTextNode(sections[i].name);
-        sectionNameLink.appendChild(sectionName);
+
 
         document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
 
-        sectionIdsArray.push(articles[i].section_id);
 
-        const sectionIds = new Set(sectionIdsArray);
-
-        const sectionIdsArr = [...sectionIds];
-
-        let listElement = document.querySelectorAll('.list-element--item');
-
-
-        for(let i = 0; i < sections.length; i++){
-          // console.log(sections[i]);
-          // console.log(sectionIdsArr.length)
-          sectionIdsArray.forEach(function (id, index) {
-            if(sections[i].id === id){
-
-
-
-
-              // console.log(sections[i].name);
-              // console.log(sections[i].html_url);
-
-
-              for(let i = 0; i < listElement.length; i++){
-                listElement[i].appendChild(sectionNameLink);
-              }
-
-            }
-          });
-        }
 
 
       }
