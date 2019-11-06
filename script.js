@@ -212,9 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  function createSection() {
+  function createSection(sections) {
     const listItemArticle = document.querySelectorAll('.list-element--item');
     console.log(listItemArticle);
+    sections.filter(x => x.id === '45').map(x => x.foo);
   }
 
   function renderHTML(articlesResponse, sectionsResponse) {
@@ -254,10 +255,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
-        console.log('s1');
 
 
-        createSection();
+        createSection(sections);
 
 
       }
