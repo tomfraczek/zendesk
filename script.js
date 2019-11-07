@@ -238,7 +238,7 @@ function fetchSections(id){
 
             for (let key in sections){
               if(sections.hasOwnProperty(key)){
-                console.log(`${key} : ${sections[key]}`)
+                console.log(`${key.name} : ${sections[key]}`)
               }
             }
 
