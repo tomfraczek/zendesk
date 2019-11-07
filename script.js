@@ -236,18 +236,17 @@ function fetchSections(id){
 
             console.log(sections);
 
-            for (let section in sections){
-              // if(obj.hasOwnProperty(key)){
-              //   console.log(`${key} : ${obj[key]}`)
-              // }
-              const sectionLink = document.createElement("a");
-              sectionLink.setAttribute('href', section.html_url);
-              const sectionName = document.createTextNode(section.name);
-              sectionLink.appendChild(sectionName);
-              articleListElement[i].appendChild(sectionLink);
+            for (let key in sections){
+              if(sections.hasOwnProperty(key)){
+                console.log(`${key} : ${sections[key]}`)
+              }
             }
 
-
+            const sectionLink = document.createElement("a");
+            sectionLink.setAttribute('href', articleListElement[i].html_url);
+            const sectionName = document.createTextNode(articleListElement[i].name);
+            sectionLink.appendChild(sectionName);
+            articleListElement[i].appendChild(sectionLink);
           });
     }
   }
