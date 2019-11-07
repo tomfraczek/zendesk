@@ -121,12 +121,20 @@
 }
 
 .recent-activity-item{
-  display: flex;
-  flex-direction: column-reverse;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.recent-activity-item-meta{
+  width: 30%;
+  position: relative;
+  top: -11px;
+  text-align: right;
 }
 
 .recent-activity-item-comment{
-  display: none;
+  display: none!important;
 }
 
 .recent-activity-item-parent{
