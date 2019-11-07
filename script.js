@@ -233,7 +233,9 @@ function fetchSections(id){
       fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections/'+ articleListElement[i].dataset.id +'.json')
           .then(response => response.json())
           .then(sections => {
+
             console.log(sections);
+
             const sectionLink = document.createElement("a");
             sectionLink.setAttribute('href', articleListElement[i].html_url);
             const sectionName = document.createTextNode(articleListElement[i].name);
@@ -278,7 +280,6 @@ function fetchSections(id){
         sectionListElementLink.setAttribute('href', articles[i].html_url);
         const articleName = document.createTextNode(articles[i].name);
         sectionListElementLink.appendChild(articleName);
-
 
         document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
 
