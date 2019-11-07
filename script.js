@@ -212,18 +212,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  function createSection(sections) {
-    const listItemArticle = document.querySelectorAll('.list-element--item');
-    console.log(listItemArticle);
-    sections.filter(x => x.id === '45').map(x => x.foo);
-  }
-   const articleListElement = document.querySelectorAll(list-element--item);
+
+  const articleListElement = document.querySelectorAll('.list-element--item');
 
   for(let i = 0; i < articleListElement.length; i++){
     console.log(articleListElement[i]);
     console.log(articleListElement[i].dataset.id);
   }
 
+
+
+
+  // function createSection(sections) {
+  //   const listItemArticle = document.querySelectorAll('.list-element--item');
+  //   console.log(listItemArticle);
+  //   sections.filter(x => x.id === '45').map(x => x.foo);
+  // }
   // function renderHTML(articlesResponse, sectionsResponse) {
   //
   //   const articles = articlesResponse.articles;
