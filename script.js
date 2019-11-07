@@ -213,17 +213,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+function fetchSections(id){
+  fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories/'+ id +'/sections.json')
+      .then(response => response.json())
+      .then(users => console.log(users));
+}
 
 
 
 
-
-  function createSection(sections) {
+  function createSection() {
     const articleListElement = document.querySelectorAll('.list-element--item');
 
     for(let i = 0; i < articleListElement.length; i++){
       console.log(articleListElement[i]);
       console.log(articleListElement[i].dataset.id);
+      fetchSections(articleListElement[i].dataset.id)
+
     }
   }
 
