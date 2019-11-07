@@ -119,3 +119,20 @@
     }
   }
 }
+
+.recent-activity-item{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.recent-activity-item-comment{
+  display: none;
+}
+
+.recent-activity-item-parent{
+  font-size: 14px!important;
+}
+
+.recent-activity-item-link{
+  font-size: 16px!important;
+}

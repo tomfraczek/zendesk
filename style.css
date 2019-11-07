@@ -667,6 +667,7 @@ ul {
 /***** Footer *****/
 .footer {
   padding: 30px 0 0;
+  margin-top: 65px;
 }
 
 .footer a {
@@ -1140,6 +1141,23 @@ ul {
 
 .list-element--item .section-url:last-of-type {
   display: block;
+}
+
+.recent-activity-item {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.recent-activity-item-comment {
+  display: none;
+}
+
+.recent-activity-item-parent {
+  font-size: 14px !important;
+}
+
+.recent-activity-item-link {
+  font-size: 16px !important;
 }
 
 /***** Recent activity *****/
