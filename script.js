@@ -230,7 +230,7 @@ function fetchSections(id){
       console.log(articleListElement[i].dataset.id);
       // fetchSections(articleListElement[i].dataset.id)
 
-      fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories/'+ articleListElement[i].dataset.id +'/sections.json')
+      fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections/'+ articleListElement[i].dataset.id +'.json')
           .then(response => response.json())
           .then(users => {
             let output = '<h2>Lists of Users</h2>';
