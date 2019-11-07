@@ -217,74 +217,80 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(listItemArticle);
     sections.filter(x => x.id === '45').map(x => x.foo);
   }
+   const articleListElement = document.querySelectorAll(list-element--item);
 
-  function renderHTML(articlesResponse, sectionsResponse) {
-
-    const articles = articlesResponse.articles;
-    const sections = sectionsResponse.sections;
-    // console.log(sections);
-    let sectionIdsArray = [];
-
-    const articleContainer = document.querySelector('#promotedArticles');
-    const sectionList = document.createElement("ul");
-    sectionList.setAttribute('id', 'promotedArticlesList');
-
-    articleContainer.appendChild(sectionList);
-
-
-    console.log('sections ', sections );
-
-
-
-
-    for(let i = 0; i < articles.length; i++){
-
-      // console.log(articles[i]);
-
-      if(articles[i].promoted === true){
-
-        // DOM structure creator
-        const sectionListElement = document.createElement("li");
-        sectionListElement.setAttribute('data-id', articles[i].section_id);
-        sectionListElement.setAttribute('class', 'list-element--item');
-        const sectionListElementLink = document.createElement("a");
-        sectionListElement.appendChild(sectionListElementLink);
-        sectionListElementLink.setAttribute('href', articles[i].html_url);
-        const articleName = document.createTextNode(articles[i].name);
-        sectionListElementLink.appendChild(articleName);
-
-
-        document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
-
-
-        createSection(sections);
-
-
-      }
-    }
-
-
-
+  for(let i = 0; i < articleListElement.length; i++){
+    console.log(articleListElement[i]);
+    console.log(articleListElement[i].dataset.id);
   }
 
-
-
-
-
-  function getData() {
-    let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
-    let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
-
-    Promise.all([articlesCall, sectionsCall])
-        .then(values => Promise.all(values.map(value => value.json())))
-        .then(finalVals => {
-          let articlesApiResp = finalVals[0];
-          let sectionsApiResp = finalVals[1];
-          renderHTML(articlesApiResp, sectionsApiResp);
-        });
-  }
-
-  getData();
+  // function renderHTML(articlesResponse, sectionsResponse) {
+  //
+  //   const articles = articlesResponse.articles;
+  //   const sections = sectionsResponse.sections;
+  //   // console.log(sections);
+  //   let sectionIdsArray = [];
+  //
+  //   const articleContainer = document.querySelector('#promotedArticles');
+  //   const sectionList = document.createElement("ul");
+  //   sectionList.setAttribute('id', 'promotedArticlesList');
+  //
+  //   articleContainer.appendChild(sectionList);
+  //
+  //
+  //   console.log('sections ', sections );
+  //
+  //
+  //
+  //
+  //   for(let i = 0; i < articles.length; i++){
+  //
+  //     // console.log(articles[i]);
+  //
+  //     if(articles[i].promoted === true){
+  //
+  //       // DOM structure creator
+  //       const sectionListElement = document.createElement("li");
+  //       sectionListElement.setAttribute('data-id', articles[i].section_id);
+  //       sectionListElement.setAttribute('class', 'list-element--item');
+  //       const sectionListElementLink = document.createElement("a");
+  //       sectionListElement.appendChild(sectionListElementLink);
+  //       sectionListElementLink.setAttribute('href', articles[i].html_url);
+  //       const articleName = document.createTextNode(articles[i].name);
+  //       sectionListElementLink.appendChild(articleName);
+  //
+  //
+  //       document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
+  //
+  //
+  //       createSection(sections);
+  //
+  //
+  //     }
+  //   }
+  //
+  //
+  //
+  // }
+  //
+  //
+  //
+  //
+  //
+  // function getData() {
+  //   let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
+  //   let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
+  //
+  //   Promise.all([articlesCall, sectionsCall])
+  //       .then(values => Promise.all(values.map(value => value.json())))
+  //       .then(finalVals => {
+  //         let articlesApiResp = finalVals[0];
+  //         let sectionsApiResp = finalVals[1];
+  //         renderHTML(articlesApiResp, sectionsApiResp);
+  //       });
+  // }
+  //
+  // getData();
 
 
 });
