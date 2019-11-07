@@ -232,19 +232,13 @@ function fetchSections(id){
 
       fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections/'+ articleListElement[i].dataset.id +'.json')
           .then(response => response.json())
-          .then(users => {
-            // let output = '<h2>Lists of Users</h2>';
-            // output += '<ul>';
-            // users.forEach(function(user) {
-            //   output += `
-            //                 <li>
-            //                     ${user.name}
-            //                 </li>
-            //             `;
-            // });
-            // output += '</ul>'
-            // document.getElementById("response").innerHTML = output;
-            console.log(users);
+          .then(sections => {
+            console.log(sections);
+            const sectionLink = document.createElement("a");
+            sectionLink.setAttribute('href', articleListElement[i].html_url);
+            const sectionName = document.createTextNode(articleListElement[i].name);
+            sectionLink.appendChild(sectionName);
+            articleListElement[i].appendChild(sectionLink);
           });
     }
   }
