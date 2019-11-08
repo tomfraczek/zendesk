@@ -212,98 +212,87 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // function renderHTML(articlesResponse, sectionsResponse) {
-  //
-  //   const articles = articlesResponse.articles;
-  //   const sections = sectionsResponse.sections;
-  //   // console.log(sections);
-  //   let sectionIdsArray = [];
-  //
-  //   const articleContainer = document.querySelector('#promotedArticles');
-  //   const sectionList = document.createElement("ul");
-  //   sectionList.setAttribute('id', 'promotedArticlesList');
-  //
-  //   articleContainer.appendChild(sectionList);
-  //
-  //
-  //   console.log('sections ', sections );
-  //
-  //
-  //
-  //
-  //   for(let i = 0; i < articles.length; i++){
-  //
-  //     console.log(articles[i]);
-  //
-  //     if(articles[i].promoted === true){
-  //         // console.log(articles[i]);
-  //
-  //       // DOM structure creator
-  //       const sectionListElement = document.createElement("li");
-  //       sectionListElement.setAttribute('data-id', articles[i].section_id);
-  //       sectionListElement.setAttribute('class', 'list-element--item');
-  //       const sectionListElementLink = document.createElement("a");
-  //       sectionListElement.appendChild(sectionListElementLink);
-  //       sectionListElementLink.setAttribute('href', articles[i].html_url);
-  //       const articleName = document.createTextNode(articles[i].name);
-  //       sectionListElementLink.appendChild(articleName);
-  //
-  //
-  //       sectionIdsArray.push(articles[i].section_id);
-  //
-  //       const sectionIds = new Set(sectionIdsArray);
-  //
-  //       const sectionIdsArr = [...sectionIds];
-  //
-  //       let listElement = document.querySelectorAll('.list-element--item');
-  //
-  //         for(let i = 0; i < sections.length; i++){
-  //           // console.log(sections[i]);
-  //           // console.log(sectionIdsArr.length)
-  //           sectionIdsArray.forEach(function (id, index) {
-  //             if(sections[i].id === id){
-  //
-  //
-  //               // console.log(sections[i].name);
-  //               // console.log(sections[i].html_url);
-  //               const sectionNameLink = document.createElement("a");
-  //               sectionNameLink.setAttribute('class', 'section-url');
-  //               sectionNameLink.setAttribute('href', sections[i].html_url);
-  //               const sectionName = document.createTextNode(sections[i].name);
-  //               sectionNameLink.appendChild(sectionName);
-  //               document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
-  //
-  //               for(let i = 0; i < listElement.length; i++){
-  //                 listElement[i].appendChild(sectionNameLink);
-  //               }
-  //
-  //             }
-  //
-  //           });
-  //
-  //         }
-  //
-  //       }
-  //     }
-  //   }
-  //
-  //
-  //
-  //
-  //
-  // function getData() {
-  //   let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
-  //   let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
-  //
-  //   Promise.all([articlesCall, sectionsCall])
-  //       .then(values => Promise.all(values.map(value => value.json())))
-  //       .then(finalVals => {
-  //         let articlesApiResp = finalVals[0];
-  //         let sectionsApiResp = finalVals[1];
-  //         renderHTML(articlesApiResp, sectionsApiResp);
-  //       });
-  // }
-  //
-  // getData();
+
+
+  function createSection(sections) {
+    const articleListElement = document.querySelectorAll('.list-element--item');
+
+    for(let i = 0; i < articleListElement.length; i++){
+
+      const articleSection = sections.find(section => section.id === articleListElement[i].dataset.id);
+
+      let result = sections.find(obj => {
+        return obj.id === parseInt(articleListElement[i].dataset.id)
+      });
+
+      const sectionLink = document.createElement("a");
+      sectionLink.setAttribute('href', result.html_url);
+      sectionLink.setAttribute('class', 'recent-activity-item-parent');
+      const sectionName = document.createTextNode(result.name);
+      sectionLink.appendChild(sectionName);
+      articleListElement[i].appendChild(sectionLink);
+    }
+  }
+
+
+
+  function renderHTML(articlesResponse, sectionsResponse) {
+
+    const articles = articlesResponse.articles;
+    const sections = sectionsResponse.sections;
+    // console.log(sections);
+
+    const articleContainer = document.querySelector('#promotedArticles');
+    const sectionList = document.createElement("ul");
+    sectionList.setAttribute('id', 'promotedArticlesList');
+    sectionList.setAttribute('class', 'promoted-articles-list');
+
+    articleContainer.appendChild(sectionList);
+
+
+    // console.log('sections ', sections );
+
+
+
+
+    for(let i = 0; i < articles.length; i++){
+
+      //SHOW ONLY PROMOTED ARTICLES
+      if(articles[i].promoted === true){
+
+        // DOM ARTICLE'S
+        const sectionListElement = document.createElement("li");
+        sectionListElement.setAttribute('data-id', articles[i].section_id);
+        sectionListElement.setAttribute('class', 'list-element--item');
+        const sectionListElementLink = document.createElement("a");
+        sectionListElementLink.setAttribute('class', 'recent-activity-item-link');
+        sectionListElement.appendChild(sectionListElementLink);
+        sectionListElementLink.setAttribute('href', articles[i].html_url);
+        const articleName = document.createTextNode(articles[i].name);
+        sectionListElementLink.appendChild(articleName);
+
+        document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
+      }
+    }
+    createSection(sections);
+  }
+
+
+  //STARTS HERE
+  function getData() {
+    let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
+    let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
+
+    Promise.all([articlesCall, sectionsCall])
+        .then(values => Promise.all(values.map(value => value.json())))
+        .then(finalVals => {
+          let articlesApiResp = finalVals[0];
+          let sectionsApiResp = finalVals[1];
+          renderHTML(articlesApiResp, sectionsApiResp);
+        });
+  }
+
+  getData();
+
 
 });
