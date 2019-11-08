@@ -1129,12 +1129,6 @@ ul {
   margin-bottom: 0;
 }
 
-.list-element--item {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 10px;
-}
-
 .recent-activity-item {
   display: flex;
   flex-direction: column-reverse;
@@ -1152,10 +1146,18 @@ ul {
   font-size: 16px !important;
 }
 
-.list--element--item {
+.list-element--item {
+  display: flex;
+  flex-direction: column-reverse;
   border-bottom: 1px solid #ddd;
   overflow: auto;
   padding: 20px 0;
+}
+
+.featured-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
 }
 
 /***** Recent activity *****/
