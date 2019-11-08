@@ -1152,6 +1152,12 @@ ul {
   font-size: 16px !important;
 }
 
+.list--element--item {
+  border-bottom: 1px solid #ddd;
+  overflow: auto;
+  padding: 20px 0;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;
