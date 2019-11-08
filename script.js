@@ -217,30 +217,17 @@ document.addEventListener('DOMContentLoaded', function() {
   function createSection(sections) {
     const articleListElement = document.querySelectorAll('.list-element--item');
 
-
-
-
-
     for(let i = 0; i < articleListElement.length; i++){
-
-
-      // console.log(articleListElement[i].dataset.id);
-
-
 
       const articleSection = sections.find(section => section.id === articleListElement[i].dataset.id);
 
-      var result = sections.find(obj => {
+      let result = sections.find(obj => {
         return obj.id === parseInt(articleListElement[i].dataset.id)
-      })
-
-      // console.log(result);
-
-
-      // console.log(articleSection);
+      });
 
       const sectionLink = document.createElement("a");
       sectionLink.setAttribute('href', result.html_url);
+      sectionLink.setAttribute('class', 'recent-activity-item-parent');
       const sectionName = document.createTextNode(result.name);
       sectionLink.appendChild(sectionName);
       articleListElement[i].appendChild(sectionLink);
@@ -248,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
-//PRINT ARTICLE'S TITLE
+
   function renderHTML(articlesResponse, sectionsResponse) {
 
     const articles = articlesResponse.articles;
@@ -273,11 +260,12 @@ document.addEventListener('DOMContentLoaded', function() {
       //SHOW ONLY PROMOTED ARTICLES
       if(articles[i].promoted === true){
 
-        // DOM ARTICLE'S TITLE
+        // DOM ARTICLE'S
         const sectionListElement = document.createElement("li");
         sectionListElement.setAttribute('data-id', articles[i].section_id);
         sectionListElement.setAttribute('class', 'list-element--item');
         const sectionListElementLink = document.createElement("a");
+        sectionListElementLink.setAttribute('class', 'recent-activity-item-link');
         sectionListElement.appendChild(sectionListElementLink);
         sectionListElementLink.setAttribute('href', articles[i].html_url);
         const articleName = document.createTextNode(articles[i].name);
