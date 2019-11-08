@@ -1160,6 +1160,10 @@ ul {
   font-size: 22px;
 }
 
+.promoted-articles-list {
+  width: 100%;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;
