@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < articleListElement.length; i++){
 
 
-      console.log(articleListElement[i].dataset.id);
+      // console.log(articleListElement[i].dataset.id);
 
 
 
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return obj.id === parseInt(articleListElement[i].dataset.id)
       })
 
-      console.log(result);
+      // console.log(result);
 
 
       // console.log(articleSection);
@@ -258,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
     sectionList.setAttribute('id', 'promotedArticlesList');
+    sectionList.setAttribute('class', 'promoted-articles-list');
 
     articleContainer.appendChild(sectionList);
 
