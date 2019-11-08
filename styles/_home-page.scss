@@ -106,20 +106,6 @@
   }
 }
 
-.list-element--item{
-  display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 10px;
-
-  //.section-url{
-  //  display: none;
-  //
-  //  &:last-of-type{
-  //    display: block;
-  //  }
-  //}
-}
-
 .recent-activity-item{
   display: flex;
   flex-direction: column-reverse;
@@ -137,7 +123,9 @@
   font-size: 16px!important;
 }
 
-.list--element--item{
+.list-element--item{
+  display: flex;
+  flex-direction: column-reverse;
   border-bottom: 1px solid #ddd;
   overflow: auto;
   padding: 20px 0;
