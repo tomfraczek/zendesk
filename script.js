@@ -213,48 +213,47 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-function fetchSections(id){
-  fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories/'+ id +'/sections.json')
-      .then(response => response.json())
-      .then(users => console.log(users));
-}
 
-
-
-
-  function createSection() {
+  function createSection(sections) {
     const articleListElement = document.querySelectorAll('.list-element--item');
 
+
+
+
+
     for(let i = 0; i < articleListElement.length; i++){
-      console.log(articleListElement[i]);
+
+
       console.log(articleListElement[i].dataset.id);
-      // fetchSections(articleListElement[i].dataset.id)
 
-      fetch('https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections/'+ articleListElement[i].dataset.id +'.json')
-          .then(response => response.json())
-          .then(sections => {
 
-            console.log(sections);
 
-            for(let i = 0; i < sections.length; i++){
-              const sectionLink = document.createElement("a");
-              sectionLink.setAttribute('href', sections[i].html_url);
-              const sectionName = document.createTextNode(sections[i].name);
-              sectionLink.appendChild(sectionName);
-              articleListElement[i].appendChild(sectionLink);
-            }
+      const articleSection = sections.find(section => section.id === articleListElement[i].dataset.id);
 
-          });
+      var result = sections.find(obj => {
+        return obj.id === parseInt(articleListElement[i].dataset.id)
+      })
+
+      console.log(result);
+
+
+      // console.log(articleSection);
+
+      const sectionLink = document.createElement("a");
+      sectionLink.setAttribute('href', result.html_url);
+      const sectionName = document.createTextNode(result.name);
+      sectionLink.appendChild(sectionName);
+      articleListElement[i].appendChild(sectionLink);
     }
   }
 
 
+//PRINT ARTICLE'S TITLE
   function renderHTML(articlesResponse, sectionsResponse) {
 
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
     // console.log(sections);
-    let sectionIdsArray = [];
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
@@ -263,18 +262,17 @@ function fetchSections(id){
     articleContainer.appendChild(sectionList);
 
 
-    console.log('sections ', sections );
+    // console.log('sections ', sections );
 
 
 
 
     for(let i = 0; i < articles.length; i++){
 
-      // console.log(articles[i]);
-
+      //SHOW ONLY PROMOTED ARTICLES
       if(articles[i].promoted === true){
 
-        // DOM structure creator
+        // DOM ARTICLE'S TITLE
         const sectionListElement = document.createElement("li");
         sectionListElement.setAttribute('data-id', articles[i].section_id);
         sectionListElement.setAttribute('class', 'list-element--item');
@@ -285,22 +283,13 @@ function fetchSections(id){
         sectionListElementLink.appendChild(articleName);
 
         document.querySelector('#promotedArticlesList').appendChild(sectionListElement);
-
-
-        createSection(sections);
-
-
       }
     }
-
-
-
+    createSection(sections);
   }
 
 
-
-
-
+  //STARTS HERE
   function getData() {
     let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
     let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
