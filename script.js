@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const articles = articlesResponse.articles;
     const sections = sectionsResponse.sections;
-    // console.log(sections);
+    console.log(sections);
 
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
