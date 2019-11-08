@@ -280,8 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //STARTS HERE
   function getData() {
-    let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json");
-    let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
+    let articlesCall = fetch("https://audiopartnership.zendesk.com/api/v2/help_center/en-us/articles.json");
+    let sectionsCall = fetch("https://audiopartnership.zendesk.com/api/v2/help_center/en-us/sections.json");
 
     Promise.all([articlesCall, sectionsCall])
         .then(values => Promise.all(values.map(value => value.json())))
