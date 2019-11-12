@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             breadcrumb.setAttribute('id', 'breadcrumbsWrapper');
             const sectionLink = document.createElement("a");
             sectionLink.setAttribute('href', result.html_url);
-            sectionLink.setAttribute('class', 'recent-activity-item-parent');
+            sectionLink.setAttribute('class', 'breadcrumb-element breadcrumb-category');
             breadcrumb.appendChild(sectionLink);
             const sectionName = document.createTextNode(result.name);
             sectionLink.appendChild(sectionName);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const sectionLink = document.createElement("a");
             sectionLink.setAttribute('href', result.html_url);
-            sectionLink.setAttribute('class', 'recent-activity-item-parent');
+            sectionLink.setAttribute('class', 'breadcrumb-element breadcrumb-category');
             const sectionName = document.createTextNode(result.name);
             sectionLink.appendChild(sectionName);
             breadcrumb[i].appendChild(sectionLink);
