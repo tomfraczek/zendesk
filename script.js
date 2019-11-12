@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             for(let i = 1; i < data.page_count + 1; i++){
 
-                let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page='+ i +'&per_page=100';
+                let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json?page='+ i +'&per_page=100';
                 fetch(url)
                     .then((resp) => resp.json()) // Transform the data into json
                     .then(function(data) {
@@ -122,13 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getSections(){
         let sections = [];
-        let url = 'https://audiopartnership1571922554.com/api/v2/help_center/en-us/sections.json?page=1&per_page=100';
+        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json?page=1&per_page=100';
         fetch(url)
             .then((resp) => resp.json()) // Transform the data into json
             .then(function(data) {
                 if(data.page_count > 1){
                     for(let i = 1; i < data.page_count + 1; i++){
-                        let url = 'https://audiopartnership1571922554.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
+                        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
                         fetch(url)
                             .then((resp) => resp.json()) // Transform the data into json
                             .then(function(data) {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getCategories(){
         let categories = [];
-        let url = 'https://audiopartnership1571922554.com/api/v2/help_center/en-us/categories.json?page=1&per_page=100';
+        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories.json?page=1&per_page=100';
         fetch(url)
             .then((resp) => resp.json()) // Transform the data into json
             .then(function(data) {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(data.page_count > 1){
                     for(let i = 2; i < data.page_count; i++){
 
-                        let url = 'https://audiopartnership1571922554.com/api/v2/help_center/en-us/categories.json?page='+ i +'&per_page=100';
+                        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories.json?page='+ i +'&per_page=100';
                         fetch(url)
                             .then((resp) => resp.json()) // Transform the data into json
                             .then(function(data) {
@@ -208,8 +208,8 @@ document.addEventListener('DOMContentLoaded', function() {
         articleContainer.appendChild(sectionList);
         // console.log(document.querySelector('#promotedArticlesList'));
 
-        let articlesCall = fetch("https://audiopartnership1571922554.com/api/v2/help_center/en-us/articles.json?page=1&per_page=100");
-        let sectionsCall = fetch("https://audiopartnership1571922554.com/api/v2/help_center/en-us/sections.json");
+        let articlesCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json?page=1&per_page=100");
+        let sectionsCall = fetch("https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json");
 
 
         Promise.all([articlesCall, sectionsCall])
