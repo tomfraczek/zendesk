@@ -1,261 +1,194 @@
-document.addEventListener('DOMContentLoaded', function() {
-  function closest (element, selector) {
-    if (Element.prototype.closest) {
-      return element.closest(selector);
-    }
-    do {
-      if (Element.prototype.matches && element.matches(selector)
-          || Element.prototype.msMatchesSelector && element.msMatchesSelector(selector)
-          || Element.prototype.webkitMatchesSelector && element.webkitMatchesSelector(selector)) {
-        return element;
-      }
-      element = element.parentElement || element.parentNode;
-    } while (element !== null && element.nodeType === 1);
-    return null;
-  }
-
-  // social share popups
-  Array.prototype.forEach.call(document.querySelectorAll('.share a'), function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.open(this.href, '', 'height = 500, width = 500');
-    });
-  });
-
-  // In some cases we should preserve focus after page reload
-  function saveFocus() {
-    var activeElementId = document.activeElement.getAttribute("id");
-    sessionStorage.setItem('returnFocusTo', '#' + activeElementId);
-  }
-  var returnFocusTo = sessionStorage.getItem('returnFocusTo');
-  if (returnFocusTo) {
-    sessionStorage.removeItem('returnFocusTo');
-    var returnFocusToEl = document.querySelector(returnFocusTo);
-    returnFocusToEl && returnFocusToEl.focus && returnFocusToEl.focus();
-  }
-
-  // show form controls when the textarea receives focus or backbutton is used and value exists
-  var commentContainerTextarea = document.querySelector('.comment-container textarea'),
-      commentContainerFormControls = document.querySelector('.comment-form-controls, .comment-ccs');
-
-  if (commentContainerTextarea) {
-    commentContainerTextarea.addEventListener('focus', function focusCommentContainerTextarea() {
-      commentContainerFormControls.style.display = 'block';
-      commentContainerTextarea.removeEventListener('focus', focusCommentContainerTextarea);
-    });
-
-    if (commentContainerTextarea.value !== '') {
-      commentContainerFormControls.style.display = 'block';
-    }
-  }
-
-  // Expand Request comment form when Add to conversation is clicked
-  var showRequestCommentContainerTrigger = document.querySelector('.request-container .comment-container .comment-show-container'),
-      requestCommentFields = document.querySelectorAll('.request-container .comment-container .comment-fields'),
-      requestCommentSubmit = document.querySelector('.request-container .comment-container .request-submit-comment');
-
-  if (showRequestCommentContainerTrigger) {
-    showRequestCommentContainerTrigger.addEventListener('click', function() {
-      showRequestCommentContainerTrigger.style.display = 'none';
-      Array.prototype.forEach.call(requestCommentFields, function(e) { e.style.display = 'block'; });
-      requestCommentSubmit.style.display = 'inline-block';
-
-      if (commentContainerTextarea) {
-        commentContainerTextarea.focus();
-      }
-    });
-  }
-
-  // Mark as solved button
-  var requestMarkAsSolvedButton = document.querySelector('.request-container .mark-as-solved:not([data-disabled])'),
-      requestMarkAsSolvedCheckbox = document.querySelector('.request-container .comment-container input[type=checkbox]'),
-      requestCommentSubmitButton = document.querySelector('.request-container .comment-container input[type=submit]');
-
-  if (requestMarkAsSolvedButton) {
-    requestMarkAsSolvedButton.addEventListener('click', function () {
-      requestMarkAsSolvedCheckbox.setAttribute('checked', true);
-      requestCommentSubmitButton.disabled = true;
-      this.setAttribute('data-disabled', true);
-      // Element.closest is not supported in IE11
-      closest(this, 'form').submit();
-    });
-  }
-
-  // Change Mark as solved text according to whether comment is filled
-  var requestCommentTextarea = document.querySelector('.request-container .comment-container textarea');
-
-  if (requestCommentTextarea) {
-    requestCommentTextarea.addEventListener('input', function() {
-      if (requestCommentTextarea.value === '') {
-        if (requestMarkAsSolvedButton) {
-          requestMarkAsSolvedButton.innerText = requestMarkAsSolvedButton.getAttribute('data-solve-translation');
-        }
-        requestCommentSubmitButton.disabled = true;
-      } else {
-        if (requestMarkAsSolvedButton) {
-          requestMarkAsSolvedButton.innerText = requestMarkAsSolvedButton.getAttribute('data-solve-and-submit-translation');
-        }
-        requestCommentSubmitButton.disabled = false;
-      }
-    });
-  }
-
-  // Disable submit button if textarea is empty
-  if (requestCommentTextarea && requestCommentTextarea.value === '') {
-    requestCommentSubmitButton.disabled = true;
-  }
-
-  // Submit requests filter form on status or organization change in the request list page
-  Array.prototype.forEach.call(document.querySelectorAll('#request-status-select, #request-organization-select'), function(el) {
-    el.addEventListener('change', function(e) {
-      e.stopPropagation();
-      saveFocus();
-      closest(this, 'form').submit();
-    });
-  });
-
-  // Submit requests filter form on search in the request list page
-  var quickSearch = document.querySelector('#quick-search');
-  quickSearch && quickSearch.addEventListener('keyup', function(e) {
-    if (e.keyCode === 13) { // Enter key
-      e.stopPropagation();
-      saveFocus();
-      closest(this, 'form').submit();
-    }
-  });
-
-  function toggleNavigation(toggle, menu) {
-    var isExpanded = menu.getAttribute('aria-expanded') === 'true';
-    menu.setAttribute('aria-expanded', !isExpanded);
-    toggle.setAttribute('aria-expanded', !isExpanded);
-  }
-
-  function closeNavigation(toggle, menu) {
-    menu.setAttribute('aria-expanded', false);
-    toggle.setAttribute('aria-expanded', false);
-    toggle.focus();
-  }
-
-  var burgerMenu = document.querySelector('.header .menu-button');
-  var userMenu = document.querySelector('#user-nav');
-
-  burgerMenu.addEventListener('click', function(e) {
-    e.stopPropagation();
-    toggleNavigation(this, userMenu);
-  });
 
 
-  userMenu.addEventListener('keyup', function(e) {
-    if (e.keyCode === 27) { // Escape key
-      e.stopPropagation();
-      closeNavigation(burgerMenu, this);
-    }
-  });
+function showPromotedArticles(){
+    const spinner = document.querySelector('#spinner');
+    const promoContainer = document.querySelector('#promotedArticles');
 
-  if (userMenu.children.length === 0) {
-    burgerMenu.style.display = 'none';
-  }
+    spinner.classList.add('hidden');
+    promoContainer.classList.remove('hidden');
+}
 
-  // Toggles expanded aria to collapsible elements
-  var collapsible = document.querySelectorAll('.collapsible-nav, .collapsible-sidebar');
-
-  Array.prototype.forEach.call(collapsible, function(el) {
-    var toggle = el.querySelector('.collapsible-nav-toggle, .collapsible-sidebar-toggle');
-
-    el.addEventListener('click', function(e) {
-      toggleNavigation(toggle, this);
-    });
-
-    el.addEventListener('keyup', function(e) {
-      if (e.keyCode === 27) { // Escape key
-        closeNavigation(toggle, this);
-      }
-    });
-  });
-
-  // Submit organization form in the request page
-  var requestOrganisationSelect = document.querySelector('#request-organization select');
-
-  if (requestOrganisationSelect) {
-    requestOrganisationSelect.addEventListener('change', function() {
-      closest(this, 'form').submit();
-    });
-  }
-
-  // If a section has more than 6 subsections, we collapse the list, and show a trigger to display them all
-  const seeAllTrigger = document.querySelector("#see-all-sections-trigger");
-  const subsectionsList = document.querySelector(".section-list");
-
-  if (subsectionsList && subsectionsList.children.length > 6) {
-    seeAllTrigger.setAttribute("aria-hidden", false);
-
-    seeAllTrigger.addEventListener("click", function(e) {
-      subsectionsList.classList.remove("section-list--collapsed");
-      seeAllTrigger.parentNode.removeChild(seeAllTrigger);
-    });
-  }
-
-  // If multibrand search has more than 5 help centers or categories collapse the list
-  const multibrandFilterLists = document.querySelectorAll(".multibrand-filter-list");
-  Array.prototype.forEach.call(multibrandFilterLists, function(filter) {
-    if (filter.children.length > 6) {
-      // Display the show more button
-      var trigger = filter.querySelector(".see-all-filters");
-      trigger.setAttribute("aria-hidden", false);
-
-      // Add event handler for click
-      trigger.addEventListener("click", function(e) {
-        e.stopPropagation();
-        trigger.parentNode.removeChild(trigger);
-        filter.classList.remove("multibrand-filter-list--collapsed")
-      })
-    }
-  });
-
-
-
-  function renderArticle(article){
+function articlesDOM (articles){
     const articlesContainer = document.querySelector('#promotedArticlesList');
 
-    for(let i = 0; i < article.length; i++){
-      const sectionListElement = document.createElement("li");
-      sectionListElement.setAttribute('data-id', article[i].section_id);
-      sectionListElement.setAttribute('class', 'list-element--item');
-      const sectionListElementLink = document.createElement("a");
-      sectionListElementLink.setAttribute('class', 'recent-activity-item-link');
-      sectionListElement.appendChild(sectionListElementLink);
-      sectionListElementLink.setAttribute('href', article[i].html_url);
-      const articleName = document.createTextNode(article[i].name);
-      sectionListElementLink.appendChild(articleName);
+    for(let i = 0; i < articles.length; i++) {
 
-      articlesContainer.appendChild(sectionListElement);
+        const sectionListElement = document.createElement("li");
+        sectionListElement.setAttribute('data-id', articles[i].section_id);
+        sectionListElement.setAttribute('class', 'list-element--item');
+        const sectionListElementLink = document.createElement("a");
+        sectionListElementLink.setAttribute('class', 'recent-activity-item-link');
+        sectionListElement.appendChild(sectionListElementLink);
+        sectionListElementLink.setAttribute('href', articles[i].html_url);
+        const articleName = document.createTextNode(articles[i].name);
+        sectionListElementLink.appendChild(articleName);
+
+        articlesContainer.appendChild(sectionListElement);
+
     }
-  };
+}
 
-  function renderSection(section){
+function sectionsDOM(sections){
     const articleListElement = document.querySelectorAll('.list-element--item');
 
     for(let i = 0; i < articleListElement.length; i++){
 
-      let result = section.find(obj => {
-        return obj.id === parseInt(articleListElement[i].dataset.id)
-      });
+        let result = sections.find(obj => {
+            return obj.id === parseInt(articleListElement[i].dataset.id)
+        });
 
-
-      console.log(result);
-      const sectionLink = document.createElement("a");
-      sectionLink.setAttribute('href', result.html_url);
-      sectionLink.setAttribute('class', 'recent-activity-item-parent');
-      const sectionName = document.createTextNode(result.name);
-      sectionLink.appendChild(sectionName);
-      articleListElement[i].appendChild(sectionLink);
+        const sectionLink = document.createElement("a");
+        sectionLink.setAttribute('href', result.html_url);
+        sectionLink.setAttribute('class', 'recent-activity-item-parent');
+        const sectionName = document.createTextNode(result.name);
+        sectionLink.appendChild(sectionName);
+        articleListElement[i].setAttribute('data-category', result.category_id);
+        articleListElement[i].appendChild(sectionLink);
     }
-  };
+}
+
+function categoriesDOM(categories){
+    // console.log(categories);
+    const articleListElement = document.querySelectorAll('.list-element--item');
+
+    for(let i = 0; i < articleListElement.length; i++){
+
+        let result = categories.find(obj => {
+            return obj.id === parseInt(articleListElement[i].dataset.category)
+        });
+
+        const sectionLink = document.createElement("a");
+        sectionLink.setAttribute('href', result.html_url);
+        sectionLink.setAttribute('class', 'recent-activity-item-parent');
+        const sectionName = document.createTextNode(result.name);
+        sectionLink.appendChild(sectionName);
+        articleListElement[i].appendChild(sectionLink);
+
+        if (i === articleListElement.length - 1){
+            showPromotedArticles();
+        }
+    }
+}
 
 
+function getArticles(data){
+    let articles = [];
+    if(data.page_count > 1){
 
-  //STARTS HERE
-  function getData() {
+
+        for(let i = 1; i < data.page_count + 1; i++){
+
+            let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page='+ i +'&per_page=100';
+            fetch(url)
+                .then((resp) => resp.json()) // Transform the data into json
+                .then(function(data) {
+
+                    if(data){
+                        for(let i = 0; i < data.articles.length; i++){
+                            if(data.articles[i].promoted === true){
+                                articles.push(data.articles[i]);
+                            }
+
+                        }
+                        setTimeout(function(){
+                            if (i === data.page_count){
+                                articlesDOM(articles)
+
+                            }},500);
+                    }else{
+
+                    }
+                });
+
+        }
+
+    } else {
+        for(let i = 0; i < data.articles.length; i++){
+            articles.push(data.articles[i]);
+        }
+    }
+}
+
+function getSections(){
+    let sections = [];
+    let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json?page=1&per_page=100';
+    fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {
+            if(data.page_count > 1){
+                for(let i = 1; i < data.page_count + 1; i++){
+                    let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
+                    fetch(url)
+                        .then((resp) => resp.json()) // Transform the data into json
+                        .then(function(data) {
+
+                            for(let i = 0; i < data.sections.length; i++){
+                                sections.push(data.sections[i]);
+                            }
+                            setTimeout(function(){
+                                if (i === data.page_count){
+                                    sectionsDOM(sections)
+                                    getCategories();
+
+                                }},500);
+                        });
+                }
+            } else {
+                for(let i = 0; i < data.sections.length; i++){
+                    sections.push(data.sections[i]);
+                    getCategories();
+                }
+            }
+        });
+
+}
+
+function getCategories(){
+    let categories = [];
+    let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/categories.json?page=1&per_page=100';
+    fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {
+
+            if(data.page_count > 1){
+                for(let i = 2; i < data.page_count; i++){
+
+                    let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/categories.json?page='+ i +'&per_page=100';
+                    fetch(url)
+                        .then((resp) => resp.json()) // Transform the data into json
+                        .then(function(data) {
+                            console.log(data);
+
+                            for(let i = 0; i < data.categories.length; i++){
+                                categories.push(data.categories[i]);
+                            }
+                            setTimeout(function(){
+                                if (i === data.page_count){
+                                    // console.log(categories);
+                                    categoriesDOM(categories);
+
+                                }},500);
+                        });
+                }
+            } else {
+                for(let i = 0; i < data.categories.length; i++){
+                    categories.push(data.categories[i]);
+                    setTimeout(function(){
+                        if (i === data.categories.length - 1){
+                            categoriesDOM(categories);
+
+                        }},500);
+                }
+            }
+        });
+
+}
+
+
+//STARTS HERE
+function getData() {
+
+
     const articleContainer = document.querySelector('#promotedArticles');
     const sectionList = document.createElement("ul");
     sectionList.setAttribute('id', 'promotedArticlesList');
@@ -264,70 +197,25 @@ document.addEventListener('DOMContentLoaded', function() {
     articleContainer.appendChild(sectionList);
     // console.log(document.querySelector('#promotedArticlesList'));
 
-    let articlesCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json");
+    let articlesCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page=1&per_page=100");
     let sectionsCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json");
+
 
     Promise.all([articlesCall, sectionsCall])
         .then(values => Promise.all(values.map(value => value.json())))
         .then(finalVals => {
-          let articlesApiResp = finalVals[0];
-          let sectionsApiResp = finalVals[1];
+
+            let articlesApiResp = finalVals[0];
+            let sectionsApiResp = finalVals[1];
 
 
 
-          articleArr = [];
-          sectionArr = [];
+            getArticles(articlesApiResp);
+            getSections(sectionsApiResp);
 
-
-
-          //get all articles and seperate the promoted ones
-          for(let i = 1; i < articlesApiResp.page_count; i++){
-            let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page='+ i +'';
-            fetch(url)
-                .then((resp) => resp.json()) // Transform the data into json
-                .then(function(data) {
-                  const page = data;
-
-                  for(let i = 0; i < page.per_page; i++){
-                    if(page.articles[i].promoted === true){
-                      // console.log(page.articles[i])
-                      articleArr.push(page.articles[i]);
-                    }
-                  }
-
-                  if (i === articlesApiResp.page_count - 1) {
-                    renderArticle(articleArr)
-                  }
-
-                })
-          }
-
-
-          for(let i = 1; i < sectionsApiResp.page_count; i++){
-            let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json?page='+ i +'';
-            fetch(url)
-                .then((resp) => resp.json()) // Transform the data into json
-                .then(function(data) {
-                  const page = data;
-                  // console.log(page.per_page)
-
-                  for(let i = 0; i < page.per_page; i++){
-                    sectionArr.push(page.sections[i]);
-                  }
-
-                  if (i === sectionsApiResp.page_count - 1) {
-                    renderSection(sectionArr);
-                    // console.log(sectionArr);
-
-                  }
-
-                })
-          }
 
         });
-  }
-
-  getData();
+}
 
 
-});
+getData();
