@@ -1173,6 +1173,12 @@ ul {
   color: #9c9c9c;
 }
 
+.breadcrumbs-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
 .breadcrumbs-wrapper a {
   color: #9c9c9c;
 }
