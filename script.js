@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         if (data) {
                             for (let i = 0; i < data.articles.length; i++) {
-                                if (data.articles[i].promoted === true) {
+                                if (data.articles[i].promoted === true && data.articles[i].draft === false) {
                                     articles.push(data.articles[i]);
                                 }
 
