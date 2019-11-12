@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(data) {
                 if(data.page_count > 1){
                     for(let i = 1; i < data.page_count + 1; i++){
-                        let url = 'audiopartnership1571922554.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
+                        let url = 'https://audiopartnership1571922554.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
                         fetch(url)
                             .then((resp) => resp.json()) // Transform the data into json
                             .then(function(data) {
