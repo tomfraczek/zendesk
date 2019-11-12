@@ -189,7 +189,7 @@ function getCategories(){
 function getData() {
 
 
-    const articleContainer = document.querySelector('#promotedArticles');
+    const articleContainer = document.getElementById('promotedArticles');
     const sectionList = document.createElement("ul");
     sectionList.setAttribute('id', 'promotedArticlesList');
     sectionList.setAttribute('class', 'promoted-articles-list');
