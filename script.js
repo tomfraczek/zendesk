@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if(result === undefined){
+                document.querySelector('#promotedArticlesList').innerHTML = "";
                 getData();
             }
 
