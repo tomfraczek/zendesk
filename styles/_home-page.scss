@@ -159,6 +159,10 @@
 // Spinner
 //////////////////////
 
+.lds-css{
+  margin:auto;
+}
+
 @keyframes lds-spinner {
   0% {
     opacity: 1;
