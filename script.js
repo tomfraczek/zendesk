@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 
-
     function showPromotedArticles(){
         const spinner = document.querySelector('#spinner');
         const promoContainer = document.querySelector('#promotedArticles');
@@ -44,12 +43,17 @@ document.addEventListener('DOMContentLoaded', function() {
             breadcrumb.setAttribute('id', 'breadcrumbsWrapper');
             const sectionLink = document.createElement("a");
             sectionLink.setAttribute('href', result.html_url);
-            sectionLink.setAttribute('class', 'breadcrumb-item breadcrumb-section');
+            sectionLink.setAttribute('class', 'recent-activity-item-parent');
             breadcrumb.appendChild(sectionLink);
             const sectionName = document.createTextNode(result.name);
             sectionLink.appendChild(sectionName);
             articleListElement[i].setAttribute('data-category', result.category_id);
             articleListElement[i].appendChild(breadcrumb);
+            const arrowWrapper = document.createElement("span");
+            arrowWrapper.setAttribute('class', 'arrow-separator');
+            const arrow = document.createTextNode('>');
+            arrowWrapper.appendChild(arrow);
+            breadcrumb.appendChild(arrowWrapper);
         }
     }
 
@@ -64,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const sectionLink = document.createElement("a");
             sectionLink.setAttribute('href', result.html_url);
-            sectionLink.setAttribute('class', 'breadcrumb-item breadcrumb-category');
+            sectionLink.setAttribute('class', 'recent-activity-item-parent');
             const sectionName = document.createTextNode(result.name);
             sectionLink.appendChild(sectionName);
             breadcrumb[i].appendChild(sectionLink);
