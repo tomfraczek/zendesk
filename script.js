@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    function showPromotedArticles() {
+
+
+    function showPromotedArticles(){
         const spinner = document.querySelector('#spinner');
         const promoContainer = document.querySelector('#promotedArticles');
 
@@ -8,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         promoContainer.classList.remove('hidden');
     }
 
-    function articlesDOM(articles) {
+    function articlesDOM (articles){
         const articlesContainer = document.querySelector('#promotedArticlesList');
 
-        for (let i = 0; i < articles.length; i++) {
+        for(let i = 0; i < articles.length; i++) {
 
             const sectionListElement = document.createElement("li");
             sectionListElement.setAttribute('data-id', articles[i].section_id);
@@ -28,30 +30,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function sectionsDOM(sections) {
+    function sectionsDOM(sections){
         const articleListElement = document.querySelectorAll('.list-element--item');
 
-        for (let i = 0; i < articleListElement.length; i++) {
+        for(let i = 0; i < articleListElement.length; i++){
 
             let result = sections.find(obj => {
                 return obj.id === parseInt(articleListElement[i].dataset.id)
             });
 
+            const breadcrumb = document.createElement("div");
+            breadcrumb.setAttribute('class', 'breadcrumbs-wrapper');
+            breadcrumb.setAttribute('id', 'breadcrumbsWrapper');
             const sectionLink = document.createElement("a");
             sectionLink.setAttribute('href', result.html_url);
             sectionLink.setAttribute('class', 'recent-activity-item-parent');
+            breadcrumb.appendChild(sectionLink);
             const sectionName = document.createTextNode(result.name);
             sectionLink.appendChild(sectionName);
             articleListElement[i].setAttribute('data-category', result.category_id);
-            articleListElement[i].appendChild(sectionLink);
+            articleListElement[i].appendChild(breadcrumb);
         }
     }
 
-    function categoriesDOM(categories) {
-        // console.log(categories);
+    function categoriesDOM(categories){
         const articleListElement = document.querySelectorAll('.list-element--item');
-
-        for (let i = 0; i < articleListElement.length; i++) {
+        const breadcrumb = document.querySelectorAll('.breadcrumbs-wrapper');
+        for(let i = 0; i < breadcrumb.length; i++){
 
             let result = categories.find(obj => {
                 return obj.id === parseInt(articleListElement[i].dataset.category)
@@ -62,41 +67,42 @@ document.addEventListener('DOMContentLoaded', function() {
             sectionLink.setAttribute('class', 'recent-activity-item-parent');
             const sectionName = document.createTextNode(result.name);
             sectionLink.appendChild(sectionName);
-            articleListElement[i].appendChild(sectionLink);
+            breadcrumb[i].appendChild(sectionLink);
 
-            if (i === articleListElement.length - 1) {
+
+            if (i === breadcrumb.length - 1){
                 showPromotedArticles();
             }
         }
     }
 
 
-    function getArticles(data) {
+    function getArticles(data){
         let articles = [];
-        if (data.page_count > 1) {
+        if(data.page_count > 1){
 
 
-            for (let i = 1; i < data.page_count + 1; i++) {
+            for(let i = 1; i < data.page_count + 1; i++){
 
-                let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page=' + i + '&per_page=100';
+                let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page='+ i +'&per_page=100';
                 fetch(url)
                     .then((resp) => resp.json()) // Transform the data into json
-                    .then(function (data) {
+                    .then(function(data) {
 
-                        if (data) {
-                            for (let i = 0; i < data.articles.length; i++) {
-                                if (data.articles[i].promoted === true && data.articles[i].draft === false) {
+                        if(data){
+                            for(let i = 0; i < data.articles.length; i++){
+                                if(data.articles[i].promoted === true && data.articles[i].draft === false){
                                     articles.push(data.articles[i]);
+                                    console.log(data.articles[i]);
                                 }
 
                             }
-                            setTimeout(function () {
-                                if (i === data.page_count) {
+                            setTimeout(function(){
+                                if (i === data.page_count){
                                     articlesDOM(articles)
 
-                                }
-                            }, 500);
-                        } else {
+                                }},500);
+                        }else{
 
                         }
                     });
@@ -104,39 +110,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
         } else {
-            for (let i = 0; i < data.articles.length; i++) {
+            for(let i = 0; i < data.articles.length; i++){
                 articles.push(data.articles[i]);
             }
         }
     }
 
-    function getSections() {
+    function getSections(){
         let sections = [];
         let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json?page=1&per_page=100';
         fetch(url)
             .then((resp) => resp.json()) // Transform the data into json
-            .then(function (data) {
-                if (data.page_count > 1) {
-                    for (let i = 1; i < data.page_count + 1; i++) {
-                        let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json?page=' + i + '&per_page=100';
+            .then(function(data) {
+                if(data.page_count > 1){
+                    for(let i = 1; i < data.page_count + 1; i++){
+                        let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
                         fetch(url)
                             .then((resp) => resp.json()) // Transform the data into json
-                            .then(function (data) {
+                            .then(function(data) {
 
-                                for (let i = 0; i < data.sections.length; i++) {
+                                for(let i = 0; i < data.sections.length; i++){
                                     sections.push(data.sections[i]);
                                 }
-                                setTimeout(function () {
-                                    if (i === data.page_count) {
+                                setTimeout(function(){
+                                    if (i === data.page_count){
                                         sectionsDOM(sections)
                                         getCategories();
 
-                                    }
-                                }, 500);
+                                    }},500);
                             });
                     }
                 } else {
-                    for (let i = 0; i < data.sections.length; i++) {
+                    for(let i = 0; i < data.sections.length; i++){
                         sections.push(data.sections[i]);
                         getCategories();
                     }
@@ -145,43 +150,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    function getCategories() {
+    function getCategories(){
         let categories = [];
         let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/categories.json?page=1&per_page=100';
         fetch(url)
             .then((resp) => resp.json()) // Transform the data into json
-            .then(function (data) {
+            .then(function(data) {
 
-                if (data.page_count > 1) {
-                    for (let i = 2; i < data.page_count; i++) {
+                if(data.page_count > 1){
+                    for(let i = 2; i < data.page_count; i++){
 
-                        let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/categories.json?page=' + i + '&per_page=100';
+                        let url = 'https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/categories.json?page='+ i +'&per_page=100';
                         fetch(url)
                             .then((resp) => resp.json()) // Transform the data into json
-                            .then(function (data) {
+                            .then(function(data) {
                                 console.log(data);
 
-                                for (let i = 0; i < data.categories.length; i++) {
+                                for(let i = 0; i < data.categories.length; i++){
                                     categories.push(data.categories[i]);
                                 }
-                                setTimeout(function () {
-                                    if (i === data.page_count) {
+                                setTimeout(function(){
+                                    if (i === data.page_count){
                                         // console.log(categories);
                                         categoriesDOM(categories);
 
-                                    }
-                                }, 500);
+                                    }},500);
                             });
                     }
                 } else {
-                    for (let i = 0; i < data.categories.length; i++) {
+                    for(let i = 0; i < data.categories.length; i++){
                         categories.push(data.categories[i]);
-                        setTimeout(function () {
-                            if (i === data.categories.length - 1) {
+                        setTimeout(function(){
+                            if (i === data.categories.length - 1){
                                 categoriesDOM(categories);
 
-                            }
-                        }, 500);
+                            }},500);
                     }
                 }
             });
@@ -189,11 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    //STARTS HERE
+//STARTS HERE
     function getData() {
 
 
-        const articleContainer = document.getElementById('promotedArticles');
+        const articleContainer = document.querySelector('#promotedArticles');
         const sectionList = document.createElement("ul");
         sectionList.setAttribute('id', 'promotedArticlesList');
         sectionList.setAttribute('class', 'promoted-articles-list');
@@ -211,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 let articlesApiResp = finalVals[0];
                 let sectionsApiResp = finalVals[1];
+
 
 
                 getArticles(articlesApiResp);
