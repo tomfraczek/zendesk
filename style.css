@@ -1140,6 +1140,7 @@ ul {
 
 .recent-activity-item-parent {
   font-size: 14px !important;
+  color: #9c9c9c;
 }
 
 .recent-activity-item-link {
@@ -1148,7 +1149,7 @@ ul {
 
 .list-element--item {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   border-bottom: 1px solid #ddd;
   overflow: auto;
   padding: 20px 0;
@@ -1181,6 +1182,7 @@ ul {
 
 .breadcrumbs-wrapper a {
   color: #9c9c9c;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
 .lds-css {
