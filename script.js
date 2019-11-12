@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return obj.id === parseInt(articleListElement[i].dataset.id)
             });
 
+            if(result === undefined){
+                getData();
+            }
+
             const breadcrumb = document.createElement("div");
             breadcrumb.setAttribute('class', 'breadcrumbs-wrapper');
             breadcrumb.setAttribute('id', 'breadcrumbsWrapper');
