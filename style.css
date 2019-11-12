@@ -1105,17 +1105,12 @@ ul {
 }
 
 .homepage--top__article {
-  margin-bottom: 55px;
+  margin-bottom: 25px;
   padding-bottom: 15px;
 }
 
 .homepage--top__article p {
   font-size: 18px;
-}
-
-.homepage--top__article p:last-of-type {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 25px;
 }
 
 .homepage--bottom__article {
@@ -1154,6 +1149,10 @@ ul {
   border-bottom: 1px solid #ddd;
   overflow: auto;
   padding: 20px 0;
+}
+
+.list-element--item:last-of-type {
+  border-bottom: none;
 }
 
 .featured-title {
