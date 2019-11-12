@@ -1168,6 +1168,14 @@ ul {
   display: none !important;
 }
 
+.arrow-separator {
+  margin: 0 10px;
+}
+
+.breadcrumbs-wrapper a {
+  color: #9c9c9c;
+}
+
 @keyframes lds-spinner {
   0% {
     opacity: 1;
