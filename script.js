@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const articlesOrder = articles.sort(byDate);
 
+        console.log(articlesOrder);
+
         const articlesContainer = document.querySelector('#promotedArticlesList');
 
         for(let i = 0; i < articlesOrder.length; i++) {
