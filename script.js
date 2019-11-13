@@ -10,18 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function articlesDOM (articles){
+
+        function byDate (a, b) {
+            if (a.updated_at > b.updated_at) return -1;
+            if (a.updated_at < b.updated_at) return 1;
+            return 0;
+        }
+
+        const articlesOrder = articles.sort(byDate);
+
         const articlesContainer = document.querySelector('#promotedArticlesList');
 
-        for(let i = 0; i < articles.length; i++) {
+        for(let i = 0; i < articlesOrder.length; i++) {
 
             const sectionListElement = document.createElement("li");
-            sectionListElement.setAttribute('data-id', articles[i].section_id);
+            sectionListElement.setAttribute('data-id', articlesOrder[i].section_id);
             sectionListElement.setAttribute('class', 'list-element--item');
             const sectionListElementLink = document.createElement("a");
             sectionListElementLink.setAttribute('class', 'recent-activity-item-link');
             sectionListElement.appendChild(sectionListElementLink);
-            sectionListElementLink.setAttribute('href', articles[i].html_url);
-            const articleName = document.createTextNode(articles[i].name);
+            sectionListElementLink.setAttribute('href', articlesOrder[i].html_url);
+            const articleName = document.createTextNode(articlesOrder[i].name);
             sectionListElementLink.appendChild(articleName);
 
             articlesContainer.appendChild(sectionListElement);
@@ -87,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function getArticles(data){
+
         let articles = [];
         if(data.page_count > 1){
 
@@ -102,12 +112,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             for(let i = 0; i < data.articles.length; i++){
                                 if(data.articles[i].promoted === true && data.articles[i].draft === false){
                                     articles.push(data.articles[i]);
-                                    console.log(data.articles[i]);
                                 }
 
                             }
                             setTimeout(function(){
                                 if (i === data.page_count){
+                                    articles.sort(function (a, b) {
+                                        return new Date(a.vote_count) - new Date(b.vote_count)
+                                    });
                                     articlesDOM(articles)
 
                                 }},500);
