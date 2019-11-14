@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spinner.classList.add('hidden');
         promoContainer.classList.remove('hidden');
         articlesContainer.classList.remove('hidden');
+        recentActivityPagination();
     }
 
     function recentActivityDOM(recentActivity){
@@ -130,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 getData();
             }
         }
-        recentActivityPagination();
     }
 
     function categoriesDOM(categories){
