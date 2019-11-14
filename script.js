@@ -170,11 +170,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             for(let i = 0; i < data.articles.length; i++){
                                 if(data.articles[i].promoted === true && data.articles[i].draft === false){
                                     promotedArticles.push(data.articles[i]);
-                                } else {
-                                    recentActivity.push(data.articles[i]);
                                 }
-
+                                recentActivity.push(data.articles[i]);
                             }
+
                             setTimeout(function(){
                                 if (i === data.page_count){
                                     articlesDOM(promotedArticles);
