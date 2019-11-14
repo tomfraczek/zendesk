@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                 }},500);
                         }else{
-
+                            console.log('error 188')
                         }
                     });
 
