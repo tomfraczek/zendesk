@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let articlesContainer = document.querySelector('#recentActivity');
         let moreButton = document.querySelector('#more');
 
-        // console.log();
-
         if(articlesContainer.getElementsByTagName("li").length > 10){
             let articlesContainer = document.querySelector('#recentActivity');
             articlesContainer.setAttribute('style', 'height:870px; overflow: hidden;');
@@ -27,14 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
     function showPromotedArticles(){
         const spinner = document.querySelector('#spinner');
-        const promoContainer = document.querySelector('#promotedArticles');
-        let articlesContainer = document.querySelector('#recentActivity');
+        let articlesContainer = document.querySelector('#articlesContent');
 
         spinner.classList.add('hidden');
-        promoContainer.classList.remove('hidden');
         articlesContainer.classList.remove('hidden');
         recentActivityPagination();
     }
@@ -298,7 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 let articlesApiResp = finalVals[0];
                 let sectionsApiResp = finalVals[1];
-
 
 
                 getArticles(articlesApiResp);
