@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         Promise.all([articlesCall, sectionsCall])
-            .then(values => Promise.all(values.map(value => value.json())))
+            .then(values ? values => Promise.all(values.map(value => value.json())) : getData())
             .then(finalVals => {
 
                 let articlesApiResp = finalVals[0];
