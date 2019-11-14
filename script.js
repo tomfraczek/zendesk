@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(articlesOrder){
 
+            console.log(articlesOrder);
+
             for(let i = 0; i < articlesOrder.length; i++) {
 
                 if(articlesOrder){
