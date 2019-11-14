@@ -540,6 +540,10 @@ ul {
   letter-spacing: 2px;
 }
 
+.nav-wrapper a.login:hover {
+  background: none;
+}
+
 .nav-wrapper .menu-button {
   background: none;
   border: 0;

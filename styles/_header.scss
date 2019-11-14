@@ -99,6 +99,10 @@ $header-height: 71px;
       padding: 20px 10px;
       border-radius: 0;
       letter-spacing: 2px;
+
+      &:hover{
+        background: none;
+      }
     }
   }
 
