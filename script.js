@@ -31,9 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function showPromotedArticles(){
         const spinner = document.querySelector('#spinner');
         const promoContainer = document.querySelector('#promotedArticles');
+        let articlesContainer = document.querySelector('#recentActivity');
 
         spinner.classList.add('hidden');
         promoContainer.classList.remove('hidden');
+        articlesContainer.classList.remove('hidden');
     }
 
     function recentActivityDOM(recentActivity){
