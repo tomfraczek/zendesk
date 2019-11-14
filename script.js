@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(articlesContainer.getElementsByTagName("li").length > 10){
             let articlesContainer = document.querySelector('#recentActivity');
-            let fullHight = articlesContainer.clientHeight;
             articlesContainer.setAttribute('style', 'height:870px; overflow: hidden;');
             moreButton.classList.remove('hidden');
             moreButton.addEventListener('click', showMorePager);
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
         }
-        recentActivityPagination();
     }
 
     function articlesDOM (articles){
@@ -130,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 getData();
             }
         }
+        recentActivityPagination();
     }
 
     function categoriesDOM(categories){
