@@ -136,6 +136,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 22px;
+  margin-top:55px;
 }
 
 .promoted-articles-list{
@@ -161,8 +162,7 @@
   }
 }
 
-.see-more,
-.see-more:focus{
+.see-more{
   background: none;
   border: none;
   margin-top: 10px;
@@ -171,6 +171,12 @@
   &:hover{
     text-decoration: underline;
   }
+}
+
+.see-more:focus,
+.see-more:visited,
+.see-more:active{
+  background: none;
 }
 
 
