@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return 0;
     }
 
-    function showMorePager(fullHight){
-        console.log(fullHight);
+    function showMorePager(e){
+        e.preventDefault();
         let articlesContainer = document.querySelector('#recentActivity');
         let containerHeight = articlesContainer.clientHeight;
         articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 870) +'px; overflow: hidden;');
@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         spinner.classList.add('hidden');
         promoContainer.classList.remove('hidden');
-
-        recentActivityPagination();
     }
 
     function recentActivityDOM(recentActivity){
@@ -69,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
         }
+        recentActivityPagination();
     }
 
     function articlesDOM (articles){
@@ -101,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function sectionsDOM(sections){
         const articleListElement = document.querySelectorAll('.list-element--item');
+        const articlesContainer = document.querySelector('#promotedArticlesList');
 
         for(let i = 0; i < articleListElement.length; i++){
 
@@ -108,22 +108,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 return obj.id === parseInt(articleListElement[i].dataset.id)
             });
 
-            const breadcrumb = document.createElement("div");
-            breadcrumb.setAttribute('class', 'breadcrumbs-wrapper');
-            breadcrumb.setAttribute('id', 'breadcrumbsWrapper');
-            const sectionLink = document.createElement("a");
-            sectionLink.setAttribute('href', result.html_url);
-            sectionLink.setAttribute('class', 'breadcrumb-element breadcrumb-category');
-            breadcrumb.appendChild(sectionLink);
-            const sectionName = document.createTextNode(result.name);
-            sectionLink.appendChild(sectionName);
-            articleListElement[i].setAttribute('data-category', result.category_id);
-            articleListElement[i].appendChild(breadcrumb);
-            const arrowWrapper = document.createElement("span");
-            arrowWrapper.setAttribute('class', 'arrow-separator');
-            const arrow = document.createTextNode('>');
-            arrowWrapper.appendChild(arrow);
-            breadcrumb.appendChild(arrowWrapper);
+            if(result){
+                const breadcrumb = document.createElement("div");
+                breadcrumb.setAttribute('class', 'breadcrumbs-wrapper');
+                breadcrumb.setAttribute('id', 'breadcrumbsWrapper');
+                const sectionLink = document.createElement("a");
+                sectionLink.setAttribute('href', result.html_url);
+                sectionLink.setAttribute('class', 'breadcrumb-element breadcrumb-category');
+                breadcrumb.appendChild(sectionLink);
+                const sectionName = document.createTextNode(result.name);
+                sectionLink.appendChild(sectionName);
+                articleListElement[i].setAttribute('data-category', result.category_id);
+                articleListElement[i].appendChild(breadcrumb);
+                const arrowWrapper = document.createElement("span");
+                arrowWrapper.setAttribute('class', 'arrow-separator');
+                const arrow = document.createTextNode('>');
+                arrowWrapper.appendChild(arrow);
+                breadcrumb.appendChild(arrowWrapper);
+            } else {
+                articlesContainer.innerHTML = '';
+                getData();
+            }
         }
     }
 
