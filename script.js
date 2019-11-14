@@ -6,16 +6,41 @@ document.addEventListener('DOMContentLoaded', function() {
         return 0;
     }
 
+    function showMorePager(fullHight){
+        console.log(fullHight);
+        let articlesContainer = document.querySelector('#recentActivity');
+        let containerHeight = articlesContainer.clientHeight;
+        articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 870) +'px; overflow: hidden;');
+    }
+
+    function recentActivityPagination(){
+        let articlesContainer = document.querySelector('#recentActivity');
+        let moreButton = document.querySelector('#more');
+
+        // console.log();
+
+        if(articlesContainer.getElementsByTagName("li").length > 10){
+            let articlesContainer = document.querySelector('#recentActivity');
+            let fullHight = articlesContainer.clientHeight;
+            articlesContainer.setAttribute('style', 'height:870px; overflow: hidden;');
+            moreButton.classList.remove('hidden');
+            moreButton.addEventListener('click', showMorePager);
+        }
+    }
+
+
     function showPromotedArticles(){
         const spinner = document.querySelector('#spinner');
         const promoContainer = document.querySelector('#promotedArticles');
 
         spinner.classList.add('hidden');
         promoContainer.classList.remove('hidden');
+
+        recentActivityPagination();
     }
 
     function recentActivityDOM(recentActivity){
-        console.log(recentActivity);
+        // console.log(recentActivity);
 
         let articlesContainer = document.querySelector('#recentActivity');
         const articlesOrder = recentActivity.sort(byDate);
@@ -128,8 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getArticles(data){
 
-        console.log('getArticles data' + data);
-
         let promotedArticles = [];
         let recentActivity = [];
         if(data.page_count > 1){
@@ -141,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch(url)
                     .then((resp) => resp.json()) // Transform the data into json
                     .then(function(data) {
-                        console.log('getArticles fetch data' + data);
+
                         if(data){
                             for(let i = 0; i < data.articles.length; i++){
                                 if(data.articles[i].promoted === true && data.articles[i].draft === false){
@@ -153,8 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                             setTimeout(function(){
                                 if (i === data.page_count){
-                                    console.log('promotedArticles data' + promotedArticles);
-                                    console.log('recentActivity data' + recentActivity);
                                     articlesDOM(promotedArticles);
                                     recentActivityDOM(recentActivity);
 
@@ -272,8 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 let articlesApiResp = finalVals[0];
                 let sectionsApiResp = finalVals[1];
 
-                console.log('get data articlesApiResp' + articlesApiResp);
-                console.log('get data sectionsApiResp' + sectionsApiResp);
+
 
                 getArticles(articlesApiResp);
                 getSections(sectionsApiResp);
