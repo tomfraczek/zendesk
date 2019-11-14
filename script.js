@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         let articlesContainer = document.querySelector('#recentActivity');
         let containerHeight = articlesContainer.clientHeight;
-        articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 870) +'px; overflow: hidden;');
+        articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 435) +'px; overflow: hidden;');
     }
 
     function recentActivityPagination(){
         let articlesContainer = document.querySelector('#recentActivity');
         let moreButton = document.querySelector('#more');
 
-        if(articlesContainer.getElementsByTagName("li").length > 10){
+        if(articlesContainer.getElementsByTagName("li").length > 5){
             let articlesContainer = document.querySelector('#recentActivity');
-            articlesContainer.setAttribute('style', 'height:870px; overflow: hidden;');
+            articlesContainer.setAttribute('style', 'height:435px; overflow: hidden;');
             moreButton.classList.remove('hidden');
             moreButton.addEventListener('click', showMorePager);
         }
