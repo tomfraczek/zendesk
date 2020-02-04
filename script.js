@@ -274,33 +274,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //STARTS HERE
     function getData() {
-
-
         const articleContainer = document.querySelector('#promotedArticles');
         const sectionList = document.createElement("ul");
-        sectionList.setAttribute('id', 'promotedArticlesList');
-        sectionList.setAttribute('class', 'promoted-articles-list');
 
-        articleContainer.appendChild(sectionList);
-        // console.log(document.querySelector('#promotedArticlesList'));
+        if(articleContainer){
+            sectionList.setAttribute('id', 'promotedArticlesList');
+            sectionList.setAttribute('class', 'promoted-articles-list');
 
-        let articlesCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page=1&per_page=100");
-        let sectionsCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json");
+            articleContainer.appendChild(sectionList);
 
+            // console.log(document.querySelector('#promotedArticlesList'));
 
-        Promise.all([articlesCall, sectionsCall])
-            .then(values => Promise.all(values ? values.map(value => value.json()) : getData()))
-            .then(finalVals => {
-
-                let articlesApiResp = finalVals[0];
-                let sectionsApiResp = finalVals[1];
+            let articlesCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/articles.json?page=1&per_page=100");
+            let sectionsCall = fetch("https://techsupport.cambridgeaudio.com/api/v2/help_center/en-us/sections.json");
 
 
-                getArticles(articlesApiResp);
-                getSections(sectionsApiResp);
+            Promise.all([articlesCall, sectionsCall])
+                .then(values => Promise.all(values ? values.map(value => value.json()) : getData()))
+                .then(finalVals => {
+
+                    let articlesApiResp = finalVals[0];
+                    let sectionsApiResp = finalVals[1];
 
 
-            });
+                    getArticles(articlesApiResp);
+                    getSections(sectionsApiResp);
+
+
+                });
+        }
+
+
+
     }
 
 
