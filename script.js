@@ -200,6 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function getData() {
         const articleContainer = document.querySelector('#promotedArticles');
 
+        console.log(articleContainer);
+
         if(articleContainer){
 
             const sectionList = document.createElement("ul");
