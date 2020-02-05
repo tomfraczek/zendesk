@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    console.log('js is on')
+
     function byDate (a, b) {
         if (a.updated_at > b.updated_at) return -1;
         if (a.updated_at < b.updated_at) return 1;
