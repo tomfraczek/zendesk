@@ -315,6 +315,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.comment-show-container ').addEventListener('click', function(){
         console.log('click dupa');
+        this.classList.add('hidden');
+        this.nextElementSibling.setAttribute('style', 'display: block');
     });
 
 
