@@ -277,6 +277,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const articleContainer = document.querySelector('#promotedArticles');
         const sectionList = document.createElement("ul");
 
+        console.log(articleContainer);
+
+
         if(articleContainer){
             sectionList.setAttribute('id', 'promotedArticlesList');
             sectionList.setAttribute('class', 'promoted-articles-list');
