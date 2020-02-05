@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(articleContainer);
 
 
-        if(articleContainer === null){
+        if(articleContainer !== null){
             sectionList.setAttribute('id', 'promotedArticlesList');
             sectionList.setAttribute('class', 'promoted-articles-list');
 
