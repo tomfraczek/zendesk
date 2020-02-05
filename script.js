@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('hidden');
 
         this.nextElementSibling.setAttribute('style', 'display: block');
-        this.nextElementSibling.nextElementSibling.setAttribute('style', 'display: block');
+        this.nextElementSibling.nextElementSibling.firstElementChild.setAttribute('style', 'display: block');
     });
 
 
