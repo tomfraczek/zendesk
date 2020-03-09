@@ -1,29 +1,52 @@
 <section class="section hero">
-  <div class="hero-inner">
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
-  </div>
+    <div class="hero-inner">
+        {{search submit=false instant=settings.instant_search class='search search-full'}}
+    </div>
 </section>
 
 <div class="container">
 
     <div id="homepageTopArticle" class="homepage--top__article">
         <h1>How can we help?</h1>
-        <p>Simply use the search bar above or browse our archive of support articles via the drop down menu below to learn more about your product.</p>
+        <p>Simply use the search bar above to learn more about your product.</p>
         <p>Still have a question? Get in contact with our dedicated technical support team by <a href="https://techsupport.cambridgeaudio.com/hc/en-us/requests/new" target="_blank">submitting a request here</a>.</p>
+        <p>We are currently receiving a high number of support requests and along with the holiday period this means we may take a little longer to reply than normal.</p>
+        <p>Please accept our apologies for any inconvenience this may cause.</p>
     </div>
 
-    <h1 class="featured-title">Featured Articles</h1>
-    <div id="promotedArticles" class="promoted-articles hidden"></div>
     <div class="lds-css ng-scope" id="spinner">
         <div class="lds-spinner" style="width:100%;height:100%"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
+    <div id="articlesContent" class="articles-content hidden">
+        <h1 class="featured-title">Featured Articles</h1>
+        <div id="promotedArticles" class="promoted-articles"></div>
 
-  <section class="section home-section activity">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
-  </section>
-
+        <h1 class="featured-title">Recent Activity</h1>
+        <ul class="blocks-list">
+            {{#each categories}}
+                {{#if ../has_multiple_categories}}
+                    <li class="blocks-item">
+                        <a href='{{url}}' class="blocks-item-link">
+                            <span class="blocks-item-title">{{name}}</span>
+                            <span class="blocks-item-description">{{excerpt description}}</span>
+                        </a>
+                    </li>
+                {{else}}
+                    {{#each sections}}
+                        <li class="blocks-item">
+                            <a href='{{url}}' class="blocks-item-link">
+                  <span class="blocks-item-title">
+                      {{name}}
+                  </span>
+                                <span class="blocks-item-description">{{excerpt description}}</span>
+                            </a>
+                        </li>
+                    {{/each}}
+                {{/if}}
+            {{/each}}
+        </ul>
+        <button id="more" class="see-more hidden">See more</button>
+    </div>
 </div>
 
 <div id="homepageBottomArticle" class="homepage--bottom__article">
