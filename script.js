@@ -81,119 +81,119 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    function getArticles(data){
-        let articles = [];
-        if(data.page_count > 1){
+    // function getArticles(data){
+    //     let articles = [];
+    //     if(data.page_count > 1){
+    //
+    //
+    //         for(let i = 1; i < data.page_count + 1; i++){
+    //
+    //             let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json?page='+ i +'&per_page=100';
+    //             fetch(url)
+    //                 .then((resp) => resp.json()) // Transform the data into json
+    //                 .then(function(data) {
+    //
+    //                     if(data){
+    //                         for(let i = 0; i < data.articles.length; i++){
+    //                             if(data.articles[i].promoted === true && data.articles[i].draft === false){
+    //                                 articles.push(data.articles[i]);
+    //                                 console.log(data.articles[i]);
+    //                             }
+    //
+    //                         }
+    //                         setTimeout(function(){
+    //                             if (i === data.page_count){
+    //                                 articlesDOM(articles)
+    //
+    //                             }},500);
+    //                     }else{
+    //
+    //                     }
+    //                 });
+    //
+    //         }
+    //
+    //     } else {
+    //         for(let i = 0; i < data.articles.length; i++){
+    //             articles.push(data.articles[i]);
+    //         }
+    //     }
+    // }
 
+    // function getSections(){
+    //     let sections = [];
+    //     let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json?page=1&per_page=100';
+    //     fetch(url)
+    //         .then((resp) => resp.json()) // Transform the data into json
+    //         .then(function(data) {
+    //             if(data.page_count > 1){
+    //                 for(let i = 1; i < data.page_count + 1; i++){
+    //                     let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
+    //                     fetch(url)
+    //                         .then((resp) => resp.json()) // Transform the data into json
+    //                         .then(function(data) {
+    //
+    //                             for(let i = 0; i < data.sections.length; i++){
+    //                                 sections.push(data.sections[i]);
+    //                             }
+    //                             setTimeout(function(){
+    //                                 if (i === data.page_count){
+    //                                     sectionsDOM(sections)
+    //                                     getCategories();
+    //
+    //                                 }},500);
+    //                         });
+    //                 }
+    //             } else {
+    //                 for(let i = 0; i < data.sections.length; i++){
+    //                     sections.push(data.sections[i]);
+    //                     getCategories();
+    //                 }
+    //             }
+    //         });
+    //
+    // }
 
-            for(let i = 1; i < data.page_count + 1; i++){
-
-                let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/articles.json?page='+ i +'&per_page=100';
-                fetch(url)
-                    .then((resp) => resp.json()) // Transform the data into json
-                    .then(function(data) {
-
-                        if(data){
-                            for(let i = 0; i < data.articles.length; i++){
-                                if(data.articles[i].promoted === true && data.articles[i].draft === false){
-                                    articles.push(data.articles[i]);
-                                    console.log(data.articles[i]);
-                                }
-
-                            }
-                            setTimeout(function(){
-                                if (i === data.page_count){
-                                    articlesDOM(articles)
-
-                                }},500);
-                        }else{
-
-                        }
-                    });
-
-            }
-
-        } else {
-            for(let i = 0; i < data.articles.length; i++){
-                articles.push(data.articles[i]);
-            }
-        }
-    }
-
-    function getSections(){
-        let sections = [];
-        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json?page=1&per_page=100';
-        fetch(url)
-            .then((resp) => resp.json()) // Transform the data into json
-            .then(function(data) {
-                if(data.page_count > 1){
-                    for(let i = 1; i < data.page_count + 1; i++){
-                        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/sections.json?page='+ i +'&per_page=100';
-                        fetch(url)
-                            .then((resp) => resp.json()) // Transform the data into json
-                            .then(function(data) {
-
-                                for(let i = 0; i < data.sections.length; i++){
-                                    sections.push(data.sections[i]);
-                                }
-                                setTimeout(function(){
-                                    if (i === data.page_count){
-                                        sectionsDOM(sections)
-                                        getCategories();
-
-                                    }},500);
-                            });
-                    }
-                } else {
-                    for(let i = 0; i < data.sections.length; i++){
-                        sections.push(data.sections[i]);
-                        getCategories();
-                    }
-                }
-            });
-
-    }
-
-    function getCategories(){
-        let categories = [];
-        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories.json?page=1&per_page=100';
-        fetch(url)
-            .then((resp) => resp.json()) // Transform the data into json
-            .then(function(data) {
-
-                if(data.page_count > 1){
-                    for(let i = 2; i < data.page_count; i++){
-
-                        let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories.json?page='+ i +'&per_page=100';
-                        fetch(url)
-                            .then((resp) => resp.json()) // Transform the data into json
-                            .then(function(data) {
-                                console.log(data);
-
-                                for(let i = 0; i < data.categories.length; i++){
-                                    categories.push(data.categories[i]);
-                                }
-                                setTimeout(function(){
-                                    if (i === data.page_count){
-                                        // console.log(categories);
-                                        categoriesDOM(categories);
-
-                                    }},500);
-                            });
-                    }
-                } else {
-                    for(let i = 0; i < data.categories.length; i++){
-                        categories.push(data.categories[i]);
-                        setTimeout(function(){
-                            if (i === data.categories.length - 1){
-                                categoriesDOM(categories);
-
-                            }},500);
-                    }
-                }
-            });
-
-    }
+    // function getCategories(){
+    //     let categories = [];
+    //     let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories.json?page=1&per_page=100';
+    //     fetch(url)
+    //         .then((resp) => resp.json()) // Transform the data into json
+    //         .then(function(data) {
+    //
+    //             if(data.page_count > 1){
+    //                 for(let i = 2; i < data.page_count; i++){
+    //
+    //                     let url = 'https://audiopartnership1571922554.zendesk.com/api/v2/help_center/en-us/categories.json?page='+ i +'&per_page=100';
+    //                     fetch(url)
+    //                         .then((resp) => resp.json()) // Transform the data into json
+    //                         .then(function(data) {
+    //                             console.log(data);
+    //
+    //                             for(let i = 0; i < data.categories.length; i++){
+    //                                 categories.push(data.categories[i]);
+    //                             }
+    //                             setTimeout(function(){
+    //                                 if (i === data.page_count){
+    //                                     // console.log(categories);
+    //                                     categoriesDOM(categories);
+    //
+    //                                 }},500);
+    //                         });
+    //                 }
+    //             } else {
+    //                 for(let i = 0; i < data.categories.length; i++){
+    //                     categories.push(data.categories[i]);
+    //                     setTimeout(function(){
+    //                         if (i === data.categories.length - 1){
+    //                             categoriesDOM(categories);
+    //
+    //                         }},500);
+    //                 }
+    //             }
+    //         });
+    //
+    // }
 
 
 //STARTS HERE
@@ -2124,6 +2124,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-console.log(getData());
-    getData();
+    function zendeskInit(){
+        console.log(getData());
+
+        articlesDOM(getData().allArticles);
+    }
+
+
+    zendeskInit();
 });
