@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //STARTS HERE
     function getData() {
+        console.log('getData starts');
         fetch('https://www.tests-lgbq5pa-k7iiozsvfd2ao.eu-2.platformsh.site/en/api/v2/zendesk-articles').then(function (response) {
             // The API call was successful!
             console.log('success!', response);
@@ -205,6 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // There was an error
             console.warn('Something went wrong.', err);
         });
+        console.log('getData ends');
+
     }
 
 
