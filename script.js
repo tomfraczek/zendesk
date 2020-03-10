@@ -201,15 +201,15 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('getData starts');
         fetch('https://www.tests-lgbq5pa-k7iiozsvfd2ao.eu-2.platformsh.site/en/api/v2/zendesk-articles')
             .then((response) => {
-                console.log(response);
                 return response.json();
             })
             .then((data) => {
                 console.log(data);
+                console.log('getData ends');
             });
 
 
-        console.log('getData ends');
+
 
     }
 
