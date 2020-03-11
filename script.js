@@ -72,21 +72,28 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function showMorePager(e){
-        console.log(e);
         e.preventDefault();
-        let articlesContainer = e.promoted === 'morePromoted' ? document.querySelector('#promotedArticles') : document.querySelector('#recentActivity');
+        let articlesContainer = e.target.id === 'morePromoted' ? document.querySelector('#promotedArticles') : document.querySelector('#recentActivity');
         let containerHeight = articlesContainer.clientHeight;
         articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 445) +'px; overflow: hidden;');
     }
 
     function promotedArticlesPagination(){
-        let articlesContainer = document.querySelector('#promotedArticles');
-        let moreButton = document.querySelector('#morePromoted');
+        let promotedArticlesContainer = document.querySelector('#promotedArticles');
+        let recentActivityContainer = document.querySelector('#recentActivity');
+        let moreFeaturedButton = document.querySelector('#morePromoted');
+        let moreRecentButton = document.querySelector('#moreRecent');
 
-        if(articlesContainer.getElementsByTagName("li").length > 5){
-            articlesContainer.setAttribute('style', 'height:445px; overflow: hidden;');
-            moreButton.classList.remove('hidden');
-            moreButton.addEventListener('click', showMorePager);
+        if(promotedArticlesContainer.getElementsByTagName("li").length > 5){
+            promotedArticlesContainer.setAttribute('style', 'height:445px; overflow: hidden;');
+            moreFeaturedButton.classList.remove('hidden');
+            moreFeaturedButton.addEventListener('click', showMorePager);
+        }
+
+        if(recentActivityContainer.getElementsByTagName("li").length > 5){
+            recentActivityContainer.setAttribute('style', 'height:445px; overflow: hidden;');
+            moreRecentButton.classList.remove('hidden');
+            moreRecentButton.addEventListener('click', showMorePager);
         }
     }
 
