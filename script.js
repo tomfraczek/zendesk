@@ -124,9 +124,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     getData();
-
-    document.querySelector('#moreRecent').addEventListener('click', function(){
-        document.querySelector('#recentActivity').classList.toggle('open');
-        document.querySelector('#recentActivity').classList.contains("open") ? this.innerHTML = "Show less" : this.innerHTML = "Show all";
-    });
 });

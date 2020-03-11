@@ -1147,14 +1147,21 @@ ul {
 
 .list-element--item a {
   font-size: 16px !important;
-  color: #9c9c9c;
   text-decoration: none;
+}
+
+.list-element--item a:hover {
+  text-decoration: underline;
 }
 
 .list-element--item__section-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+}
+
+.list-element--item__section-wrapper a {
+  color: #9c9c9c;
 }
 
 .list-element--item__section-wrapper a:first-of-type::after {
@@ -1166,7 +1173,7 @@ ul {
   margin: 25px 0;
   background: none;
   box-shadow: none;
-  border: 2px solid #56565a;
+  border: 1px solid #56565a;
   color: #56565a;
   text-transform: uppercase;
 }
@@ -1174,6 +1181,10 @@ ul {
 .see-more:hover {
   background: #56565a;
   color: #fff;
+}
+
+.article-link {
+  color: #626262 !important;
 }
 
 .lds-css {
