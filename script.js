@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(data);
                 featuredArticles(data.promotedArticles);
                 recentActivity(data.allArticles);
+                document.querySelectorAll('#spinner').classList.add('hidden');
+                document.querySelectorAll('#articlesContent').classList.remove('hidden');
+
             });
     }
 
