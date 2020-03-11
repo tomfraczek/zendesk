@@ -28,7 +28,6 @@
 /***** Promoted articles *****/
 
 .promoted-articles {
-  @include desktop { flex-direction: row; }
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
