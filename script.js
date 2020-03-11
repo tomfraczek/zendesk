@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     function featuredArticles(data) {
-        console.log(data);
         const articles = data;
         const articlesContainer = document.querySelector("#promotedArticlesList");
 
@@ -115,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
                 featuredArticles(data.promotedArticles);
                 recentActivity(data.allArticles);
                 showPromotedArticles();
