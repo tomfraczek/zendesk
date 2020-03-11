@@ -917,7 +917,8 @@ ul {
           flex-direction: column;
   border-bottom: 1px solid #ddd;
   overflow: auto;
-  padding: 20px 0; }
+  padding: 20px 0;
+  width: 100%; }
   .list-element--item a {
     font-size: 16px !important;
     color: #9c9c9c;
