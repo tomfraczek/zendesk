@@ -1162,6 +1162,20 @@ ul {
   margin: 0 10px;
 }
 
+.see-more {
+  margin: 25px 0;
+  background: none;
+  box-shadow: none;
+  border: 2px solid #56565a;
+  color: #56565a;
+  text-transform: uppercase;
+}
+
+.see-more:hover {
+  background: #56565a;
+  color: #fff;
+}
+
 .lds-css {
   margin: auto;
   width: 50px;
