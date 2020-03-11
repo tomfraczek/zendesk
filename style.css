@@ -1182,6 +1182,11 @@ ul {
   color: #626262 !important;
 }
 
+.promoted-articles-wrapper--wrapper,
+.recent-articles--wrapper {
+  transition: all .3s ease-in-out;
+}
+
 .lds-css {
   margin: auto;
   width: 50px;
