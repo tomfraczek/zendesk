@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function recentActivity(data){
         const articles = data;
-        const articlesContainer = document.querySelector("#recentActivity");
+        const articlesContainer = document.querySelector("#recentActivityList");
 
         for (let i = 0; i < articles.length; i++) {
             const sectionListElement = document.createElement("li");
