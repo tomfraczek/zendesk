@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     function featuredArticles(data) {
         console.log(data);
         const articles = data;
@@ -33,9 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
             sectionListElement.prepend(sectionListElementSectionWrapper);
             articlesContainer.appendChild(sectionListElement);
         }
-
-        document.querySelector('#spinner').classList.add('hidden');
-        document.querySelector('#articlesContent').classList.remove('hidden');
     }
 
     function recentActivity(data){
@@ -73,6 +71,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function showMorePager(e){
+        e.preventDefault();
+        let articlesContainer = document.querySelector('#promotedArticles');
+        let containerHeight = articlesContainer.clientHeight;
+        articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 435) +'px; overflow: hidden;');
+    }
+
+    function promotedArticlesPagination(){
+        let articlesContainer = document.querySelector('#promotedArticles');
+        let moreButton = document.querySelector('#morePromoted');
+
+        if(articlesContainer.getElementsByTagName("li").length > 5){
+            articlesContainer.setAttribute('style', 'height:435px; overflow: hidden;');
+            moreButton.classList.remove('hidden');
+            moreButton.addEventListener('click', showMorePager);
+        }
+    }
+
+    function showPromotedArticles(){
+        const spinner = document.querySelector('#spinner');
+        let articlesContainer = document.querySelector('#articlesContent');
+
+        spinner.classList.add('hidden');
+        articlesContainer.classList.remove('hidden');
+        promotedArticlesPagination();
+    }
+
 
 
     //STARTS HERE
@@ -85,17 +110,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(data);
                 featuredArticles(data.promotedArticles);
                 recentActivity(data.allArticles);
-
+                showPromotedArticles();
             });
     }
 
 
     getData();
-
-    document.querySelector('#morePromoted').addEventListener('click', function(){
-        document.querySelector('#promotedArticlesList').classList.toggle('open');
-        document.querySelector('#promotedArticlesList').classList.contains("open") ? this.innerHTML = "Show less" : this.innerHTML = "Show all";
-    });
 
     document.querySelector('#moreRecent').addEventListener('click', function(){
         document.querySelector('#recentActivity').classList.toggle('open');
