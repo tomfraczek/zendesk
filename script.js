@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
             sectionListElement.prepend(sectionListElementSectionWrapper);
             articlesContainer.appendChild(sectionListElement);
         }
+
+        document.querySelectorAll('#spinner').classList.add('hidden');
+        document.querySelectorAll('#articlesContent').classList.remove('hidden');
     }
 
     function recentActivity(data){
@@ -82,8 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(data);
                 featuredArticles(data.promotedArticles);
                 recentActivity(data.allArticles);
-                document.querySelectorAll('#spinner').classList.add('hidden');
-                document.querySelectorAll('#articlesContent').classList.remove('hidden');
 
             });
     }
