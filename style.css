@@ -836,6 +836,7 @@ ul {
 
 /***** Hero component *****/
 .hero {
+  background-image: url($assets-zendesk-main-jpg);
   background-position: center;
   background-size: cover;
   height: 300px;
@@ -1120,6 +1121,10 @@ ul {
 
 .homepage--bottom__article p:last-of-type {
   margin-bottom: 0;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .open {
