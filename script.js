@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
             articlesContainer.appendChild(sectionListElement);
         }
 
-        document.querySelectorAll('#spinner').classList.add('hidden');
-        document.querySelectorAll('#articlesContent').classList.remove('hidden');
+        document.querySelector('#spinner').classList.add('hidden');
+        document.querySelector('#articlesContent').classList.remove('hidden');
     }
 
     function recentActivity(data){
