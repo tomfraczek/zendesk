@@ -178,8 +178,11 @@
 
   a{
     font-size: 16px!important;
-    color: #9c9c9c;
     text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
 
@@ -187,10 +190,15 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  a:first-of-type{
-    &::after{
-      content: '>';
-      margin: 0 10px;
+
+  a{
+    color: #9c9c9c;
+
+    &:first-of-type{
+      &::after{
+        content: '>';
+        margin: 0 10px;
+      }
     }
   }
 }
@@ -209,6 +217,9 @@
   }
 }
 
+.article-link {
+  color: #626262!important;
+}
 
 ///////////////////////
 // Spinner

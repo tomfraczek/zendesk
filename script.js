@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function showMorePager(e){
+        console.log(e);
         e.preventDefault();
         let articlesContainer = document.querySelector('#promotedArticles');
         let containerHeight = articlesContainer.clientHeight;
