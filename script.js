@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         let articlesContainer = document.querySelector('#promotedArticles');
         let containerHeight = articlesContainer.clientHeight;
-        articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 435) +'px; overflow: hidden;');
+        articlesContainer.setAttribute('style', 'height:'+ (containerHeight + 445) +'px; overflow: hidden;');
     }
 
     function promotedArticlesPagination(){
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let moreButton = document.querySelector('#morePromoted');
 
         if(articlesContainer.getElementsByTagName("li").length > 5){
-            articlesContainer.setAttribute('style', 'height:435px; overflow: hidden;');
+            articlesContainer.setAttribute('style', 'height:445px; overflow: hidden;');
             moreButton.classList.remove('hidden');
             moreButton.addEventListener('click', showMorePager);
         }
