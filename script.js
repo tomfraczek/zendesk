@@ -313,13 +313,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    document.querySelector('.comment-show-container ').addEventListener('click', function(){
-        console.log('click dupa');
+    var element = document.querySelector('.comment-show-container');
+    if (typeof(element) != 'undefined' && element != null) {
         this.classList.add('hidden');
-
         this.nextElementSibling.setAttribute('style', 'display: block');
         this.nextElementSibling.nextElementSibling.firstElementChild.setAttribute('style', 'display: block');
-    });
+    }
 
 
     getData();
