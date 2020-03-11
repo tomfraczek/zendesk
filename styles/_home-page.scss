@@ -106,57 +106,100 @@
   }
 }
 
-.recent-activity-item{
-  display: flex;
-  flex-direction: column-reverse;
+//.recent-activity-item{
+//  display: flex;
+//  flex-direction: column-reverse;
+//}
+//
+//.recent-activity-item-meta{
+//  display: none;
+//}
+//
+//.recent-activity-item-parent{
+//  font-size: 14px!important;
+//}
+//
+//.recent-activity-item-link{
+//  font-size: 16px!important;
+//}
+//
+//.list-element--item{
+//  display: flex;
+//  flex-direction: column-reverse;
+//  border-bottom: 1px solid #ddd;
+//  overflow: auto;
+//  padding: 20px 0;
+//}
+//
+//.featured-title{
+//  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+//  font-weight: 400;
+//  font-size: 22px;
+//}
+//
+//.promoted-articles-list{
+//  width:100%;
+//}
+//
+//.hidden{
+//  display: none!important;
+//}
+//
+//.arrow-separator {
+//  margin: 0 10px;
+//  color: #9c9c9c;
+//}
+//
+//.breadcrumbs-wrapper {
+//  display: flex;
+//  flex-direction: row-reverse;
+//  justify-content: flex-end;
+//  a{
+//    color: #9c9c9c;
+//  }
+//}
+
+.open{
+  height: auto!important;
 }
 
-.recent-activity-item-meta{
-  display: none;
+.promoted-articles{
+  height:55px;
+  overflow: hidden;
 }
 
-.recent-activity-item-parent{
-  font-size: 14px!important;
-}
-
-.recent-activity-item-link{
-  font-size: 16px!important;
+.recent-articles{
+  height:55px;
+  overflow: hidden;
 }
 
 .list-element--item{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   border-bottom: 1px solid #ddd;
   overflow: auto;
   padding: 20px 0;
-}
 
-.featured-title{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 22px;
-}
-
-.promoted-articles-list{
-  width:100%;
-}
-
-.hidden{
-  display: none!important;
-}
-
-.arrow-separator {
-  margin: 0 10px;
-  color: #9c9c9c;
-}
-
-.breadcrumbs-wrapper {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
   a{
+    font-size: 16px!important;
     color: #9c9c9c;
+    text-decoration: none;
   }
+}
+
+.list-element--item__section-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  a:first-of-type{
+    &::after{
+      content: '>';
+      margin: 0 10px;
+    }
+  }
+
+
+
 }
 
 
