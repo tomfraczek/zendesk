@@ -1131,11 +1131,6 @@ ul {
   height: auto !important;
 }
 
-.promoted-articles {
-  height: 55px;
-  overflow: hidden;
-}
-
 .recent-articles {
   height: 55px;
   overflow: hidden;
