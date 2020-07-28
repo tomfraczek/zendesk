@@ -340,3 +340,17 @@
   -webkit-transform: translate(-25.5px, -25.5px) scale(0.255) translate(25.5px, 25.5px);
   transform: translate(-25.5px, -25.5px) scale(0.255) translate(25.5px, 25.5px);
 }
+
+.homepage_category_section_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.homepage_category_section{
+  max-width: 300px;
+  flex: 1 0 310px;
+  padding: 9px;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #ffffff;
+}
