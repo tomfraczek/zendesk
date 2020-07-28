@@ -1367,13 +1367,13 @@ h3.homepage {
   padding: 0;
 }
 
-.article-list-item {
+.article-list-tem {
   padding: 0 0 5px 0;
   text-decoration: none;
   transition: text-decoration 0.21s;
 }
 
-.article-list-item h4 {
+.article-list-tem h4 {
   font-size: 16px;
   color: #898989;
   margin-bottom: 0;
