@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     document.querySelector("#hifi").addEventListener("click", (e) => {
+        e.preventDefault();
         e.target.parentElement.nextElementSibling.classList.toggle("show");
         console.log(e.target.parentElement.nextElementSibling);
     });
