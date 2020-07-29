@@ -1350,6 +1350,7 @@ a.homepage_category_title_link:hover {
 }
 
 h3.homepage {
+  margin: 0;
   font-size: 20px;
   color: white;
   background-color: black;
@@ -1358,7 +1359,9 @@ h3.homepage {
   transition: background-color 0.2s;
   text-decoration: none;
   font-weight: 390;
-  padding-bottom: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .article-list {
@@ -1385,10 +1388,20 @@ h3.homepage {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .image_link img {
   height: 100%;
+}
+
+.drop {
+  height: 0;
+  overflow: hidden;
+}
+
+.show {
+  height: auto;
 }
 
 /***** Recent activity *****/
