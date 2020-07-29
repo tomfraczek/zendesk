@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    console.log('tommy')
+    document.querySelector("#hifi").addEventListener("click", (e) => {
+        e.preventDefault();
+        e.target.parentElement.nextElementSibling.classList.toggle("show");
+        console.log(e.target.parentElement.nextElementSibling);
+    });
+
+
     function featuredArticles(data) {
         const articles = data;
         const articlesContainer = document.querySelector("#promotedArticlesList");
@@ -119,14 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 showPromotedArticles();
             });
     }
-
-    console.log('tommy')
-    document.querySelector("#hifi").addEventListener("click", (e) => {
-        e.preventDefault();
-        e.target.parentElement.nextElementSibling.classList.toggle("show");
-        console.log(e.target.parentElement.nextElementSibling);
-    });
-
 
 
     getData();
