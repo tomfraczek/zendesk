@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('tommy')
     document.querySelector("#hifi").addEventListener("click", (e) => {
         e.preventDefault();
-        e.target.parentElement.nextElementSibling.classList.toggle("show");
-        console.log(e.target.parentElement.nextElementSibling);
+        document.querySelector("#drop").classList.toggle("show");
+        // e.target.parentElement.nextElementSibling.classList.toggle("show");
+        // console.log(e.target.parentElement.nextElementSibling);
     });
 
 
