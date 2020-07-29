@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
+    console.log('tommy')
     document.querySelector("#hifi").addEventListener("click", (e) => {
         e.preventDefault();
         e.target.parentElement.nextElementSibling.classList.toggle("show");
