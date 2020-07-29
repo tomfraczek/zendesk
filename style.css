@@ -1380,6 +1380,17 @@ h3.homepage {
   margin-left: 20px;
 }
 
+.image_link {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_link img {
+  height: 100%;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;
