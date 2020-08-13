@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let i = 0; i <= categoryButtons.length; i++){
         categoryButtons[i].addEventListener('click', (e) => {
-            console.log(e.target.parentElement.nextElementSibling);
+            const list = e.target.parentElement.nextElementSibling;
+            list.classList.toggle('show');
         })
     }
     //
