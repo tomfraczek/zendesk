@@ -418,22 +418,14 @@ h3.homepage {
 
 .drop {
   height: 0;
+  opacity: 0;
   overflow: hidden;
-  width: 100%;
+  width:100%;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  //transition: all ease-in 600ms;
-  font-size: 0;
-  margin: 0;
-  opacity: 0;
-  padding: 0;
-  /* fade out, then shrink */
-  transition: opacity .25s,
-  font-size .5s .25s,
-  margin .5s .25s,
-  padding .5s .25s;
+  transition: all ease-in 600ms;
 
   .column{
     width: 30%;
@@ -442,6 +434,6 @@ h3.homepage {
 }
 
 .show {
-  margin: .5em 1em;
-  padding: 1em;
+  height: auto;
+  opacity:1;
 }
