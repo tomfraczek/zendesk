@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
+    console.log(innerList)
+    console.log(categoryButtons)
+
     for (let i = 0; i <= innerList.length; i++){
         innerList[i].addEventListener('click', (e) => {
             e.preventDefault();
