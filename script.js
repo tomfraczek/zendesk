@@ -8,11 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show');
+            console.log(innerList);
+            console.log(categoryButtons);
         })
     }
 
-    console.log(innerList)
-    console.log(categoryButtons)
+    console.log(innerList);
+    console.log(categoryButtons);
 
     for (let i = 0; i <= innerList.length; i++){
         innerList[i].addEventListener('click', (e) => {
