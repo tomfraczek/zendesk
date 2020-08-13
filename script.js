@@ -1,12 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    console.log('tommy')
-    document.querySelector("#hifi").addEventListener("click", (e) => {
-        e.preventDefault();
-        document.querySelector("#drop").classList.toggle("show");
-        // e.target.parentElement.nextElementSibling.classList.toggle("show");
-        // console.log(e.target.parentElement.nextElementSibling);
-    });
+    const categoryButtons = document.querySelectorAll('.action');
+
+    for (let i = 0; i <= categoryButtons.length; i++){
+        categoryButtons[i].addEventListener('click', (e) => {
+            console.log(e.target);
+        })
+    }
+    //
+    // document.querySelector("#hifi").addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     document.querySelector("#drop").classList.toggle("show");
+    //     // e.target.parentElement.nextElementSibling.classList.toggle("show");
+    //     // console.log(e.target.parentElement.nextElementSibling);
+    // });
 
 
     function featuredArticles(data) {

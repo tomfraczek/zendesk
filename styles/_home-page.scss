@@ -81,6 +81,7 @@
 .homepage--top__article{
   margin-bottom: 55px;
   padding-bottom: 15px;
+  width:100%;
 
   p{
     font-size: 18px;
@@ -351,6 +352,7 @@
   margin: 10px auto;
   display: block;
   border: 1px solid #ffffff;
+  width: 30%;
 
   img {
     max-width: 100%;
@@ -389,6 +391,10 @@ h3.homepage {
   list-style: none;
   margin: 15px 0 0 0;
   padding: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all ease-in 600ms;
 }
 
 .article-list-item {
@@ -437,4 +443,9 @@ h3.homepage {
   height: auto;
   opacity:1;
   transition: height, 600ms, ease-in, 200ms;
+}
+
+.homepage--categories__wrapper{
+  display: flex;
+  flex-wrap: wrap;
 }
