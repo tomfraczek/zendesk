@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let i = 0; i <= categoryButtons.length; i++){
         categoryButtons[i].addEventListener('click', (e) => {
-            console.log(e.target);
+            console.log(e.target.parentElement.nextElementSibling);
         })
     }
     //
