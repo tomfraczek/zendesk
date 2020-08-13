@@ -2,16 +2,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const categoryButtons = document.querySelectorAll('.action');
     const innerList = document.querySelectorAll('.inner-list');
-
-    for (let i = 0; i <= categoryButtons.length; i++){
-        categoryButtons[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            const list = e.target.parentElement.nextElementSibling;
-            list.classList.toggle('show');
-            console.log(innerList);
-            console.log(categoryButtons);
-        })
-    }
+    //
+    // for (let i = 0; i <= categoryButtons.length; i++){
+    //     categoryButtons[i].addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         const list = e.target.parentElement.nextElementSibling;
+    //         list.classList.toggle('show');
+    //         console.log(innerList);
+    //         console.log(categoryButtons);
+    //     })
+    // }
 
     console.log(innerList);
     console.log(categoryButtons);
