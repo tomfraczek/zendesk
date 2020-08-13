@@ -436,4 +436,5 @@ h3.homepage {
 .show {
   height: auto;
   opacity:1;
+  transition: height, 600ms, ease-in, 200ms;
 }

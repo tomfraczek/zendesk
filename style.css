@@ -835,7 +835,7 @@ ul {
 
 /***** Hero component *****/
 .hero {
-  background-image: url($assets-zendesk-main-jpg);
+  background-image: url($assets-alva-jpg);
   background-position: center;
   background-size: cover;
   height: 300px;
@@ -1414,6 +1414,7 @@ h3.homepage {
 .show {
   height: auto;
   opacity: 1;
+  transition: height, 600ms, ease-in, 200ms;
 }
 
 /***** Recent activity *****/
