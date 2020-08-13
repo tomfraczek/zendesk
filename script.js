@@ -6,16 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i <= categoryButtons.length; i++){
         categoryButtons[i].addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(this);
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show');
         })
     }
 
     for (let i = 0; i <= innerList.length; i++){
-        categoryButtons[i].addEventListener('click', (e) => {
+        innerList[i].addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(this);
             console.log(e.target);
             // const list = e.target.parentElement.nextElementSibling;
             // list.classList.toggle('show');
