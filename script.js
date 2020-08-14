@@ -17,12 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if(submenu[i]){
             submenu[i].addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log(e.target);
-                if(document.querySelector('.show-submenu')){
+                if(document.querySelector('.show-submenu') && !e.target.parentElement.classList.contains('show-submenu')){
                     document.querySelector('.show-submenu').classList.remove('show-submenu')
                 }
                 const list = e.target.parentElement.nextElementSibling;
-                list.classList.add('show-submenu');
+                list.classList.toggle('show-submenu');
             })
         }
     }
