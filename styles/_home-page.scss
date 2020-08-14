@@ -469,5 +469,11 @@ h3.homepage {
 .show {
   height: auto!important;
   opacity:1!important;
-  display: block!important;
+}
+
+.show-submenu{
+  height: auto!important;
+  opacity:1!important;
+  display: flex;
+  flex-direction: column;
 }
