@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const categoryButtons = document.querySelectorAll('.action');
+    const submenu = document.querySelectorAll('.submenu');
     const innerList = document.querySelectorAll('.inner-list');
     const hifi = document.querySelector('#hifiButton');
     const hifioDrop = document.querySelector('#hiFiDrop');
@@ -16,10 +17,19 @@ console.log(hifi)
     //     })
     // }
 
-    hifi.addEventListener('click', () => {
+    hifi.addEventListener('click', (e) => {
+        e.preventDefault()
         hifioDrop.classList.toggle('show');
-        console.log('dupa')
     })
+
+    for (let i = 0; i <= submenu.length; i++){
+        submenu[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            const list = e.target.parentElement.nextElementSibling;
+            list.classList.toggle('show');
+            console.log('click')
+        })
+    }
 
     // for (let i = 0; i <= categoryButtons.length; i++){
     //     categoryButtons[i].addEventListener('click', (e) => {

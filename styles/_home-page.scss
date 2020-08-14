@@ -457,6 +457,11 @@ h3.homepage {
 
   .column{
     width: 30%;
+
+    ul{
+      opacity: 0;
+      height:0;
+    }
   }
 }
 
