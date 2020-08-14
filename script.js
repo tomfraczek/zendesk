@@ -2,27 +2,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const categoryButtons = document.querySelectorAll('.action');
     const innerList = document.querySelectorAll('.inner-list');
+    const hifi = document.querySelector('#hifiButton');
+    const hifioDrop = document.querySelector('#hiFiDrop');
 
-    for (let i = 0; i <= innerList.length; i++){
-        innerList[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log(e.target);
-            const list = e.target.parentElement.nextElementSibling;
-            list.classList.toggle('show');
-            // const list = e.target.parentElement.nextElementSibling;
-            // list.classList.toggle('show');
-        })
-    }
+    // for (let i = 0; i <= innerList.length; i++){
+    //     innerList[i].addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         console.log(e.target);
+    //         const list = e.target.parentElement.nextElementSibling;
+    //         list.classList.toggle('show');
+    //         // const list = e.target.parentElement.nextElementSibling;
+    //         // list.classList.toggle('show');
+    //     })
+    // }
 
-    for (let i = 0; i <= categoryButtons.length; i++){
-        categoryButtons[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            const list = e.target.parentElement.nextElementSibling;
-            list.classList.toggle('show');
-            console.log(innerList);
-            console.log(categoryButtons);
-        })
-    }
+    hifi.addEventListener('click', () => {
+        hifioDrop.classList.toggle('show');
+    })
+
+    // for (let i = 0; i <= categoryButtons.length; i++){
+    //     categoryButtons[i].addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         const list = e.target.parentElement.nextElementSibling;
+    //         list.classList.toggle('show');
+    //         console.log(innerList);
+    //         console.log(categoryButtons);
+    //     })
+    // }
 
     console.log('innerList');
     console.log(categoryButtons);
