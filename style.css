@@ -1436,6 +1436,12 @@ h3.homepage {
   width: 30%;
 }
 
+.column-container .column ul {
+  opacity: 0;
+  height: 0;
+  display: none;
+}
+
 .show {
   height: auto !important;
   opacity: 1 !important;

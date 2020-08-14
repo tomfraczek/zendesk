@@ -1,18 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    const categoryButtons = document.querySelectorAll('.action');
     const submenu = document.querySelectorAll('.submenu');
     const submenuSmall = document.querySelectorAll('.submenu-small');
-    const innerList = document.querySelectorAll('.inner-list');
     const hifi = document.querySelector('#hifiButton');
-    const hifioDrop = document.querySelector('#hiFiDrop');
-    const show = document.querySelector('.show');
-    const showSubmenu = document.querySelectorAll('.show-submenu');
+    const hifioDropdown = document.querySelector('#hiFiDrop');
+
 
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
-        if(show) show.classList.remove('show');
-        hifioDrop.classList.toggle('show');
+        // if(show) show.classList.remove('show');
+        hifioDropdown.classList.toggle('show');
     })
 
     for (let i = 0; i <= submenu.length; i++){
@@ -31,9 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             if(document.querySelector('.show-submenu-small')){
                 document.querySelector('.show-submenu-small').classList.remove('show-submenu-small')
-                console.log('dupa');
             }
-            console.log('dupaaaaa')
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show-submenu-small');
         })
