@@ -1420,12 +1420,23 @@ h3.homepage {
 .show {
   height: auto;
   opacity: 1;
-  transition: height, 600ms, ease-in, 200ms;
 }
 
 .homepage--categories__wrapper {
   display: flex;
   flex-wrap: wrap;
+}
+
+.column-container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.column-container .column {
+  width: 30%;
 }
 
 /***** Recent activity *****/
