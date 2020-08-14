@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const innerList = document.querySelectorAll('.inner-list');
     const hifi = document.querySelector('#hifiButton');
     const hifioDrop = document.querySelector('#hiFiDrop');
+    const show = document.querySelector('.show');
+    const showSubmenu = document.querySelector('.show-submenu');
 console.log(hifi)
     // for (let i = 0; i <= innerList.length; i++){
     //     innerList[i].addEventListener('click', (e) => {
@@ -19,15 +21,16 @@ console.log(hifi)
 
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
+        if(show) show.classList.remove('show');
         hifioDrop.classList.toggle('show');
     })
 
     for (let i = 0; i <= submenu.length; i++){
         submenu[i].addEventListener('click', (e) => {
             e.preventDefault();
+            if(showSubmenu) showSubmenu.classList.remove('show');
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show-submenu');
-            console.log('click')
         })
     }
 
