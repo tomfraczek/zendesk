@@ -1,7 +1,7 @@
 {
   "name": "Copenhagen",
   "author": "Zendesk",
-  "version": "1.8.418",
+  "version": "1.8.419",
   "api_version": 1,
   "default_locale": "en-us",
   "settings": [{
@@ -14,7 +14,7 @@
       "value": "#0072EF"
     }, {
       "identifier": "brand_text_color",
-      "type": "color"8
+      "type": "color",
       "description": "brand_text_color_description",
       "label": "brand_text_color_label",
       "value": "#FFFFFF"
