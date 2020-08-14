@@ -39,8 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
         submenuSmall[i].addEventListener('click', (e) => {
             e.preventDefault();
             if(document.querySelector('.show-submenu-small')){
-                document.querySelector('.show-submenu-small').classList.remove('show-submenu')
+                document.querySelector('.show-submenu-small').classList.remove('show-submenu-small')
+                console.log('dupa');
             }
+            console.log('dupaaaaa')
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show-submenu-small');
         })
