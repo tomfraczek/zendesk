@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const hifioDrop = document.querySelector('#hiFiDrop');
     const show = document.querySelector('.show');
     const showSubmenu = document.querySelectorAll('.show-submenu');
+
+    console.log(submenuSmall);
     // for (let i = 0; i <= innerList.length; i++){
     //     innerList[i].addEventListener('click', (e) => {
     //         e.preventDefault();
