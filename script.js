@@ -1,53 +1,69 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    const submenu = document.querySelectorAll('.submenu');
-    const submenuSmall = document.querySelectorAll('.submenu-small');
-    const hifi = document.querySelector('#hifiButton');
-    const melo = document.querySelector('#meloButton');
-    const hifioDropdown = document.querySelector('#hiFiDrop');
-    const meloDrop = document.querySelector('#meloDrop');
+    const acc = document.getElementsByClassName("action");
 
-
-    melo.addEventListener('click', (e) => {
-        e.preventDefault()
-        // if(show) show.classList.remove('show');
-        meloDrop.classList.toggle('show');
-    })
-
-    hifi.addEventListener('click', (e) => {
-        e.preventDefault()
-        // if(show) show.classList.remove('show');
-        hifioDropdown.classList.toggle('show');
-    })
-
-    for (let i = 0; i <= submenu.length; i++){
-        console.log(submenu[i]);
-        if(submenu[i]){
-            submenu[i].addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log(e.target)
-                if(document.querySelector('.show-submenu') && !e.target.parentElement.classList.contains('show-submenu')){
-                    document.querySelector('.show-submenu').classList.remove('show-submenu')
-                }
-                const list = e.target.parentElement.nextElementSibling;
-                list.classList.toggle('show-submenu');
-            })
-        }
+    for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.parentElement.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
     }
 
-    for (let i = 0; i <= submenuSmall.length; i++){
-        console.log(submenuSmall[i]);
-        if(submenuSmall[i]){
-            submenuSmall[i].addEventListener('click', (e) => {
-                e.preventDefault();
-                if(document.querySelector('.show-submenu-small')){
-                    document.querySelector('.show-submenu-small').classList.remove('show-submenu-small')
-                }
-                const list = e.target.parentElement.nextElementSibling;
-                list.classList.toggle('show-submenu-small');
-            })
-        }
-    }
+
+    //
+    // const submenu = document.querySelectorAll('.submenu');
+    // const submenuSmall = document.querySelectorAll('.submenu-small');
+    // const hifi = document.querySelector('#hifiButton');
+    // const melo = document.querySelector('#meloButton');
+    // const hifioDropdown = document.querySelector('#hiFiDrop');
+    // const meloDrop = document.querySelector('#meloDrop');
+    //
+    //
+    // melo.addEventListener('click', (e) => {
+    //     e.preventDefault()
+    //     // if(show) show.classList.remove('show');
+    //     meloDrop.classList.toggle('show');
+    // })
+    //
+    // hifi.addEventListener('click', (e) => {
+    //     e.preventDefault()
+    //     // if(show) show.classList.remove('show');
+    //     hifioDropdown.classList.toggle('show');
+    // })
+    //
+    // for (let i = 0; i <= submenu.length; i++){
+    //     console.log(submenu[i]);
+    //     if(submenu[i]){
+    //         submenu[i].addEventListener('click', (e) => {
+    //             e.preventDefault();
+    //             console.log(e.target)
+    //             if(document.querySelector('.show-submenu') && !e.target.parentElement.classList.contains('show-submenu')){
+    //                 document.querySelector('.show-submenu').classList.remove('show-submenu')
+    //             }
+    //             const list = e.target.parentElement.nextElementSibling;
+    //             list.classList.toggle('show-submenu');
+    //         })
+    //     }
+    // }
+    //
+    // for (let i = 0; i <= submenuSmall.length; i++){
+    //     console.log(submenuSmall[i]);
+    //     if(submenuSmall[i]){
+    //         submenuSmall[i].addEventListener('click', (e) => {
+    //             e.preventDefault();
+    //             if(document.querySelector('.show-submenu-small')){
+    //                 document.querySelector('.show-submenu-small').classList.remove('show-submenu-small')
+    //             }
+    //             const list = e.target.parentElement.nextElementSibling;
+    //             list.classList.toggle('show-submenu-small');
+    //         })
+    //     }
+    // }
 
     function featuredArticles(data) {
         const articles = data;
