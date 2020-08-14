@@ -21,6 +21,19 @@ document.addEventListener("DOMContentLoaded", function() {
     //     })
     // }
 
+    for (let i = 0; i <= submenuSmall.length; i++){
+        submenuSmall[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            if(document.querySelector('.show-submenu-small')){
+                document.querySelector('.show-submenu-small').classList.remove('show-submenu-small')
+                console.log('dupa');
+            }
+            console.log('dupaaaaa')
+            const list = e.target.parentElement.nextElementSibling;
+            list.classList.toggle('show-submenu-small');
+        })
+    }
+
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
         if(show) show.classList.remove('show');
@@ -37,18 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
             list.classList.toggle('show-submenu');
         })
     }
-    for (let i = 0; i <= submenuSmall.length; i++){
-        submenuSmall[i].addEventListener('click', (e) => {
-            e.preventDefault();
-            if(document.querySelector('.show-submenu-small')){
-                document.querySelector('.show-submenu-small').classList.remove('show-submenu-small')
-                console.log('dupa');
-            }
-            console.log('dupaaaaa')
-            const list = e.target.parentElement.nextElementSibling;
-            list.classList.toggle('show-submenu-small');
-        })
-    }
+
 
     // for (let i = 0; i <= categoryButtons.length; i++){
     //     categoryButtons[i].addEventListener('click', (e) => {
