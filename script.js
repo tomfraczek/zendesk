@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.querySelector('.show-submenu').classList.remove('show-submenu')
                 }
                 const list = e.target.parentElement.nextElementSibling;
-                list.classList.toggle('show-submenu');
+                list.classList.add('show-submenu');
             })
         }
     }
