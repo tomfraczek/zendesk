@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     for (let i = 0; i <= submenu.length; i++){
+        console.log(submenu[i]);
         submenu[i].addEventListener('click', (e) => {
             e.preventDefault();
             if(document.querySelector('.show-submenu')){
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     for (let i = 0; i <= submenuSmall.length; i++){
+        console.log(submenuSmall[i]);
         submenuSmall[i].addEventListener('click', (e) => {
             e.preventDefault();
             if(document.querySelector('.show-submenu-small')){
