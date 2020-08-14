@@ -1442,6 +1442,14 @@ h3.homepage {
   display: none;
 }
 
+.column-container .column ul ul {
+  margin-left: 20px;
+}
+
+.column-container .column ul ul ul {
+  margin-left: 20px;
+}
+
 .show {
   height: auto !important;
   opacity: 1 !important;
@@ -1450,8 +1458,8 @@ h3.homepage {
 .show-submenu {
   height: auto !important;
   opacity: 1 !important;
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /***** Recent activity *****/

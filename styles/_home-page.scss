@@ -462,6 +462,14 @@ h3.homepage {
       opacity: 0;
       height:0;
       display: none;
+
+      ul{
+        margin-left: 20px;
+
+        ul{
+          margin-left:20px;
+        }
+      }
     }
   }
 }
@@ -474,6 +482,6 @@ h3.homepage {
 .show-submenu{
   height: auto!important;
   opacity:1!important;
-  display: flex;
-  flex-direction: column;
+  display: flex!important;
+  flex-direction: column!important;
 }
