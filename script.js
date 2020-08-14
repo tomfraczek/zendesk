@@ -28,7 +28,9 @@ console.log(hifi)
     for (let i = 0; i <= submenu.length; i++){
         submenu[i].addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(document.querySelector('.show-submenu'));
+            if(document.querySelector('.show-submenu')){
+                document.querySelector('.show-submenu').classList.remove('show-submenu')
+            }
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show-submenu');
         })
