@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const acc = document.querySelector("#hifiButton");
 
     for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
+        acc[i].addEventListener("click", function (e) {
+            e.preventDefault();
             this.classList.toggle("activvvve");
             const panel = this.parentElement.nextElementSibling;
             if (panel.style.maxHeight) {
