@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const hifi = document.querySelector('#hifiButton');
     const hifioDrop = document.querySelector('#hiFiDrop');
     const show = document.querySelector('.show');
-    const showSubmenu = document.querySelector('.show-submenu');
+    const showSubmenu = document.querySelectorAll('.show-submenu');
 console.log(hifi)
     // for (let i = 0; i <= innerList.length; i++){
     //     innerList[i].addEventListener('click', (e) => {
@@ -28,9 +28,7 @@ console.log(hifi)
     for (let i = 0; i <= submenu.length; i++){
         submenu[i].addEventListener('click', (e) => {
             e.preventDefault();
-            if(showSubmenu){
-                showSubmenu.classList.remove('show-submenu');
-            }
+            console.log(showSubmenu);
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show-submenu');
         })
