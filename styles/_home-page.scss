@@ -417,6 +417,12 @@ h3.homepage {
   justify-content: center;
   position: relative;
 
+  ul{
+    opacity: 0;
+    height: 0;#
+    overflow: hidden;
+  }
+
   img {
     height: 100%;
   }
