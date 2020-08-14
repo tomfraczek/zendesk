@@ -1456,6 +1456,14 @@ h3.homepage {
   margin-left: 20px;
 }
 
+.show-submenu-small {
+  height: auto !important;
+  opacity: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-left: 20px;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;

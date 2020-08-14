@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const categoryButtons = document.querySelectorAll('.action');
     const submenu = document.querySelectorAll('.submenu');
+    const submenuSmall = document.querySelectorAll('.submenu-small');
     const innerList = document.querySelectorAll('.inner-list');
     const hifi = document.querySelector('#hifiButton');
     const hifioDrop = document.querySelector('#hiFiDrop');
@@ -33,6 +34,16 @@ console.log(hifi)
             }
             const list = e.target.parentElement.nextElementSibling;
             list.classList.toggle('show-submenu');
+        })
+    }
+    for (let i = 0; i <= submenuSmall.length; i++){
+        submenuSmall[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            if(document.querySelector('.show-submenu-small')){
+                document.querySelector('.show-submenu-small').classList.remove('show-submenu')
+            }
+            const list = e.target.parentElement.nextElementSibling;
+            list.classList.toggle('show-submenu-small');
         })
     }
 
