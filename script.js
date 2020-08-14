@@ -9,17 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const show = document.querySelector('.show');
     const showSubmenu = document.querySelectorAll('.show-submenu');
 
-    console.log(submenuSmall);
-    // for (let i = 0; i <= innerList.length; i++){
-    //     innerList[i].addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         console.log(e.target);
-    //         const list = e.target.parentElement.nextElementSibling;
-    //         list.classList.toggle('show');
-    //         // const list = e.target.parentElement.nextElementSibling;
-    //         // list.classList.toggle('show');
-    //     })
-    // }
 
     for (let i = 0; i <= submenuSmall.length; i++){
         submenuSmall[i].addEventListener('click', (e) => {
@@ -50,30 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
             list.classList.toggle('show-submenu');
         })
     }
-
-
-    // for (let i = 0; i <= categoryButtons.length; i++){
-    //     categoryButtons[i].addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         const list = e.target.parentElement.nextElementSibling;
-    //         list.classList.toggle('show');
-    //         console.log(innerList);
-    //         console.log(categoryButtons);
-    //     })
-    // }
-
-    console.log('innerList');
-    console.log(categoryButtons);
-
-
-    //
-    // document.querySelector("#hifi").addEventListener("click", (e) => {
-    //     e.preventDefault();
-    //     document.querySelector("#drop").classList.toggle("show");
-    //     // e.target.parentElement.nextElementSibling.classList.toggle("show");
-    //     // console.log(e.target.parentElement.nextElementSibling);
-    // });
-
 
     function featuredArticles(data) {
         const articles = data;
