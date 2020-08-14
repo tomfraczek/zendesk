@@ -461,11 +461,13 @@ h3.homepage {
     ul{
       opacity: 0;
       height:0;
+      display: none;
     }
   }
 }
 
 .show {
-  height: auto;
-  opacity:1;
+  height: auto!important;
+  opacity:1!important;
+  display: block!important;
 }
