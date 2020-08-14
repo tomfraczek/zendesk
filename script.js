@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const innerList = document.querySelectorAll('.inner-list');
     const hifi = document.querySelector('#hifiButton');
     const hifioDrop = document.querySelector('#hiFiDrop');
-
+console.log(hifi)
     // for (let i = 0; i <= innerList.length; i++){
     //     innerList[i].addEventListener('click', (e) => {
     //         e.preventDefault();
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     hifi.addEventListener('click', () => {
         hifioDrop.classList.toggle('show');
+        console.log('dupa')
     })
 
     // for (let i = 0; i <= categoryButtons.length; i++){
