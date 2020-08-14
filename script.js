@@ -26,7 +26,7 @@ console.log(hifi)
         submenu[i].addEventListener('click', (e) => {
             e.preventDefault();
             const list = e.target.parentElement.nextElementSibling;
-            list.classList.toggle('show');
+            list.classList.toggle('show-submenu');
             console.log('click')
         })
     }
