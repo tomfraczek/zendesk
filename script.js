@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(submenu[i]){
             submenu[i].addEventListener('click', (e) => {
                 e.preventDefault();
+                console.log(e.target);
                 if(document.querySelector('.show-submenu')){
                     document.querySelector('.show-submenu').classList.remove('show-submenu')
                 }
