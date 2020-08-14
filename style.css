@@ -1417,11 +1417,6 @@ h3.homepage {
   text-align: justify;
 }
 
-.show {
-  height: auto;
-  opacity: 1;
-}
-
 .homepage--categories__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -1433,10 +1428,17 @@ h3.homepage {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
+  opacity: 0;
+  height: 0;
 }
 
 .column-container .column {
   width: 30%;
+}
+
+.show {
+  height: auto;
+  opacity: 1;
 }
 
 /***** Recent activity *****/
