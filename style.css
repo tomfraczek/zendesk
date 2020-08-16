@@ -1494,6 +1494,28 @@ h3.homepage {
   content: "\2212";
 }
 
+.visible-list {
+  padding: 10px 0;
+}
+
+.visible-list li {
+  margin: 2px 0;
+  font-size: 16px;
+}
+
+.visible-list li a {
+  color: #777;
+  font-weight: 600;
+}
+
+.submenu h3:after {
+  content: "\002B";
+  color: #ffff;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;

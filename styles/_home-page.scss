@@ -516,3 +516,29 @@ h3.homepage {
 .hifi-button-active:after {
   content: "\2212";
 }
+
+.visible-list{
+  padding: 10px 0;
+
+  li{
+    margin: 2px 0;
+    font-size: 16px;
+
+    a{
+      color: #777;
+      font-weight: 600;
+    }
+  }
+}
+
+.submenu{
+  h3{
+    &:after{
+      content: "\002B";
+      color: #ffff;
+      font-weight: bold;
+      position: absolute;
+      right: 20px;
+    }
+  }
+}
