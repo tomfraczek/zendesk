@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i <= submenu.length; i++){
         if(submenu[i]){
             submenu[i].addEventListener('click', (e) => {
-                console.log(e.target)
+                console.log(e.target.parentElement.nextElementSibling)
+                console.log(e.target.parentElement.nextElementSibling.offsetHeight)
                 e.preventDefault();
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
