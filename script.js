@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const hifi = document.querySelector("#hifiButton");
+    const preList = document.querySelector("#preList").scrollHeight;
     const catWrapper = document.querySelector("#homepageCatWrapper");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
     const hiFiDefault = hiFiDropdown.scrollHeight;
@@ -9,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const submenuSmall = document.querySelectorAll('.submenu-small');
     let valueForSmall;
     let foo;
+
+    console.log(preList)
 
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
@@ -58,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             submenuSmall[i].addEventListener('click', (e) => {
                 e.preventDefault();
-                foo = e.target.parentElement.parentElement.parentElement.offsetHeight;
-                console.log(foo);
+
+                console.log(foo);//135
                 for (let i = 0; i <= submenuSmall.length; i++){
                     if(submenuSmall[i]){
                         submenuSmall[i].nextElementSibling.style.height = 0;
@@ -71,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
                     console.log(e.target.parentElement.parentElement.parentElement)
-                    e.target.parentElement.parentElement.parentElement.style.height = foo + 'px';
+                    e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
