@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
                     catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
                     e.target.classList.add('hifi-button-active');
-                    valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
+                    valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight;
                 }
             })
         }
