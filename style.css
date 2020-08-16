@@ -1436,17 +1436,11 @@ h3.homepage {
   justify-content: center;
   overflow: hidden;
   height: 0;
-  transition: height ease-in 600ms;
+  transition: height ease-in 300ms;
 }
 
 .column-container .column {
   width: 30%;
-}
-
-.column-container .column ul {
-  opacity: 0;
-  height: 0;
-  display: none;
 }
 
 .show {
@@ -1488,6 +1482,12 @@ h3.homepage {
 
 .active:after {
   content: "\2212";
+}
+
+.submenu {
+  height: 0;
+  overflow: hidden;
+  transition: height ease-in 300ms;
 }
 
 /***** Recent activity *****/

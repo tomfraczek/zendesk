@@ -460,7 +460,7 @@ h3.homepage {
   justify-content: center;
   overflow: hidden;
   height: 0;
-  transition: height ease-in 600ms;
+  transition: height ease-in 300ms;
 
   .column{
     width: 30%;
@@ -516,4 +516,5 @@ h3.homepage {
 .submenu{
   height: 0;
   overflow: hidden;
+  transition: height ease-in 300ms;
 }
