@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
         console.log('click');
+        console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight){
             hiFiDropdown.style.hight = null;
         } else {
