@@ -460,6 +460,7 @@ h3.homepage {
   justify-content: center;
   overflow: hidden;
   height: 0;
+  transition: height ease-in 600ms;
 
   .column{
     width: 30%;
