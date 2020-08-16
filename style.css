@@ -1455,11 +1455,11 @@ h3.homepage {
   height: 0;
   overflow: hidden;
   transition: height ease-in 300ms;
-  margin-right: 25px;
+  margin-left: 25px;
 }
 
 .column-container .column ul ul {
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .column-container .column ul ul a {
@@ -1517,12 +1517,14 @@ h3.homepage {
   font-weight: 600;
 }
 
-.submenu h3 {
+.submenu h3,
+.submenu-small h3 {
   position: relative;
   color: #777;
 }
 
-.submenu h3:after {
+.submenu h3:after,
+.submenu-small h3:after {
   content: "\002B";
   color: #777;
   font-weight: bold;
@@ -1531,7 +1533,7 @@ h3.homepage {
 }
 
 .hifi-button-active:after {
-  content: "\2212";
+  content: "−" !important;
 }
 
 /***** Recent activity *****/

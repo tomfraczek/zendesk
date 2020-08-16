@@ -539,7 +539,8 @@ h3.homepage {
   }
 }
 
-.submenu{
+.submenu,
+.submenu-small{
   h3{
     position: relative;
     color: #777;
@@ -555,4 +556,7 @@ h3.homepage {
 
 .hifi-button-active:after {
   content: "\2212"!important;
+}
+
+.submenu-small h3{
 }
