@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault()
         console.log('click');
         console.log(hiFiDropdown.offsetHeight);
-        if(hiFiDropdown.offsetHeight){
-            hiFiDropdown.style.hight = null;
+        if(hiFiDropdown.offsetHeight !== 0){
+            hiFiDropdown.style.hight = 0;
         } else {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
         }
