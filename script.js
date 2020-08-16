@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 e.preventDefault();
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
+                    console.log('1')
                     e.target.parentElement.nextElementSibling.offsetHeight = 0;
                 } else {
-                    e.target.parentElement.nextElementSibling.offsetHeight = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+                    console.log('2')
+                    e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                 }
             })
         }
