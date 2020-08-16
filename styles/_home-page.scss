@@ -416,6 +416,7 @@ h3.homepage {
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 
   ul{
     opacity: 0;
@@ -424,7 +425,8 @@ h3.homepage {
   }
 
   img {
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 

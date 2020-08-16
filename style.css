@@ -1394,6 +1394,7 @@ h3.homepage {
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .image_link ul {
@@ -1403,7 +1404,8 @@ h3.homepage {
 }
 
 .image_link img {
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .drop {
