@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const submenu = document.querySelectorAll('.submenu');
     const submenuSmall = document.querySelectorAll('.submenu-small');
     let valueForSmall;
+    let foo;
 
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             submenuSmall[i].addEventListener('click', (e) => {
                 e.preventDefault();
+                foo = e.target.parentElement.parentElement.parentElement.offsetHeight;
                 for (let i = 0; i <= submenuSmall.length; i++){
                     if(submenuSmall[i]){
                         submenuSmall[i].nextElementSibling.style.height = 0;
@@ -67,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
+                    e.target.parentElement.parentElement.parentElement.style.height = foo + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
