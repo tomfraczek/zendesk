@@ -476,10 +476,10 @@ h3.homepage {
       height: 0;
       overflow: hidden;
       transition: height ease-in 300ms;
-      margin-right:25px;
+      margin-left:25px;
 
       ul{
-        margin-right:20px;
+        margin-left:20px;
 
         a{
           font-weight: 100;
@@ -554,5 +554,5 @@ h3.homepage {
 }
 
 .hifi-button-active:after {
-  content: "\2212";
+  content: "\2212"!important;
 }

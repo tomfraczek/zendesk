@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const hiFiDefault = hiFiDropdown.scrollHeight;
     const hifiButtonTitle = document.querySelector('#hifiButtonTitle');
     const submenu = document.querySelectorAll('.submenu');
+    const submenuSmall = document.querySelectorAll('.submenu-small');
 
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
@@ -29,6 +30,36 @@ document.addEventListener("DOMContentLoaded", function() {
                     if(submenu[i]){
                         submenu[i].nextElementSibling.style.height = 0;
                         submenu[i].firstElementChild.classList.remove('hifi-button-active');
+                        hiFiDropdown.style.height = hiFiDefault + "px";
+                        catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
+                    }
+                }
+
+                // submenu[i].nextElementSibling.style.height = 0;
+                if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
+                    e.target.parentElement.nextElementSibling.style.height = 0;
+                    hiFiDropdown.style.height = hiFiDefault + "px";
+                    catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
+                } else {
+                    e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
+                    catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
+                    e.target.classList.add('hifi-button-active');
+                }
+            })
+        }
+    }
+
+    for (let i = 0; i <= submenuSmall.length; i++){
+        if(submenuSmall[i]){
+
+            submenuSmall[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                for (let i = 0; i <= submenuSmall.length; i++){
+                    console.log()
+                    if(submenuSmall[i]){
+                        submenuSmall[i].nextElementSibling.style.height = 0;
+                        submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
                         hiFiDropdown.style.height = hiFiDefault + "px";
                         catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
                     }
