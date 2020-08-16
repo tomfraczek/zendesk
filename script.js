@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
                     catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
                     e.target.classList.add('hifi-button-active');
-                    valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight;
+                    valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
                 }
             })
         }
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
             submenuSmall[i].addEventListener('click', (e) => {
                 e.preventDefault();
                 foo = e.target.parentElement.parentElement.parentElement.offsetHeight;
+                console.log(foo);
                 for (let i = 0; i <= submenuSmall.length; i++){
                     if(submenuSmall[i]){
                         submenuSmall[i].nextElementSibling.style.height = 0;
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
+                    console.log(e.target.parentElement.parentElement.parentElement)
                     e.target.parentElement.parentElement.parentElement.style.height = foo + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
