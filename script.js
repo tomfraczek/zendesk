@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                         }
                     }
-                    console.log(e.target.parentElement.nextElementSibling.scrollHeight)
+                    console.log(e.target)
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
                 }
