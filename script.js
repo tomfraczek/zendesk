@@ -1,19 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    const acc = document.querySelector("#hifiButton");
+    const hifi = document.querySelector("#hifiButton");
+    const hiFiDropdown = document.querySelector("#hiFiDrop");
 
-    for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function (e) {
-            e.preventDefault();
-            this.classList.toggle("activvvve");
-            const panel = this.parentElement.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-    }
+    hifi.addEventListener('click', () => {
+        if(hiFiDropdown.style.maxHeight){
+            hiFiDropdown.style.maxHeight = null;
+        } else {
+            hiFiDropdown.style.maxHeight = hiFiDropdown.scrollHeight + "px";
+        }
+    })
+    //
+    // for (let i = 0; i < acc.length; i++) {
+    //     acc[i].addEventListener("click", function (e) {
+    //         e.preventDefault();
+    //         this.classList.toggle("activvvve");
+    //         const panel = this.parentElement.nextElementSibling;
+    //         if (panel.style.maxHeight) {
+    //             panel.style.maxHeight = null;
+    //         } else {
+    //             panel.style.maxHeight = panel.scrollHeight + "px";
+    //         }
+    //     });
+    // }
 
 
     //
