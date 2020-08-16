@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log()
                     if(submenu[i]){
                         submenu[i].nextElementSibling.style.height = 0;
+                        hiFiDropdown.style.height = hiFiDefault + "px";
                     }
                 }
 
