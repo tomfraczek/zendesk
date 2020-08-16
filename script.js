@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
-                    hiFiDropdown.style.height = hiFiDefault + "px";
+                    hiFiDropdown.style.height = (e.target.parentElement.parentElement.parentElement.scrollHeight + hiFiDefault) + "px";
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
                         console.log()
@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                         }
                     }
-                    console.log(e.target.parentElement.parentElement.parentElement.scrollHeight)
                     e.target.parentElement.parentElement.parentElement.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + e.target.parentElement.parentElement.parentElement.scrollHeight) + 'px';
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
