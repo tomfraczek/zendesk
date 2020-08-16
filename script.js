@@ -2,18 +2,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const hifi = document.querySelector("#hifiButton");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
+    const submenu = document.querySelectorAll('.submenu');
 
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
-        console.log('click');
         console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight !== 0){
-            console.log('wtf?!')
             hiFiDropdown.style.height = 0;
         } else {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
         }
     })
+
+    for (let i = 0; i <= submenu.length; i++){
+        if(submenu[i]){
+            submenu[i].addEventListener('click', (e) => {
+                console.log('click sub')
+                e.preventDefault();
+                //
+                if(e.target.parentElement.offsetHeight !== 0){
+                    e.target.parentElement.offsetHeight = 0;
+                } else {
+                    e.target.parentElement.offsetHeight = e.target.parentElement.scrollHeight + "px";
+                }
+            })
+        }
+    }
     //
     // for (let i = 0; i < acc.length; i++) {
     //     acc[i].addEventListener("click", function (e) {
