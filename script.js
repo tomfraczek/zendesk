@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     console.log('1')
-                    e.target.parentElement.nextElementSibling.offsetHeight = 0;
+                    e.target.parentElement.nextElementSibling.style.height = 0;
                 } else {
                     console.log('2')
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
