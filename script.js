@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i <= submenu.length; i++){
         if(submenu[i]){
             submenu[i].addEventListener('click', (e) => {
-                console.log('click sub')
+                console.log(e.target)
                 e.preventDefault();
                 //
-                if(e.target.nextElementSibling.offsetHeight !== 0){
-                    e.target.nextElementSibling.offsetHeight = 0;
-                } else {
-                    e.target.nextElementSibling.offsetHeight = e.target.nextElementSibling.scrollHeight + "px";
-                }
+                // if(e.target.nextElementSibling.offsetHeight !== 0){
+                //     e.target.nextElementSibling.offsetHeight = 0;
+                // } else {
+                //     e.target.nextElementSibling.offsetHeight = e.target.nextElementSibling.scrollHeight + "px";
+                // }
             })
         }
     }
