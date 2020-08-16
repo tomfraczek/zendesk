@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const hifi = document.querySelector("#hifiButton");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
 
-    hifi.addEventListener('click', () => {
+    hifi.addEventListener('click', (e) => {
+        e.preventDefault()
+        console.log('click');
         if(hiFiDropdown.style.maxHeight){
             hiFiDropdown.style.maxHeight = null;
         } else {
