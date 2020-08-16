@@ -20,10 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             submenu[i].addEventListener('click', (e) => {
 
-                for (let i = 0; i <= submenu.length; i++){
-                    console.log()
-                    submenu[i].nextElementSibling.style.height = 0;
-                }
                 e.preventDefault();
                 // submenu[i].nextElementSibling.style.height = 0;
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
