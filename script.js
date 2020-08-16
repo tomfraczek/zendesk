@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
         console.log('click');
-        if(hiFiDropdown.style.maxHeight){
-            hiFiDropdown.style.maxHeight = null;
+        if(hiFiDropdown.style.height){
+            hiFiDropdown.style.hight = null;
         } else {
-            hiFiDropdown.style.maxHeight = hiFiDropdown.scrollHeight + "px";
+            hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
         }
     })
     //
