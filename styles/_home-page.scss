@@ -501,7 +501,7 @@ h3.homepage {
   transition: max-height 0.2s ease-out;
 }
 
-.action:after {
+.hifi-button:after {
   content: "\002B";
   color: #777;
   font-weight: bold;
@@ -509,6 +509,6 @@ h3.homepage {
   margin-left: 5px;
 }
 
-.active:after {
+.hifi-button-active:after {
   content: "\2212";
 }

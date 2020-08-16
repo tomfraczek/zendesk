@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight !== 0){
             hiFiDropdown.style.height = 0;
+            e.target.classList.remove('hifi-button-active');
         } else {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
+            e.target.classList.add('hifi-button-active');
         }
     })
 
