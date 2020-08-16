@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     console.log('2')
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDropdown.scrollHeight) + "px";
                 }
             })
         }
