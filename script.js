@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const hifi = document.querySelector("#hifiButton");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
+    const hiFiDefault = hiFiDropdown.scrollHeight;
     const submenu = document.querySelectorAll('.submenu');
 
     hifi.addEventListener('click', (e) => {
@@ -17,15 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i <= submenu.length; i++){
         if(submenu[i]){
             submenu[i].addEventListener('click', (e) => {
-                console.log(e.target.parentElement.nextElementSibling)
-                console.log(e.target.parentElement.nextElementSibling.offsetHeight)
+                console.log(submenu[i].nextElementSibling)
                 e.preventDefault();
                 submenu[i].nextElementSibling.style.height = 0;
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
-                    console.log('1')
                     e.target.parentElement.nextElementSibling.style.height = 0;
+                    hiFiDropdown.style.height = hiFiDefault + "px";
                 } else {
-                    console.log('2')
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDropdown.scrollHeight) + "px";
                 }
