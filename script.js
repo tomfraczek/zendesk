@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const catWrapper = document.querySelector("#homepageCatWrapper");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
     const hiFiDefault = hiFiDropdown.scrollHeight;
+    const hifiButtonTitle = document.querySelector('#hifiButtonTitle');
     const submenu = document.querySelectorAll('.submenu');
 
     hifi.addEventListener('click', (e) => {
@@ -11,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight !== 0){
             hiFiDropdown.style.height = 0;
-            e.target.classList.remove('hifi-button-active');
+            hifiButtonTitle.remove('hifi-button-active');
         } else {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
-            e.target.classList.add('hifi-button-active');
+            hifiButtonTitle.add('hifi-button-active');
         }
     })
 
