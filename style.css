@@ -1447,10 +1447,23 @@ h3.homepage {
   width: 30%;
 }
 
+.column-container .column * {
+  color: #777;
+}
+
 .column-container .column ul {
   height: 0;
   overflow: hidden;
   transition: height ease-in 300ms;
+  margin-right: 25px;
+}
+
+.column-container .column ul ul {
+  margin-right: 20px;
+}
+
+.column-container .column ul ul a {
+  font-weight: 100;
 }
 
 .show {
@@ -1490,10 +1503,6 @@ h3.homepage {
   right: 20px;
 }
 
-.hifi-button-active:after {
-  content: "\2212";
-}
-
 .visible-list {
   padding: 10px 0;
 }
@@ -1510,6 +1519,7 @@ h3.homepage {
 
 .submenu h3 {
   position: relative;
+  color: #777;
 }
 
 .submenu h3:after {
@@ -1518,6 +1528,10 @@ h3.homepage {
   font-weight: bold;
   position: absolute;
   right: 20px;
+}
+
+.hifi-button-active:after {
+  content: "\2212";
 }
 
 /***** Recent activity *****/

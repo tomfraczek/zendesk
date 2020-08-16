@@ -468,11 +468,23 @@ h3.homepage {
 
   .column{
     width: 30%;
+    *{
+      color: #777;
+    }
 
     ul{
       height: 0;
       overflow: hidden;
       transition: height ease-in 300ms;
+      margin-right:25px;
+
+      ul{
+        margin-right:20px;
+
+        a{
+          font-weight: 100;
+        }
+      }
     }
   }
 }
@@ -513,10 +525,6 @@ h3.homepage {
   right: 20px;
 }
 
-.hifi-button-active:after {
-  content: "\2212";
-}
-
 .visible-list{
   padding: 10px 0;
 
@@ -534,6 +542,7 @@ h3.homepage {
 .submenu{
   h3{
     position: relative;
+    color: #777;
     &:after{
       content: "\002B";
       color: #777;
@@ -542,4 +551,8 @@ h3.homepage {
       right: 20px;
     }
   }
+}
+
+.hifi-button-active:after {
+  content: "\2212";
 }
