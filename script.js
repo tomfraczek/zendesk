@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let i = 0; i <= submenu.length; i++){
         if(submenu[i]){
-            console.log(submenu[i])
+
             submenu[i].addEventListener('click', (e) => {
 
+                for (let i = 0; i <= submenu.length; i++){
+                    console.log(submenu[i])
+
+                }
                 e.preventDefault();
                 // submenu[i].nextElementSibling.style.height = 0;
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
