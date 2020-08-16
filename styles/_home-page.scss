@@ -465,11 +465,11 @@ h3.homepage {
   .column{
     width: 30%;
 
-    //ul{
-    //  opacity: 0;
-    //  height:0;
-    //  display: none;
-    //}
+    ul{
+      height: 0;
+      overflow: hidden;
+      transition: height ease-in 300ms;
+    }
   }
 }
 
@@ -511,10 +511,4 @@ h3.homepage {
 
 .active:after {
   content: "\2212";
-}
-
-.submenu{
-  height: 0;
-  overflow: hidden;
-  transition: height ease-in 300ms;
 }

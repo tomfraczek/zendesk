@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log('click sub')
                 e.preventDefault();
                 //
-                if(e.target.parentElement.offsetHeight !== 0){
-                    e.target.parentElement.offsetHeight = 0;
+                if(e.target.nextElementSibling.offsetHeight !== 0){
+                    e.target.nextElementSibling.offsetHeight = 0;
                 } else {
-                    e.target.parentElement.offsetHeight = e.target.parentElement.scrollHeight + "px";
+                    e.target.nextElementSibling.offsetHeight = e.target.nextElementSibling.scrollHeight + "px";
                 }
             })
         }
