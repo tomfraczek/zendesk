@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(e.target.parentElement.nextElementSibling)
                 console.log(e.target.parentElement.nextElementSibling.offsetHeight)
                 e.preventDefault();
-
+                submenu[i].nextElementSibling.style.height = 0;
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     console.log('1')
                     e.target.parentElement.nextElementSibling.style.height = 0;
