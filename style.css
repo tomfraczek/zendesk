@@ -1508,9 +1508,13 @@ h3.homepage {
   font-weight: 600;
 }
 
+.submenu h3 {
+  position: relative;
+}
+
 .submenu h3:after {
   content: "\002B";
-  color: #ffff;
+  color: #777;
   font-weight: bold;
   position: absolute;
   right: 20px;

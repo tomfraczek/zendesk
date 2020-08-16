@@ -533,9 +533,10 @@ h3.homepage {
 
 .submenu{
   h3{
+    position: relative;
     &:after{
       content: "\002B";
-      color: #ffff;
+      color: #777;
       font-weight: bold;
       position: absolute;
       right: 20px;
