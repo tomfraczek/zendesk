@@ -1423,6 +1423,10 @@ h3.homepage {
   text-align: justify;
 }
 
+.drop .column:nth-child(4n+1) {
+  padding-left: 10px;
+}
+
 .homepage--categories__wrapper {
   display: flex;
   flex-wrap: wrap;

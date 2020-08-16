@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight !== 0){
             hiFiDropdown.style.height = 0;
-            hifiButtonTitle.remove('hifi-button-active');
+            hifiButtonTitle.classList.remove('hifi-button-active');
         } else {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
-            hifiButtonTitle.add('hifi-button-active');
+            hifiButtonTitle.classList.add('hifi-button-active');
         }
     })
 
