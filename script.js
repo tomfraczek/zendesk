@@ -19,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
             submenu[i].addEventListener('click', (e) => {
                 console.log(e.target)
                 e.preventDefault();
-                //
-                // if(e.target.nextElementSibling.offsetHeight !== 0){
-                //     e.target.nextElementSibling.offsetHeight = 0;
-                // } else {
-                //     e.target.nextElementSibling.offsetHeight = e.target.nextElementSibling.scrollHeight + "px";
-                // }
+
+                if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
+                    e.target.parentElement.nextElementSibling.offsetHeight = 0;
+                } else {
+                    e.target.parentElement.nextElementSibling.offsetHeight = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+                }
             })
         }
     }
