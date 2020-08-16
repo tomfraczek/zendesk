@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i <= submenu.length; i++){
         if(submenu[i]){
             submenu[i].addEventListener('click', (e) => {
-                console.log(submenu[i].nextElementSibling)
+                console.log(submenu[i])
                 e.preventDefault();
-                submenu[i].nextElementSibling.style.height = 0;
+                // submenu[i].nextElementSibling.style.height = 0;
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
                     hiFiDropdown.style.height = hiFiDefault + "px";
