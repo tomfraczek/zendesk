@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 for (let i = 0; i <= submenu.length; i++){
                     console.log()
-                    submenu[i].style.height = 0;
+                    submenu[i].nextElementSibling.style.height = 0;
                 }
                 e.preventDefault();
                 // submenu[i].nextElementSibling.style.height = 0;
