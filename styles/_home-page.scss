@@ -503,10 +503,10 @@ h3.homepage {
 
 .hifi-button:after {
   content: "\002B";
-  color: #777;
+  color: #ffff;
   font-weight: bold;
-  float: right;
-  margin-left: 5px;
+  position: absolute;
+  right: 20px;
 }
 
 .hifi-button-active:after {
