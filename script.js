@@ -90,11 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                         }
                     }
-                    // e.target.parentElement.parentElement.parentElement.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + e.target.parentElement.parentElement.parentElement.scrollHeight) + 'px';
+                    e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
-                    document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
-
                 }
             })
         }
