@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
                     preListEl.style.height = preList + 'px';
-                    // hiFiDropdown.style.height = valueForSmall + "px";
+                    hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
 
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
