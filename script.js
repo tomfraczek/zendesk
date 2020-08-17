@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 // }
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
-                    // e.target.parentElement.nextElementSibling.style.height = 0;
-                    // e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
+                    e.target.parentElement.nextElementSibling.style.height = 0;
+                    preListEl.style.height = preList + 'px';
                     // hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
 
