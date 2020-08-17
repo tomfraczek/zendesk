@@ -1600,6 +1600,10 @@ h3.homepage {
   display: none;
 }
 
+.bottom-link {
+  height: 40px;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;
