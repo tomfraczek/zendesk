@@ -1098,18 +1098,21 @@ ul {
 }
 
 .homepage--top__article {
-  margin-bottom: 55px;
-  padding-bottom: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 2px black;
   width: 100%;
+}
+
+.homepage--top__article h1 {
+  font-size: 70px;
 }
 
 .homepage--top__article p {
   font-size: 18px;
 }
 
-.homepage--top__article p:last-of-type {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 25px;
+.homepage--top__article p a:hover {
+  opacity: .8;
 }
 
 .homepage--bottom__article {
@@ -1536,6 +1539,18 @@ h3.homepage {
 
 .hifi-button-active:after {
   content: "−" !important;
+}
+
+.section.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-inner {
+  width: 50%;
+  margin-top: 120px;
 }
 
 /***** Recent activity *****/
