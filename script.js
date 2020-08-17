@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log('end 4 ' + e.target.parentElement.parentElement.scrollHeight)
                 console.log('end 5 ' + e.target.parentElement.nextElementSibling.offsetHeight)
                 console.log('end 6 ' + e.target.parentElement.nextElementSibling.scrollHeight)
+                console.log('end 7 ' + (hiFiDefault + document.querySelector("#preList").scrollHeight + e.target.parentElement.nextElementSibling.scrollHeight))
             })
         }
     }
