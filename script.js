@@ -4,16 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const network = document.querySelector('#networkStream')
     const networkTitle = document.querySelector('#networkTitle')
     const preList = document.querySelector("#preList").scrollHeight;
-    const preListEl = document.querySelector("#preList");
-    const catWrapper = document.querySelector("#homepageCatWrapper");
+    // const preListEl = document.querySelector("#preList");
+    // const catWrapper = document.querySelector("#homepageCatWrapper");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
     const networkDropdown = document.querySelector("#networkDrop");
     const hiFiDefault = hiFiDropdown.scrollHeight;
     const hifiButtonTitle = document.querySelector('#hifiButtonTitle');
     const submenu = document.querySelectorAll('.submenu');
-    const submenuSmall = document.querySelectorAll('.submenu-small');
+    // const submenuSmall = document.querySelectorAll('.submenu-small');
     let valueForSmall;
-    let foo;
+    // let foo;
 
     console.log(preList)
 
@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
             networkDropdown.style.height = networkDropdown.scrollHeight + "px";
             networkTitle.classList.add('network-button-active');
         }
-
-        if(document.querySelector('.mini-open')){
-            document.querySelector('.mini-open').style.height = 0 + 'px';
-            document.querySelector('.mini-open').classList.remove('mini-open');
-        }
+        //
+        // if(document.querySelector('.mini-open')){
+        //     document.querySelector('.mini-open').style.height = 0 + 'px';
+        //     document.querySelector('.mini-open').classList.remove('mini-open');
+        // }
     })
 
     hifi.addEventListener('click', (e) => {
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
             hifiButtonTitle.classList.add('hifi-button-active');
         }
-
-        if(document.querySelector('.mini-open')){
-            document.querySelector('.mini-open').style.height = 0 + 'px';
-            document.querySelector('.mini-open').classList.remove('mini-open');
-        }
+        //
+        // if(document.querySelector('.mini-open')){
+        //     document.querySelector('.mini-open').style.height = 0 + 'px';
+        //     document.querySelector('.mini-open').classList.remove('mini-open');
+        // }
     })
 
     for (let i = 0; i <= submenu.length; i++){
