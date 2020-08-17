@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 console.log(preList)
                                 console.log(e.target.parentElement.nextElementSibling.scrollHeight)
 
-                                document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.offsetHeight) + 'px;'
+                                document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
                                 hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + submenu[i].nextElementSibling.scrollHeight) + "px";
 
                             }
