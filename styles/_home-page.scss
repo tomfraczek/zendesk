@@ -467,6 +467,9 @@ h3.homepage {
 
 
 .column-container{
+  flex-direction: column;
+  width: 100%;
+
   margin:auto;
   display: flex;
   flex-wrap: wrap;
@@ -476,8 +479,17 @@ h3.homepage {
   height: 0;
   transition: height ease-in 300ms;
 
+  @include tablet{
+    flex-direction: row;
+  }
+
   .column{
-    width: 33.3333%;
+    width: 100%;
+
+    @include tablet{
+      width: 33.3333%;
+    }
+
     *{
       color: #777;
     }

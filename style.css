@@ -1444,6 +1444,8 @@ h3.homepage {
 }
 
 .column-container {
+  flex-direction: column;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -1454,8 +1456,20 @@ h3.homepage {
   transition: height ease-in 300ms;
 }
 
+@media (min-width: 768px) {
+  .column-container {
+    flex-direction: row;
+  }
+}
+
 .column-container .column {
-  width: 33.3333%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .column-container .column {
+    width: 33.3333%;
+  }
 }
 
 .column-container .column * {
