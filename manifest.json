@@ -1,7 +1,7 @@
 {
   "name": "Copenhagen",
   "author": "Zendesk",
-  "version": "1.8.540",
+  "version": "1.8.541",
   "api_version": 1,
   "default_locale": "en-us",
   "settings": [{
