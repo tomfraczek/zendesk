@@ -60,12 +60,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 e.preventDefault();
 
                 // console.log(document.querySelector('#preList').scrollHeight);
-                for (let i = 0; i <= submenuSmall.length; i++){
-                    if(submenuSmall[i]){
-                        submenuSmall[i].nextElementSibling.style.height = 0;
-                        submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
-                        // hiFiDropdown.style.height = hiFiDefault + "px";
-                    }
+                // for (let i = 0; i <= submenuSmall.length; i++){
+                //     if(submenuSmall[i]){
+                //         submenuSmall[i].nextElementSibling.style.height = 0;
+                //         submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
+                //         // hiFiDropdown.style.height = hiFiDefault + "px";
+                //     }
+                // }
+
+                if(submenuSmall[i].classList.contains('hifi-button-active')){
+                    submenuSmall[i].nextElementSibling.style.height = 0;
+                    submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
                 }
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
