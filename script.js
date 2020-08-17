@@ -77,15 +77,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 //     submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
                 // }
 
+
+
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
+                    if(document.querySelector('mini-open')){
+                        document.querySelector('mini-open').style.height = 0;
+                        document.querySelector('mini-open').classList.remove('mini-open');
+                    }
+
                     e.target.parentElement.nextElementSibling.style.height = 0;
                     preListEl.style.height = preList + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
-
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     preListEl.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList) + 'px';
                     hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList + hiFiDefault) + 'px';
+                    e.target.parentElement.nextElementSibling.classList.add('mini-open');
                     // for (let i = 0; i <= submenu.length; i++){
                     //     if(submenu[i]){
                     //         if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
