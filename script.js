@@ -59,6 +59,28 @@ document.addEventListener("DOMContentLoaded", function() {
             submenuSmall[i].addEventListener('click', (e) => {
                 e.preventDefault();
 
+                console.log(submenuSmall[i])
+
+                for (let i = 0; i <= submenuSmall.length; i++){
+                    // console.log()
+                    if(submenuSmall[i]){
+                        submenuSmall[i].nextElementSibling.style.height = 0;
+                        submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
+                        hiFiDropdown.style.height = hiFiDefault + "px";
+                    }
+                }
+
+                // submenu[i].nextElementSibling.style.height = 0;
+                if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
+                    e.target.parentElement.nextElementSibling.style.height = 0;
+                    hiFiDropdown.style.height = hiFiDefault + "px";
+                } else {
+                    e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
+                    e.target.classList.add('hifi-button-active');
+                    valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
+                }
+
                 // console.log(document.querySelector('#preList').scrollHeight);
                 // for (let i = 0; i <= submenuSmall.length; i++){
                 //     if(submenuSmall[i]){
