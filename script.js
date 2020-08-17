@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     e.target.classList.add('hifi-button-active');
 
                 }
-                // hiFiDropdown.style.height += (document.querySelector("#preList").scrollHeight) + 'px';
+                hiFiDropdown.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight + e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + 'px';
                 console.log('end 1 ' + document.querySelector("#preList").scrollHeight)
                 console.log('end 2 ' + document.querySelector("#preList").offsetHeight)
                 console.log('end 3 ' + hiFiDefault)
