@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const submenu = document.querySelectorAll('.submenu');
     const submenuSmall = document.querySelectorAll('.submenu-small');
     let valueForSmall;
+    let foo;
 
     console.log(preList)
 
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
+                    console.log(e.target.parentElement.parentElement.parentElement)
                     e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
