@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
             hifiButtonTitle.classList.add('hifi-button-active');
         }
+
+        if(document.querySelector('.mini-open')){
+            document.querySelector('.mini-open').style.height = 0 + 'px';
+            document.querySelector('.mini-open').classList.remove('mini-open');
+        }
     })
 
     for (let i = 0; i <= submenu.length; i++){
@@ -31,6 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             submenu[i].addEventListener('click', (e) => {
                 e.preventDefault();
+
+                if(document.querySelector('.mini-open')){
+                    document.querySelector('.mini-open').style.height = 0 + 'px';
+                    document.querySelector('.mini-open').classList.remove('mini-open');
+                }
+
                 for (let i = 0; i <= submenu.length; i++){
                     // console.log()
                     if(submenu[i]){
