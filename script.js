@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
                     if(document.querySelector('.mini-open')){
-                        console.log('dsdfd')
                         document.querySelector('.mini-open').style.height = 0 + 'px';
                         document.querySelector('.mini-open').classList.remove('mini-open');
                     }
