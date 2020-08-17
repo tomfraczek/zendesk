@@ -1596,6 +1596,10 @@ h3.homepage {
   padding: 0;
 }
 
+.remove {
+  display: none;
+}
+
 /***** Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;
