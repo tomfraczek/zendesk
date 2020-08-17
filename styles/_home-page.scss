@@ -567,6 +567,20 @@ h3.homepage {
   content: "\2212"!important;
 }
 
+.network-title{
+  &:after{
+    content: "\002B";
+    color: #ffff;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.network-button-active:after{
+  content: "\2212"!important;
+}
+
 .submenu-small h3{
 }
 

@@ -1546,6 +1546,18 @@ h3.homepage {
   content: "−" !important;
 }
 
+.network-title:after {
+  content: "\002B";
+  color: #ffff;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+}
+
+.network-button-active:after {
+  content: "−" !important;
+}
+
 .section.hero {
   display: flex;
   flex-direction: column;

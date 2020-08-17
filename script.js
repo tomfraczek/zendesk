@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const hifi = document.querySelector("#hifiButton");
     const network = document.querySelector('#networkStream')
+    const networkTitle = document.querySelector('#networkTitle')
     const preList = document.querySelector("#preList").scrollHeight;
     const preListEl = document.querySelector("#preList");
     const catWrapper = document.querySelector("#homepageCatWrapper");
@@ -28,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if(networkDropdown.offsetHeight !== 0){
             networkDropdown.style.height = 0;
-            hifiButtonTitle.classList.remove('network-button-active');
+            networkTitle.classList.remove('network-button-active');
         } else {
             networkDropdown.style.height = networkDropdown.scrollHeight + "px";
-            hifiButtonTitle.classList.add('network-button-active');
+            networkTitle.classList.add('network-button-active');
         }
 
         if(document.querySelector('.mini-open')){
