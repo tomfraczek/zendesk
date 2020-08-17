@@ -2218,6 +2218,12 @@ h3.homepage {
   list-style-type: none !important;
 }
 
+.under-section--paragraph {
+  margin-top: 70px;
+  border-top: 1px solid #dedede;
+  padding-top: 30px;
+}
+
 /***** Attachments *****/
 /* Styles attachments inside posts, articles and comments */
 .attachments .attachment-item {
