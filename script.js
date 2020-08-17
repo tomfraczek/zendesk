@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const hifi = document.querySelector("#hifiButton");
     const preList = document.querySelector("#preList").scrollHeight;
+    const preListEl = document.querySelector("#preList");
     const catWrapper = document.querySelector("#homepageCatWrapper");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
     const hiFiDefault = hiFiDropdown.scrollHeight;
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // console.log()
                     if(submenuSmall[i]){
                         submenuSmall[i].nextElementSibling.style.height = 0;
-                        submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
+                        submenuSmall[i].firstElementChild.classList.remove('small-button-active');
                         hiFiDropdown.style.height = hiFiDefault + "px";
                     }
                 }
@@ -77,9 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log('!== 0')
                 } else {
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
-                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
-                    e.target.classList.add('hifi-button-active');
-                    valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
+                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + preList) + "px";
+                    e.target.classList.add('small-button-active');
+                    // preListEl.style.height =
+                    // valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
                 }
 
                 // console.log(document.querySelector('#preList').scrollHeight);
