@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if(document.querySelector('.hifi-button-active')){
             hiFiDropdown.style.height = 0;
+            hifiButtonTitle.classList.remove('hifi-button-active');
         }
 
 
@@ -44,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
         if(document.querySelector('.network-button-active')){
-            hiFiDropdown.style.height = 0;
+            networkDropdown.style.height = 0;
+            networkTitle.classList.remove('network-button-active');
         }
         console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight !== 0){
