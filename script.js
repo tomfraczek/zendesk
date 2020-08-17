@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     console.log('tomm');
                     e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
-                    hiFiDropdown.style.height = (hiFiDefault + e.target.parentElement.parentElement.parentElement) + 'px';
+                    hiFiDropdown.style.height = (hiFiDefault + e.target.parentElement.parentElement.parentElement.scrollHeight) + 'px';
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
 
