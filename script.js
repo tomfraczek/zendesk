@@ -71,26 +71,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     console.log('1')
                     e.target.parentElement.nextElementSibling.style.height = 0;
-                    console.log(e.target.parentElement.parentElement.parentElement)
                     e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
-                    for (let i = 0; i <= submenu.length; i++){
-
-                        if(submenu[i]){
-                            if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
-                                console.log('2.1')
-                                console.log(hiFiDefault)
-                                console.log(preList)
-
-                                // hiFiDropdown.style.height = (hiFiDefault + preList) + 'px';
-
-                                document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
-                                hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + submenu[i].nextElementSibling.scrollHeight) + "px";
-                            }
-                        }
-                    }
-                    console.log('tomm');
+                    // for (let i = 0; i <= submenu.length; i++){
+                    //
+                    //     if(submenu[i]){
+                    //         if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
+                    //             console.log('2.1')
+                    //             console.log(hiFiDefault)
+                    //             console.log(preList)
+                    //
+                    //             // hiFiDropdown.style.height = (hiFiDefault + preList) + 'px';
+                    //
+                    //             document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
+                    //             hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + submenu[i].nextElementSibling.scrollHeight) + "px";
+                    //         }
+                    //     }
+                    // }
+                    // console.log('tomm');
                     console.log('1  ' + (preList + e.target.parentElement.nextElementSibling.scrollHeight))
                     console.log('2  ' + (e.target.parentElement.nextElementSibling.scrollHeight))
                     e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
