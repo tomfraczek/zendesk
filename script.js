@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
                     hiFiDropdown.style.height = hiFiDefault + "px";
+                    console.log('!== 0')
                 } else {
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
