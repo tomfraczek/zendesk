@@ -86,13 +86,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
                                 document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
                                 hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + submenu[i].nextElementSibling.scrollHeight) + "px";
-
                             }
                         }
                     }
                     console.log('tomm');
                     e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
-                    // hiFiDropdown.style.height = (hiFiDefault + preList) + 'px';
+                    hiFiDropdown.style.height = (hiFiDefault + e.target.parentElement.parentElement.parentElement) + 'px';
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
 
