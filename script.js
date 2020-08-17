@@ -62,27 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 console.log(submenuSmall[i])
 
-                for (let i = 0; i <= submenuSmall.length; i++){
-                    // console.log()
-                    if(submenuSmall[i]){
-                        submenuSmall[i].nextElementSibling.style.height = 0;
-                        submenuSmall[i].firstElementChild.classList.remove('small-button-active');
-                        hiFiDropdown.style.height = hiFiDefault + "px";
-                    }
-                }
-
-                // submenu[i].nextElementSibling.style.height = 0;
-                if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
-                    e.target.parentElement.nextElementSibling.style.height = 0;
-                    hiFiDropdown.style.height = hiFiDefault + "px";
-                    console.log('!== 0')
-                } else {
-                    e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
-                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + preList) + "px";
-                    e.target.classList.add('small-button-active');
-                    // preListEl.style.height =
-                    // valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
-                }
 
                 // console.log(document.querySelector('#preList').scrollHeight);
                 // for (let i = 0; i <= submenuSmall.length; i++){
@@ -103,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     // e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
                     // hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
+
+                    e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+                    preListEl.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList) + 'px';
+                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList + hiFiDefault) + 'px';
                     // for (let i = 0; i <= submenu.length; i++){
                     //     if(submenu[i]){
                     //         if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
