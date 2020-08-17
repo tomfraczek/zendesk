@@ -97,76 +97,76 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    for (let i = 0; i <= submenuSmall.length; i++){
-        if(submenuSmall[i]){
-
-            submenuSmall[i].addEventListener('click', (e) => {
-                e.preventDefault();
-
-                console.log(submenuSmall[i])
-
-
-                // console.log(document.querySelector('#preList').scrollHeight);
-                // for (let i = 0; i <= submenuSmall.length; i++){
-                //     if(submenuSmall[i]){
-                //         submenuSmall[i].nextElementSibling.style.height = 0;
-                //         submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
-                //         // hiFiDropdown.style.height = hiFiDefault + "px";
-                //     }
-                // }
-
-                // if(submenuSmall[i].classList.contains('hifi-button-active')){
-                //     submenuSmall[i].nextElementSibling.style.height = 0;
-                //     submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
-                // }
-
-
-
-                if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
-
-
-                    // document.querySelector('.mini-open').style.height = 0 + 'px';
-                    // document.querySelector('.mini-open').classList.remove('mini-open');
-
-                    e.target.parentElement.nextElementSibling.style.height = 0 + 'px';
-                    preListEl.style.height = preList + 'px';
-                    hiFiDropdown.style.height = valueForSmall + "px";
-                } else {
-                    if(document.querySelector('.mini-open')){
-                        document.querySelector('.mini-open').style.height = 0 + 'px';
-                        document.querySelector('.mini-open').classList.remove('mini-open');
-                    }
-                    e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
-                    preListEl.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList) + 'px';
-                    hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList + hiFiDefault) + 'px';
-                    e.target.parentElement.nextElementSibling.classList.add('mini-open');
-                    // for (let i = 0; i <= submenu.length; i++){
-                    //     if(submenu[i]){
-                    //         if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
-                    //             document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
-                    //             hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + submenu[i].nextElementSibling.scrollHeight) + "px";
-                    //         }
-                    //     }
-                    // }
-                    // e.log('3  ' + e.target.parentElement.parentElement.parentElement);
-                    // e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
-                    // e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
-                    // e.target.classList.add('hifi-button-active');
-
-                }
-                // hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + 'px';
-                // console.log('end 1 ' + document.querySelector("#preList").scrollHeight)
-                // console.log('end 2 ' + document.querySelector("#preList").offsetHeight)
-                // console.log('end 3 ' + hiFiDefault)
-                // console.log('end 4 ' + e.target.parentElement.parentElement.scrollHeight)
-                // console.log('end 5 ' + e.target.parentElement.nextElementSibling.offsetHeight)
-                // console.log('end 6 ' + e.target.parentElement.nextElementSibling.scrollHeight)
-                // console.log('end 7 ' + (hiFiDefault + document.querySelector("#preList").scrollHeight ))
-                // console.log('end 8 ' + (preList + e.target.parentElement.nextElementSibling.scrollHeight))
-                // console.log('end 8 ' + e.target.parentElement.nextElementSibling.scrollHeight)
-            })
-        }
-    }
+    // for (let i = 0; i <= submenuSmall.length; i++){
+    //     if(submenuSmall[i]){
+    //
+    //         submenuSmall[i].addEventListener('click', (e) => {
+    //             e.preventDefault();
+    //
+    //             console.log(submenuSmall[i])
+    //
+    //
+    //             // console.log(document.querySelector('#preList').scrollHeight);
+    //             // for (let i = 0; i <= submenuSmall.length; i++){
+    //             //     if(submenuSmall[i]){
+    //             //         submenuSmall[i].nextElementSibling.style.height = 0;
+    //             //         submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
+    //             //         // hiFiDropdown.style.height = hiFiDefault + "px";
+    //             //     }
+    //             // }
+    //
+    //             // if(submenuSmall[i].classList.contains('hifi-button-active')){
+    //             //     submenuSmall[i].nextElementSibling.style.height = 0;
+    //             //     submenuSmall[i].firstElementChild.classList.remove('hifi-button-active');
+    //             // }
+    //
+    //
+    //
+    //             if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
+    //
+    //
+    //                 // document.querySelector('.mini-open').style.height = 0 + 'px';
+    //                 // document.querySelector('.mini-open').classList.remove('mini-open');
+    //
+    //                 e.target.parentElement.nextElementSibling.style.height = 0 + 'px';
+    //                 preListEl.style.height = preList + 'px';
+    //                 hiFiDropdown.style.height = valueForSmall + "px";
+    //             } else {
+    //                 if(document.querySelector('.mini-open')){
+    //                     document.querySelector('.mini-open').style.height = 0 + 'px';
+    //                     document.querySelector('.mini-open').classList.remove('mini-open');
+    //                 }
+    //                 e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+    //                 preListEl.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList) + 'px';
+    //                 hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + preList + hiFiDefault) + 'px';
+    //                 e.target.parentElement.nextElementSibling.classList.add('mini-open');
+    //                 // for (let i = 0; i <= submenu.length; i++){
+    //                 //     if(submenu[i]){
+    //                 //         if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
+    //                 //             document.querySelector('#preList').style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px;'
+    //                 //             hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault + submenu[i].nextElementSibling.scrollHeight) + "px";
+    //                 //         }
+    //                 //     }
+    //                 // }
+    //                 // e.log('3  ' + e.target.parentElement.parentElement.parentElement);
+    //                 // e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
+    //                 // e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
+    //                 // e.target.classList.add('hifi-button-active');
+    //
+    //             }
+    //             // hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + 'px';
+    //             // console.log('end 1 ' + document.querySelector("#preList").scrollHeight)
+    //             // console.log('end 2 ' + document.querySelector("#preList").offsetHeight)
+    //             // console.log('end 3 ' + hiFiDefault)
+    //             // console.log('end 4 ' + e.target.parentElement.parentElement.scrollHeight)
+    //             // console.log('end 5 ' + e.target.parentElement.nextElementSibling.offsetHeight)
+    //             // console.log('end 6 ' + e.target.parentElement.nextElementSibling.scrollHeight)
+    //             // console.log('end 7 ' + (hiFiDefault + document.querySelector("#preList").scrollHeight ))
+    //             // console.log('end 8 ' + (preList + e.target.parentElement.nextElementSibling.scrollHeight))
+    //             // console.log('end 8 ' + e.target.parentElement.nextElementSibling.scrollHeight)
+    //         })
+    //     }
+    // }
 
     function featuredArticles(data) {
         const articles = data;
