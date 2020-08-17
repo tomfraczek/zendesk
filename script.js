@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const hifi = document.querySelector("#hifiButton");
+    const network = document.querySelector('#networkStream')
     const preList = document.querySelector("#preList").scrollHeight;
     const preListEl = document.querySelector("#preList");
     const catWrapper = document.querySelector("#homepageCatWrapper");
     const hiFiDropdown = document.querySelector("#hiFiDrop");
+    const networkDropdown = document.querySelector("#networkDrop");
     const hiFiDefault = hiFiDropdown.scrollHeight;
     const hifiButtonTitle = document.querySelector('#hifiButtonTitle');
     const submenu = document.querySelectorAll('.submenu');
@@ -14,8 +16,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log(preList)
 
+    network.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if(document.querySelector('.hifi-button-active')){
+            hiFiDropdown.style.height = 0;
+        }
+
+
+        if(networkDropdown.offsetHeight !== 0){
+            networkDropdown.style.height = 0;
+            hifiButtonTitle.classList.remove('network-button-active');
+        } else {
+            networkDropdown.style.height = networkDropdown.scrollHeight + "px";
+            hifiButtonTitle.classList.add('network-button-active');
+        }
+
+        if(document.querySelector('.mini-open')){
+            document.querySelector('.mini-open').style.height = 0 + 'px';
+            document.querySelector('.mini-open').classList.remove('mini-open');
+        }
+    })
+
     hifi.addEventListener('click', (e) => {
         e.preventDefault()
+        if(document.querySelector('.network-button-active')){
+            hiFiDropdown.style.height = 0;
+        }
         console.log(hiFiDropdown.offsetHeight);
         if(hiFiDropdown.offsetHeight !== 0){
             hiFiDropdown.style.height = 0;

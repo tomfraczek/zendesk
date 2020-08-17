@@ -85,6 +85,7 @@
 
   h1{
     font-size: 70px;
+    margin: 0;
   }
 
   p{
@@ -94,6 +95,7 @@
       color: #00c3ef;
       &:hover{
         color: #00d9ff;
+        text-decoration: none;
       }
     }
   }
@@ -576,7 +578,27 @@ h3.homepage {
 }
 
 .hero-inner{
-  width: 50%;
-  margin-top: 120px;
+  width: 100%;
+  margin-top: 60px;
   top:0!important;
+  max-width: unset;
+
+  @include tablet{
+    width: 60%;
+    margin-top: 120px;
+  }
+}
+
+.search{
+  max-width: unset;
+}
+
+.search-full input[type="search"]{
+  font-size: 23px;
+}
+
+.network-drop{
+  overflow: hidden;
+  height: 0;
+  transition: height ease-in 300ms;
 }
