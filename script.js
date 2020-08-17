@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const submenu = document.querySelectorAll('.submenu');
     const submenuSmall = document.querySelectorAll('.submenu-small');
     let valueForSmall;
-    let foo;
 
     console.log(preList)
 
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         submenu[i].nextElementSibling.style.height = 0;
                         submenu[i].firstElementChild.classList.remove('hifi-button-active');
                         hiFiDropdown.style.height = hiFiDefault + "px";
-                        catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
                     }
                 }
 
@@ -44,11 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
                     hiFiDropdown.style.height = hiFiDefault + "px";
-                    catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
                 } else {
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     hiFiDropdown.style.height = (e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault) + "px";
-                    catWrapper.scrollIntoView({ behavior: 'smooth', block: 'start'});
                     e.target.classList.add('hifi-button-active');
                     valueForSmall = e.target.parentElement.nextElementSibling.scrollHeight + hiFiDefault;
                 }
@@ -73,8 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
-                    console.log(e.target.parentElement.parentElement.parentElement)
-                    e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
+                    e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.parentElement.parentElement.offsetHeight) + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
