@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
     network.addEventListener('click', (e) => {
         e.preventDefault();
 
+        console.log('click')
+
         if(document.querySelector('.hifi-button-active')){
             hiFiDropdown.style.height = 0;
         }
