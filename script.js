@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
                         console.log(preList)
-                        console.log(e.target.parentElement.parentElement.offsetHeight)
+                        console.log(e.target.parentElement.parentElement.scrollHeight)
                         document.querySelector('#preList').style.height = (preList + e.target.parentElement.parentElement.offsetHeight) + 'px';
                         if(submenu[i]){
                             if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
