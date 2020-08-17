@@ -91,8 +91,9 @@
     font-size: 18px;
 
     a{
+      color: #00c3ef;
       &:hover{
-        opacity: .8;
+        color: #00d9ff;
       }
     }
   }
@@ -541,7 +542,6 @@ h3.homepage {
 
     a{
       color: #777;
-      font-weight: 600;
     }
   }
 }

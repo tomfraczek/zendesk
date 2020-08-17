@@ -1111,8 +1111,12 @@ ul {
   font-size: 18px;
 }
 
+.homepage--top__article p a {
+  color: #00c3ef;
+}
+
 .homepage--top__article p a:hover {
-  opacity: .8;
+  color: #00d9ff;
 }
 
 .homepage--bottom__article {
@@ -1519,7 +1523,6 @@ h3.homepage {
 
 .visible-list li a {
   color: #777;
-  font-weight: 600;
 }
 
 .submenu h3,
