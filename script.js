@@ -76,8 +76,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
-                        console.log('2')
-                        document.querySelector('#preList').style.height = document.querySelector('#preList').scrollHeight + 'px';
+                        console.log(preList)
+                        console.log(e.target.parentElement.parentElement.offsetHeight)
+                        document.querySelector('#preList').style.height = (preList + e.target.parentElement.parentElement.offsetHeight) + 'px';
                         if(submenu[i]){
                             if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
                                 console.log('2.1')
