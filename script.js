@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
             submenuSmall[i].addEventListener('click', (e) => {
                 e.preventDefault();
 
-                console.log('0');//135
+                console.log(document.querySelector('#preList').scrollHeight);
                 for (let i = 0; i <= submenuSmall.length; i++){
                     if(submenuSmall[i]){
                         submenuSmall[i].nextElementSibling.style.height = 0;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
                         console.log('2')
-                        document.querySelector('#preList').style.height = (preList + document.querySelector('#preList').scrollHeight) + 'px';
+                        document.querySelector('#preList').style.height = document.querySelector('#preList').scrollHeight + 'px';
                         if(submenu[i]){
                             if (submenu[i].firstElementChild.classList.contains('hifi-button-active')){
                                 console.log('2.1')
