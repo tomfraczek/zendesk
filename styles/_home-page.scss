@@ -471,13 +471,13 @@ h3.homepage {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
   overflow: hidden;
   height: 0;
   transition: height ease-in 300ms;
 
   .column{
-    width: 30%;
+    width: 33.3333%;
     *{
       color: #777;
     }
