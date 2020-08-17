@@ -1585,6 +1585,7 @@ h3.homepage {
 
 .search-full input[type="search"] {
   font-size: 23px;
+  height: 60px;
 }
 
 .network-drop {
