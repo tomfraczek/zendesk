@@ -1611,8 +1611,10 @@ h3.homepage {
   display: none;
 }
 
-.bottom-link {
-  height: 40px;
+.bottom-link img {
+  height: 79%;
+  width: auto;
+  padding: 20px;
 }
 
 /***** Recent activity *****/
