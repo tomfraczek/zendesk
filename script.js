@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                     e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
+                    hiFiDropdown.style.height = (hiFiDefault + preList) + 'px';
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
                 }
