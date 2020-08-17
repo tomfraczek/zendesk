@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     e.target.parentElement.nextElementSibling.style.height = 0;
-                    e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.parentElement.parentElement.offsetHeight) + 'px';
+                    e.target.parentElement.parentElement.parentElement.style.height = preList + 'px';
                     hiFiDropdown.style.height = valueForSmall + "px";
                 } else {
                     for (let i = 0; i <= submenu.length; i++){
