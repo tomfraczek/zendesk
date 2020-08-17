@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     e.target.parentElement.parentElement.parentElement.style.height = (preList + e.target.parentElement.nextElementSibling.scrollHeight) + 'px';
                     e.target.parentElement.nextElementSibling.style.height = e.target.parentElement.nextElementSibling.scrollHeight + "px";
                     e.target.classList.add('hifi-button-active');
-                    console.log(hiFiDefault)
-                    console.log(preList)
+                    console.log(hiFiDefault + document.querySelector("#preList").offsetHeight)
+                    console.log(hiFiDefault + document.querySelector("#preList").scrollHeight)
                     hiFiDropdown.style.height = (hiFiDefault + document.querySelector("#preList").offsetHeight) + 'px';
 
 
