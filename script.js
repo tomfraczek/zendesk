@@ -81,9 +81,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if(e.target.parentElement.nextElementSibling.offsetHeight !== 0){
                     if(document.querySelector('.mini-open')){
+                        console.log('dsdfd')
                         document.querySelector('.mini-open').style.height = 0 + 'px';
                         document.querySelector('.mini-open').classList.remove('mini-open');
                     }
+
+                    document.querySelector('.mini-open').style.height = 0 + 'px';
+                    document.querySelector('.mini-open').classList.remove('mini-open');
 
                     e.target.parentElement.nextElementSibling.style.height = 0 + 'px';
                     preListEl.style.height = preList + 'px';
