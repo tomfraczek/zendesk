@@ -548,7 +548,7 @@ h3.homepage {
 }
 
 .visible-list{
-  padding: 10px 0;
+  padding: 10px;
 
   li{
     margin: 2px 0;
@@ -556,6 +556,10 @@ h3.homepage {
 
     a{
       color: #777;
+
+      h4{
+        margin: 0;
+      }
     }
   }
 }
@@ -628,7 +632,6 @@ h3.homepage {
   overflow: hidden;
   height: 0;
   transition: height ease-in 300ms;
-  margin: 10px 0 0 10px;
   padding: 0;
 }
 

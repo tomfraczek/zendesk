@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
     network.addEventListener('click', (e) => {
         e.preventDefault();
 
-        console.log('click')
-
         if(document.querySelector('.hifi-button-active')){
             hiFiDropdown.style.height = 0;
             hifiButtonTitle.classList.remove('hifi-button-active');
@@ -35,11 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
             networkDropdown.style.height = networkDropdown.scrollHeight + "px";
             networkTitle.classList.add('network-button-active');
         }
-        //
-        // if(document.querySelector('.mini-open')){
-        //     document.querySelector('.mini-open').style.height = 0 + 'px';
-        //     document.querySelector('.mini-open').classList.remove('mini-open');
-        // }
     })
 
     hifi.addEventListener('click', (e) => {
@@ -53,14 +46,12 @@ document.addEventListener("DOMContentLoaded", function() {
             hiFiDropdown.style.height = 0;
             hifiButtonTitle.classList.remove('hifi-button-active');
         } else {
+            console.log(hiFiDropdown.scrollHeight);
+            console.log(hiFiDropdown.offsetHeight);
+            console.log(hiFiDropdown);
             hiFiDropdown.style.height = hiFiDropdown.scrollHeight + "px";
             hifiButtonTitle.classList.add('hifi-button-active');
         }
-        //
-        // if(document.querySelector('.mini-open')){
-        //     document.querySelector('.mini-open').style.height = 0 + 'px';
-        //     document.querySelector('.mini-open').classList.remove('mini-open');
-        // }
     })
 
     for (let i = 0; i <= submenu.length; i++){

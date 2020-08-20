@@ -1529,7 +1529,7 @@ h3.homepage {
 }
 
 .visible-list {
-  padding: 10px 0;
+  padding: 10px;
 }
 
 .visible-list li {
@@ -1539,6 +1539,10 @@ h3.homepage {
 
 .visible-list li a {
   color: #777;
+}
+
+.visible-list li a h4 {
+  margin: 0;
 }
 
 .submenu h3,
@@ -1603,7 +1607,6 @@ h3.homepage {
   overflow: hidden;
   height: 0;
   transition: height ease-in 300ms;
-  margin: 10px 0 0 10px;
   padding: 0;
 }
 
